@@ -15,11 +15,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        //super.getResources()
         setContentView(R.layout.activity_maps)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
+        mapFragment.onResume()
+        mapFragment.allowEnterTransitionOverlap
+        mapFragment.activity
     }
 
     /**
@@ -35,9 +39,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Providence Bridgeport and move the camera
-        val providenceBridgeport = LatLng(45.39,-122.75)
+        val providenceBridgeport = LatLng(45.39, -122.75)
+        val providenceMercantile = LatLng(45.42, -122.72)
         //val locationType: nt = GooglePlacesApi.TYPE_HOSPITAL
-        mMap.addMarker(MarkerOptions().position(providenceBridgeport).title("Providence Bridgeport"))
+        mMap.addMarker(
+            MarkerOptions().position(providenceBridgeport).title("Providence Bridgeport")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceMercantile).title("Providence Mercantile")
+        )
+        //mMap.addCircle()
         mMap.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
-    }
-}
+
+    }}
