@@ -35,7 +35,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+
+    fun getPhoneNumberFromUserInput()
+    {
+        val number = Integer.valueOf(readLine())
+        return number as Unit
+    }
     override fun onMapReady(googleMap: GoogleMap) {
+
+        authenticateFirebase()
         mMap = googleMap
 
         // Add a marker in Providence Bridgeport and move the camera
@@ -50,5 +58,39 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         )
         //mMap.addCircle()
         mMap.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
-
+       // var phoneNumber = getPhoneNumberFromUserInput();
+       // var appVerifier = window.recaptchaVerifier;
+//        firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+//            .then(function (confirmationResult) {
+//                // SMS sent. Prompt user to type the code from the message, then sign the
+//                // user in with confirmationResult.confirm(code).
+//                window.confirmationResult = confirmationResult;
+//            }).catch(function (error) {
+//                // Error; SMS not sent
+//                // ...
+            //});
     }}
+
+fun authenticateFirebase()
+{
+    // Turn off phone auth app verification.
+    val firebase = null
+//    firebase.auth().settings.appVerificationDisabledForTesting = true;
+//
+//    var phoneNumber = "+16505554567";
+//    var testVerificationCode = "123456";
+//
+//// This will render a fake reCAPTCHA as appVerificationDisabledForTesting is true.
+//// This will resolve after rendering without app verification.
+//    var appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
+//// signInWithPhoneNumber will call appVerifier.verify() which will resolve with a fake
+//// reCAPTCHA response.
+//    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
+//        .then(function (confirmationResult) {
+//            // confirmationResult can resolve with the whitelisted testVerificationCode above.
+//            return confirmationResult.confirm(testVerificationCode)
+//        }).catch(function (error) {
+//            // Error; SMS not sent
+//            // ...
+//        });
+}

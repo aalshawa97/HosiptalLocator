@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "123140511070",
+    "firebase_url": "https://hospitallocator-be5cd.firebaseio.com",
+    "project_id": "hospitallocator-be5cd",
+    "storage_bucket": "hospitallocator-be5cd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:123140511070:android:053eac0e60d6acb402ebcf",
+        "android_client_info": {
+          "package_name": "hospital.Locator"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "123140511070-r7bpu1rhlsoe7knd9ov07v7va2kfa0jm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhp9velxKCu4zR7j8iQJTuJvGY9pjnPoU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "123140511070-r7bpu1rhlsoe7knd9ov07v7va2kfa0jm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
