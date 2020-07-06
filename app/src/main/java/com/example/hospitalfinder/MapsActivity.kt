@@ -17,6 +17,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         super.onCreate(savedInstanceState)
         //super.getResources()
         setContentView(R.layout.activity_maps)
+//        setContentView(R.layout.news)
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
@@ -24,9 +25,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.onResume()
         mapFragment.allowEnterTransitionOverlap
         mapFragment.activity
+        //return inflater.inflate(R.layout.article_view, container, false)
+
     }
 
-    /**
+    /**        setContentView(R.layout.news_articles)
+
      * Manipulates the map once available.
      * This callback is triggered when the map is ready to be used.
      * This is where we can add markers or lines, add listeners or move the camera. In this case,
@@ -49,6 +53,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Add a marker in Providence Bridgeport and move the camera
         val providenceBridgeport = LatLng(45.39, -122.75)
         val providenceMercantile = LatLng(45.42, -122.72)
+        val providenceStVincent = LatLng(45.46,-122.792)
         //val locationType: nt = GooglePlacesApi.TYPE_HOSPITAL
         mMap.addMarker(
             MarkerOptions().position(providenceBridgeport).title("Providence Bridgeport")
@@ -56,8 +61,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(
             MarkerOptions().position(providenceMercantile).title("Providence Mercantile")
         )
+
+        mMap.addMarker(
+            MarkerOptions().position(providenceStVincent).title("Providence St. Vincent")
+        )
         //mMap.addCircle()
         mMap.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
+
        // var phoneNumber = getPhoneNumberFromUserInput();
        // var appVerifier = window.recaptchaVerifier;
 //        firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
@@ -66,11 +76,26 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                // user in with confirmationResult.confirm(code).
 //                window.confirmationResult = confirmationResult;
 //            }).catch(function (error) {
-//                // Error; SMS not sent
+//                // Error; SMS not senthttps://www.linkedin.com/in/abdullah-alshawa-691b23132/
 //                // ...
             //});
     }}
 
+fun findHospitalNearby()
+{
+    var R = 6371; // km
+    val lat2 = 0
+    val lat1 = 0
+    val lon2 = 0
+    val lon1 = 0
+//    var dLat = (lat2-lat1).toRad();
+//    var dLon = (lon2-lon1).toRad();
+//    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+//            Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
+//            Math.sin(dLon/2) * Math.sin(dLon/2);
+  //  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+    //var d = R * c;
+}
 fun authenticateFirebase()
 {
     // Turn off phone auth app verification.
