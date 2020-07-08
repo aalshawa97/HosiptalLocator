@@ -1,5 +1,12 @@
+//Abdullah Mutaz Alshawa
+// 7/8/20
+// Hospital Locator
+// Locates the directions to hospitals for COVID 19 treatment
+
 package com.example.hospitalfinder
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -25,6 +32,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.onResume()
         mapFragment.allowEnterTransitionOverlap
         mapFragment.activity
+
+        if(mapFragment.isRemoving)
+            println("Application is closing!")
+
+        //mapFragment.onEnterAmbient()
         //return inflater.inflate(R.layout.article_view, container, false)
 
     }
@@ -68,6 +80,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         //mMap.addCircle()
         mMap.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
 
+
+        val hospitalUrl = "http://maps.google.co.uk/maps?q=Hospital&hl=en"
+        
+        
+       val intent = Intent(Intent.ACTION_VIEW, Uri.parse(hospitalUrl));
+       // val activityIntent = Intent(this,isActivityTransitionRunning::class.java) startActivity(intent)
+
+        //String string = ""
+//            intent.setClassName("com.google.android.apps.maps","com.google.android.maps.MapsActivity");
+//        startActivity(intent);
        // var phoneNumber = getPhoneNumberFromUserInput();
        // var appVerifier = window.recaptchaVerifier;
 //        firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
@@ -80,6 +102,32 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                // ...
             //});
     }}
+
+//private infix fun Parcelable.startActivity(intent: Intent): Any {
+//
+//}
+
+
+//private fun firebaseAuthWithGoogle(idToken: String) {
+//    val credential = GoogleAuthProvider.getCredential(idToken, null)
+//    auth.signInWithCredential(credential)
+//            .addOnCompleteListener(this) { task ->
+//                if (task.isSuccessful) {
+//                    // Sign in success, update UI with the signed-in user's information
+//                    Log.d(TAG, "signInWithCredential:success")
+//                    val user = auth.currentUser
+//                    updateUI(user)
+//                } else {
+//                    // If sign in fails, display a message to the user.
+//                    Log.w(TAG, "signInWithCredential:failure", task.exception)
+//                    // ...
+//                    Snackbar.make(view, "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
+//                    updateUI(null)
+//                }
+//
+//                // ...
+//            }
+//}
 
 fun findHospitalNearby()
 {
