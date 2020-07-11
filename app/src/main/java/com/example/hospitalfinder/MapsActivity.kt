@@ -66,6 +66,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val providenceBridgeport = LatLng(45.39, -122.75)
         val providenceMercantile = LatLng(45.42, -122.72)
         val providenceStVincent = LatLng(45.46,-122.792)
+        val universityOfWashingtonMedicalCenter = LatLng(46.53,-123.75)
         //val locationType: nt = GooglePlacesApi.TYPE_HOSPITAL
         mMap.addMarker(
             MarkerOptions().position(providenceBridgeport).title("Providence Bridgeport")
@@ -76,6 +77,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         mMap.addMarker(
             MarkerOptions().position(providenceStVincent).title("Providence St. Vincent")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(universityOfWashingtonMedicalCenter).title("University of Washington Medical Center")
         )
         //mMap.addCircle()
         mMap.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
