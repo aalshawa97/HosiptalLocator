@@ -67,8 +67,34 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val providenceMercantile = LatLng(45.42, -122.72)
         val providenceStVincent = LatLng(45.46,-122.792)
         val universityOfWashingtonMedicalCenter = LatLng(46.53,-123.75)
+        val providenceWilametteFallsMedicalCenter = LatLng(45.42,-122.72)
         //val locationType: nt = GooglePlacesApi.TYPE_HOSPITAL
         val legacygoodSamaritan = LatLng(45.42,-122.85)
+        val providenceCanbyMedicalPlaza = LatLng(45.42,-122.72)
+        val legacyMeridianParkMedicalCenter = LatLng(45.42, -122.72)
+        val providenceMedicalPlazaSherwood = LatLng(45.42,-122.72)
+        val providenceNewbergMedicalCenter = LatLng(45.36,-122.97)
+        val oregonClinicSouth = LatLng(45.42,-122.72)
+
+        mMap.addMarker(
+            MarkerOptions().position(oregonClinicSouth).title("Oregon Clinic South")
+        )
+
+        mMap.addMarker(
+            MarkerOptions().position(providenceNewbergMedicalCenter).title("Providence Newberg Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceMedicalPlazaSherwood).title("Providence Medical Plaza Sherwood")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(legacyMeridianParkMedicalCenter).title("Legacy Meridian Park Medical Plaza")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceCanbyMedicalPlaza).title("Providence Medical Plaza")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceWilametteFallsMedicalCenter).title("Providence Wilamette Falls Medical Center")
+        )
         mMap.addMarker(
             MarkerOptions().position(legacygoodSamaritan).title("Legacy Good Samaritan")
         )
@@ -156,6 +182,11 @@ fun authenticateFirebase()
 {
     // Turn off phone auth app verification.
     val firebase = null
+
+    //Initialize the variables
+    val userName = "userName"
+
+
 //    firebase.auth().settings.appVerificationDisabledForTesting = true;
 //
 //    var phoneNumber = "+16505554567";

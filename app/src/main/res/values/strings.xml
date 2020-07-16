@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">HospitalFinder</string>
+    <string name="app_name">BBT (Be Better Today - Hospital Finder)</string>
     <string name="title_activity_maps">Hospital Finder</string>
     <string name="access_token" translatable="false">YOUR_MAPBOX_ACCESS_TOKEN</string>
     <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
