@@ -75,7 +75,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val providenceMedicalPlazaSherwood = LatLng(45.42,-122.72)
         val providenceNewbergMedicalCenter = LatLng(45.36,-122.97)
         val oregonClinicSouth = LatLng(45.42,-122.72)
+        val clackamasPediatricClinic = LatLng(45.44,-122.80)
 
+        mMap.addMarker(
+            MarkerOptions().position(clackamasPediatricClinic).title("Clackamas Pediatric Clinic")
+        )
         mMap.addMarker(
             MarkerOptions().position(oregonClinicSouth).title("Oregon Clinic South")
         )
