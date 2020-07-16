@@ -68,6 +68,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val providenceStVincent = LatLng(45.46,-122.792)
         val universityOfWashingtonMedicalCenter = LatLng(46.53,-123.75)
         //val locationType: nt = GooglePlacesApi.TYPE_HOSPITAL
+        val legacygoodSamaritan = LatLng(45.42,-122.85)
+        mMap.addMarker(
+            MarkerOptions().position(legacygoodSamaritan).title("Legacy Good Samaritan")
+        )
         mMap.addMarker(
             MarkerOptions().position(providenceBridgeport).title("Providence Bridgeport")
         )
