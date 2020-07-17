@@ -85,8 +85,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val oregonStateHospital = LatLng(45.42,-122.72)
         val legacySilverton = LatLng(45.42,-122.72)
         val samaritanNorthLincolnHospital = LatLng(45.42,-122.72)
+        val tualityCommunityHospital = LatLng(45.42,-122.72)
+        val kaiserPermanenteWestsideMedicalCenter = LatLng(45.49,-122.92)
+        val providenceCentrailiaHospital = LatLng(45.42,-122.72)
+        val stJoesphMedicalClinic = LatLng(45.42,-122.72)
 //
 //
+        mMap.addMarker(
+            MarkerOptions().position(stJoesphMedicalClinic).title("St. Joesph Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceCentrailiaHospital).title("Providence Centrailia Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(kaiserPermanenteWestsideMedicalCenter).title("Kaiser Permanente Westside Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(tualityCommunityHospital).title("Tuality Community Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(samaritanNorthLincolnHospital).title("Samartian North Lincoln Hospital")
         )
