@@ -94,6 +94,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val asanteThreeRiversMedicalCenter = LatLng(45.42,-122.72)
         val blueMountainHospital = LatLng(44.42,-118.96)
         val goodShepardHealthCareSystem = LatLng(45.42,-122.72)
+        val vaPortlandHealthCareSystem =  LatLng(45.48,-122.69)
+        val oregonClinicCardiology = LatLng(45.42,-122.72)
+
+        mMap.addMarker(
+            MarkerOptions().position(oregonClinicCardiology).title("Oregon Clinic Cardiology")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(vaPortlandHealthCareSystem).title("Veteran Affairs Portland Health Care System")
+        )
 //
         mMap.addMarker(
             MarkerOptions().position(oregonHealthAndScienceUniversity).title("Oregon Health and Science University")
