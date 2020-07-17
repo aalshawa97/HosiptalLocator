@@ -9,6 +9,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -81,8 +82,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val providenceHoodRiver = LatLng(45.56,-122.69)
         val shrinersHospitalsForChildren = LatLng(45.42,-123.02)
         val peakMedicalNorthwestIncorporated = LatLng(45.42,-122.74)
+        val oregonStateHospital = LatLng(45.42,-122.72)
+        val legacySilverton = LatLng(45.42,-122.72)
 //
 //
+        mMap.addMarker(
+            MarkerOptions().position(legacySilverton).title("Legacy Silverton Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(oregonStateHospital).title("Oregon State Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(peakMedicalNorthwestIncorporated).title("Peak Medical Northwest Incorporated")
         )
@@ -205,11 +214,23 @@ fun findHospitalNearby()
 }
 fun authenticateFirebase()
 {
-    // Turn off phone auth app verification.
-    val firebase = null
-
-    //Initialize the variables
-    val userName = "userName"
+//    val getString
+//    val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString.default_web_client_id)
+//    val requestCode = 0
+//    if (requestCode  == null) {
+//
+//    }
+//    try {
+//        //val builderInference
+//    } catch (e:
+//                     Exception) {
+//    }
+    // var  dbReference
+//    // Turn off phone auth app verification.
+//    val firebase = null
+//
+//    //Initialize the variables
+//    val userName = "userName"
 
 
 //    firebase.auth().settings.appVerificationDisabledForTesting = true;
