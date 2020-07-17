@@ -67,6 +67,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val providenceBridgeport = LatLng(45.39, -122.75)
         val providenceMercantile = LatLng(45.42, -122.72)
         val providenceStVincent = LatLng(45.46,-122.792)
+        val oregonHealthAndScienceUniversity = LatLng(45.48,-122.81)
         val universityOfWashingtonMedicalCenter = LatLng(46.53,-123.75)
         val providenceWilametteFallsMedicalCenter = LatLng(45.42,-122.72)
         //val locationType: nt = GooglePlacesApi.TYPE_HOSPITAL
@@ -94,6 +95,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val blueMountainHospital = LatLng(44.42,-118.96)
         val goodShepardHealthCareSystem = LatLng(45.42,-122.72)
 //
+        mMap.addMarker(
+            MarkerOptions().position(oregonHealthAndScienceUniversity).title("Oregon Health and Science University")
+        )
         mMap.addMarker(
             MarkerOptions().position(goodShepardHealthCareSystem).title("Good Shepard Health Care System")
         )
