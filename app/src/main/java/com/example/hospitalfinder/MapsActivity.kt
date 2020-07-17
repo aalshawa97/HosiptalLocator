@@ -78,7 +78,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val clackamasPediatricClinic = LatLng(45.44,-122.80)
         val providenceMedicalGroupBeaverton = LatLng(45.42,-122.72)
         val providenceMilwaukieHospital = LatLng(45.45,-123.06)
-        //val providenceM
+        val providenceHoodRiver = LatLng(45.56,-122.69)
+//
+//
+        mMap.addMarker(
+                    MarkerOptions().position(providenceHoodRiver).title("Providence Hood River Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(providenceMilwaukieHospital).title("Providence Milwaukie Hospital")
         )
