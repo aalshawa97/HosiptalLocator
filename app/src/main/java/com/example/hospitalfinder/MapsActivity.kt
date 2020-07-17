@@ -89,8 +89,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val kaiserPermanenteWestsideMedicalCenter = LatLng(45.49,-122.92)
         val providenceCentrailiaHospital = LatLng(45.42,-122.72)
         val stJoesphMedicalClinic = LatLng(45.42,-122.72)
+        val samaritanAlbanyGeneralHospital = LatLng(44.63, 123.12)
+        val asanteThreeRiversMedicalCenter = LatLng(45.42,-122.72)
+        val blueMountainHospital = LatLng(44.42,-118.96)
+        val goodShepardHealthCareSystem = LatLng(45.42,-122.72)
 //
-//
+        mMap.addMarker(
+            MarkerOptions().position(goodShepardHealthCareSystem).title("Good Shepard Health Care System")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(blueMountainHospital).title("Blue Mountain Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(asanteThreeRiversMedicalCenter).title("Asante Three Rivers Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(samaritanAlbanyGeneralHospital).title("Samaritan Albany General Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(stJoesphMedicalClinic).title("St. Joesph Medical Center")
         )
