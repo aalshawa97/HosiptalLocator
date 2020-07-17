@@ -84,8 +84,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val peakMedicalNorthwestIncorporated = LatLng(45.42,-122.74)
         val oregonStateHospital = LatLng(45.42,-122.72)
         val legacySilverton = LatLng(45.42,-122.72)
+        val samaritanNorthLincolnHospital = LatLng(45.42,-122.72)
 //
 //
+        mMap.addMarker(
+            MarkerOptions().position(samaritanNorthLincolnHospital).title("Samartian North Lincoln Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(legacySilverton).title("Legacy Silverton Medical Center")
         )
