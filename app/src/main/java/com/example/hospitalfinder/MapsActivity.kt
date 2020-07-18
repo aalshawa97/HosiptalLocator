@@ -99,7 +99,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val legacySalmonCreek = LatLng(45.42,-122.72)
         val stCharlesMedicalCenter = LatLng(45.42, -122.72)
         val goodSamaritanRegionalMedicalCenter = LatLng(45.42, -122.72)
+        val ProvidenceMedicalCenterMedford = LatLng(45.4160126,-122.7230276)
+        val skyLakesMedicalCenter = LatLng(45.42,-122.72)
+        val lakeDistrictMedicalCenter = LatLng(45.42, -122.72)
 
+        mMap.addMarker(
+            MarkerOptions().position(lakeDistrictMedicalCenter).title("Lake District Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(skyLakesMedicalCenter).title("Sky Lakes medical center Klamath Falls")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(ProvidenceMedicalCenterMedford).title("Providence Medical Center Medford ")
+        )
         mMap.addMarker(
             MarkerOptions().position(goodSamaritanRegionalMedicalCenter).title("St. Charles Medical Center")
         )

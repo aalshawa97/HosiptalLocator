@@ -6,9 +6,11 @@
     android:paddingTop="16dp"
 
     >
-<androidx.appcompat.widget.AppCompatImageButton
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:onClick="jnr" />
     <activity android:name=".DisplayMessageActivity"
         android:parentActivityName=".MainActivity">
         <!-- The meta-data tag is required if you support API level 15 and lower -->
