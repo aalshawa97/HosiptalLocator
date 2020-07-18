@@ -96,6 +96,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val goodShepardHealthCareSystem = LatLng(45.42,-122.72)
         val vaPortlandHealthCareSystem =  LatLng(45.48,-122.69)
         val oregonClinicCardiology = LatLng(45.42,-122.72)
+        val legacySalmonCreek = LatLng(45.42,-122.72)
+
+        mMap.addMarker(
+            MarkerOptions().position(legacySalmonCreek).title("Legacy Salmon Creek")
+        )
 
         mMap.addMarker(
             MarkerOptions().position(oregonClinicCardiology).title("Oregon Clinic Cardiology")
