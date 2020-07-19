@@ -118,7 +118,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val coquilleValleyHospital = LatLng(45.42, -122.72)
         val mcKenzieWillametteMedicalCenter = LatLng(45.42,-122.72)
         val midColumbiaMedicalCenterEmergencyRoom = LatLng(45.42,-122.72)
-
+        val adventistHealthTillamook = LatLng(45.42,-122.72)
+        val westValleyHospital = LatLng(45.42,-122.72)
+        mMap.addMarker(
+            MarkerOptions().position(westValleyHospital).title("West Valley Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(adventistHealthTillamook).title("Adventist Health Center")
+        )
         mMap.addMarker(
             MarkerOptions().position(midColumbiaMedicalCenterEmergencyRoom).title("Mid Columbia Medical Center Emergency Room")
         )
