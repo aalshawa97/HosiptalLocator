@@ -104,7 +104,19 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val lakeDistrictMedicalCenter = LatLng(45.42, -122.72)
         val samariatanLebanonCommunityHospital = LatLng(44.55, 122.91)
         val peaceHealthPeaceHarborMedicalCenter = LatLng(45.42, -122.72)
+        val sacredHeartMedicalCenterUniversityDistrict = LatLng(45.42,-122.72)
+        val grandeRondeHospital = LatLng(45.32,-118.11)
+        val providenceSwindellsResourceCenter = LatLng(45.42, -122.73)
 
+        mMap.addMarker(
+            MarkerOptions().position(providenceSwindellsResourceCenter).title("Providence Swindells Resource Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(grandeRondeHospital).title("Grande Ronde Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(sacredHeartMedicalCenterUniversityDistrict).title("Sacred Heart Medical Center University District")
+        )
         mMap.addMarker(
             MarkerOptions().position(peaceHealthPeaceHarborMedicalCenter).title("Peace Health Peace Harbor Medical Center")
         )
