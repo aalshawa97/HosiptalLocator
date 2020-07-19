@@ -117,7 +117,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val curryGeneralHospital = LatLng(45.42, -122.72)
         val coquilleValleyHospital = LatLng(45.42, -122.72)
         val mcKenzieWillametteMedicalCenter = LatLng(45.42,-122.72)
-        
+        val midColumbiaMedicalCenterEmergencyRoom = LatLng(45.42,-122.72)
+
+        mMap.addMarker(
+            MarkerOptions().position(midColumbiaMedicalCenterEmergencyRoom).title("Mid Columbia Medical Center Emergency Room")
+        )
         mMap.addMarker(
             MarkerOptions().position(mcKenzieWillametteMedicalCenter).title("McKenzie Willamette Medical Center")
         )
