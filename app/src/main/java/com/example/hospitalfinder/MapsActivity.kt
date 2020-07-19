@@ -110,7 +110,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val salemHealthHospital = LatLng(45.22,-123.08)
         val stAlphonsusMedicalCenter = LatLng(45.42, -122.72)
         val harneyDistrictHospital = LatLng(44.59,-123.27)
+        val columbiaMemorialHospital = LatLng(45.42,-122.72)
+        val southernCoosHospitalandHealthCenter = LatLng(45.42, -122.72)
 
+
+        mMap.addMarker(
+            MarkerOptions().position(southernCoosHospitalandHealthCenter).title("Southern Coos Hospital and Health Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(columbiaMemorialHospital).title("Columbia Memorial Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(harneyDistrictHospital).title("Harney District Hospital")
         )
