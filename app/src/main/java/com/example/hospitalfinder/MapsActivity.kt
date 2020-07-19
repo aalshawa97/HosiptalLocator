@@ -122,7 +122,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val westValleyHospital = LatLng(45.42,-122.72)
         val veteransAffairsMedicalCenterOregon = LatLng(45.42,-122.72)
         val cottageGroveCommunityMedicalCenter = LatLng(45.42, -122.72)
+        val stAnthonyHospital = LatLng(45.42,-122.72)
+        val adventistHealthPortland = LatLng(45.42,-122.72)
 
+        mMap.addMarker(
+            MarkerOptions().position(adventistHealthPortland).title("Adventist Health Portland")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(stAnthonyHospital).title("St. Anthony Hospital ")
+        )
         mMap.addMarker(
             MarkerOptions().position(cottageGroveCommunityMedicalCenter).title("Cottage Grove Community Medical Center")
         )
