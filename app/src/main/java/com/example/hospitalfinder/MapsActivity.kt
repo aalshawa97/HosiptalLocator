@@ -114,7 +114,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val columbiaMemorialHospital = LatLng(45.42,-122.72)
         val southernCoosHospitalandHealthCenter = LatLng(45.42, -122.72)
         val woodlandParkHospital = LatLng(38.97,-105.08)
+        val curryGeneralHospital = LatLng(45.42, -122.72)
 
+        mMap.addMarker(
+            MarkerOptions().position(curryGeneralHospital).title("Curry General Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(woodlandParkHospital).title("Woodland Park Hospital")
         )
