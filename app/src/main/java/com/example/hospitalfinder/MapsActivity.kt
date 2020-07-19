@@ -79,6 +79,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val oregonClinicSouth = LatLng(45.42,-122.72)
         val clackamasPediatricClinic = LatLng(45.44,-122.80)
         val providenceMedicalGroupBeaverton = LatLng(45.42,-122.72)
+        val legacyEmanuelMedicalCenter = LatLng(45.42,-122.72)
         val providenceMilwaukieHospital = LatLng(45.45,-123.06)
         val providenceHoodRiver = LatLng(45.56,-122.69)
         val shrinersHospitalsForChildren = LatLng(45.42,-123.02)
@@ -113,7 +114,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val columbiaMemorialHospital = LatLng(45.42,-122.72)
         val southernCoosHospitalandHealthCenter = LatLng(45.42, -122.72)
 
-
+        mMap.addMarker(
+            MarkerOptions().position(legacyEmanuelMedicalCenter).title("Legacy Emanuel Medical Center")
+        )
         mMap.addMarker(
             MarkerOptions().position(southernCoosHospitalandHealthCenter).title("Southern Coos Hospital and Health Center")
         )
