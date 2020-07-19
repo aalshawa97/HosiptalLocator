@@ -108,7 +108,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val grandeRondeHospital = LatLng(45.32,-118.11)
         val providenceSwindellsResourceCenter = LatLng(45.42, -122.73)
         val salemHealthHospital = LatLng(45.22,-123.08)
+        val stAlphonsusMedicalCenter = LatLng(45.42, -122.72)
 
+        mMap.addMarker(
+            MarkerOptions().position(stAlphonsusMedicalCenter).title("St. Alphonsus Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(salemHealthHospital).title("Salem Health Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(providenceSwindellsResourceCenter).title("Providence Swindells Resource Center")
         )
