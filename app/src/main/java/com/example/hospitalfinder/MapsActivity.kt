@@ -102,6 +102,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val ProvidenceMedicalCenterMedford = LatLng(45.4160126,-122.7230276)
         val skyLakesMedicalCenter = LatLng(45.42,-122.72)
         val lakeDistrictMedicalCenter = LatLng(45.42, -122.72)
+        val samariatanLebanonCommunityHospital = LatLng(44.55, 122.91)
+
+        mMap.addMarker(
+            MarkerOptions().position(samariatanLebanonCommunityHospital).title("Samariatan Lebanon Community Hospital")
+        )
 
         mMap.addMarker(
             MarkerOptions().position(lakeDistrictMedicalCenter).title("Lake District Hospital")
