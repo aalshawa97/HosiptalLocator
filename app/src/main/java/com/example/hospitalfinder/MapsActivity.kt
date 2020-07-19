@@ -115,7 +115,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val southernCoosHospitalandHealthCenter = LatLng(45.42, -122.72)
         val woodlandParkHospital = LatLng(38.97,-105.08)
         val curryGeneralHospital = LatLng(45.42, -122.72)
-
+        val coquilleValleyHospital = LatLng(45.42, -122.72)
+        val mcKenzieWillametteMedicalCenter = LatLng(45.42,-122.72)
+        
+        mMap.addMarker(
+            MarkerOptions().position(mcKenzieWillametteMedicalCenter).title("McKenzie Willamette Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(coquilleValleyHospital).title("Coquille Valley Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(curryGeneralHospital).title("Curry General Hospital")
         )
