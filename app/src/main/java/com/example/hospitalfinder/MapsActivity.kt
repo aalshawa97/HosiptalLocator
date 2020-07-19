@@ -129,7 +129,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val bayAreaHospital = LatLng(45.42, -122.72)
 
         mMap.addMarker(
-            MarkerOptions().position(bayAreaHospital).title("Bay Area Hosptial")
+            MarkerOptions().position(bayAreaHospital).title("Bay Area Hospital")
         )
         mMap.addMarker(
             MarkerOptions().position(eastMorelandHospital).title("East Moreland Hospital")
