@@ -84,6 +84,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val providenceHoodRiver = LatLng(45.56,-122.69)
         val shrinersHospitalsForChildren = LatLng(45.42,-123.02)
         val peakMedicalNorthwestIncorporated = LatLng(45.42,-122.74)
+        val legacyMountHoodMedicalCenter = LatLng(45.42,-122.72)
         val oregonStateHospital = LatLng(45.42,-122.72)
         val legacySilverton = LatLng(45.42,-122.72)
         val samaritanNorthLincolnHospital = LatLng(45.42,-122.72)
@@ -124,7 +125,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val cottageGroveCommunityMedicalCenter = LatLng(45.42, -122.72)
         val stAnthonyHospital = LatLng(45.42,-122.72)
         val adventistHealthPortland = LatLng(45.42,-122.72)
+        val eastMorelandHospital = LatLng(45.47,-122.64)
 
+        mMap.addMarker(
+            MarkerOptions().position(eastMorelandHospital).title("East Moreland Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(legacyMountHoodMedicalCenter).title("Legacy Mount Hood")
+        )
         mMap.addMarker(
             MarkerOptions().position(adventistHealthPortland).title("Adventist Health Portland")
         )
