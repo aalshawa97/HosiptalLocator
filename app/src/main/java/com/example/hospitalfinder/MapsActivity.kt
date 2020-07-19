@@ -113,7 +113,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val harneyDistrictHospital = LatLng(44.59,-123.27)
         val columbiaMemorialHospital = LatLng(45.42,-122.72)
         val southernCoosHospitalandHealthCenter = LatLng(45.42, -122.72)
+        val woodlandParkHospital = LatLng(38.97,-105.08)
 
+        mMap.addMarker(
+            MarkerOptions().position(woodlandParkHospital).title("Woodland Park Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(legacyEmanuelMedicalCenter).title("Legacy Emanuel Medical Center")
         )
