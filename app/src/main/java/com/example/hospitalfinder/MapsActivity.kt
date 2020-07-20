@@ -127,7 +127,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val adventistHealthPortland = LatLng(45.42,-122.72)
         val eastMorelandHospital = LatLng(45.47,-122.64)
         val bayAreaHospital = LatLng(45.42, -122.72)
+        val redmondClinic = LatLng(44.26,-121.28)
 
+        mMap.addMarker(
+            MarkerOptions().position(redmondClinic).title("Redmond Clinic")
+        )
         mMap.addMarker(
             MarkerOptions().position(bayAreaHospital).title("Bay Area Hospital")
         )
