@@ -155,7 +155,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val highlineMedicalCenter = LatLng(46.98,-123.99)
         val skylineHealth = LatLng(45.86,-123.90)
         val masonGeneralHospital = LatLng(46.95,-125.05)
+        val daytonGeneralHospital = LatLng(46.92,-123.10)
 
+        mMap.addMarker(
+            MarkerOptions().position(daytonGeneralHospital).title("Dayton General Hosptial")
+        )
         mMap.addMarker(
             MarkerOptions().position(masonGeneralHospital).title("Mason General Health")
         )
