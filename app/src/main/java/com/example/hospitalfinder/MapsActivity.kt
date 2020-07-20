@@ -67,6 +67,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val providenceBridgeport = LatLng(45.39, -122.75)
         val providenceMercantile = LatLng(45.42, -122.72)
         val providenceStVincent = LatLng(45.46,-122.792)
+        //val goodSamaritanRegionalMedicalCenter = LatLng(44.60,-123.25)
         val oregonHealthAndScienceUniversity = LatLng(45.48,-122.81)
         val universityOfWashingtonMedicalCenter = LatLng(46.53,-123.75)
         val providenceWilametteFallsMedicalCenter = LatLng(45.42,-122.72)
@@ -128,6 +129,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val eastMorelandHospital = LatLng(45.47,-122.64)
         val bayAreaHospital = LatLng(45.42, -122.72)
         val redmondClinic = LatLng(44.26,-121.28)
+        val sageViewPsychiatrists = LatLng(44.07,-121.41)
+
+        mMap.addMarker(
+            MarkerOptions().position(sageViewPsychiatrists).title("Sage View Psychiatrists")
+        )
 
         mMap.addMarker(
             MarkerOptions().position(redmondClinic).title("Redmond Clinic")
