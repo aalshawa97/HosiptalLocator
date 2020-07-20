@@ -149,7 +149,20 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val multiCareGoodSamaritanHospital = LatLng (47.02,-122.88)
         val easternStateHospital = LatLng(45.66,-127.99)
         val westernStateHospital = LatLng(47.18,-127.05)
+        val snoqualmieValleyHospital = LatLng(47.00,-123.62)
+        val multiCareTacomaGeneralHospital = LatLng(47.40,-123.13)
+        val navalHospital = LatLng(46.98,-123.99)
 
+        mMap.addMarker(
+            MarkerOptions().position(navalHospital).title(navalHospital)
+        )
+        mMap.addMarker(
+            MarkerOptions().position(multiCareTacomaGeneralHospital).title("MultiCare Tacoma General Hospital")
+        )
+
+        mMap.addMarker(
+            MarkerOptions().position(snoqualmieValleyHospital).title("Snoqualmie Valley Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(westernStateHospital).title("Western State Hospital")
         )
