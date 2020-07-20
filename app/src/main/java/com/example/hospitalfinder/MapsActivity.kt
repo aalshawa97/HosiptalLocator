@@ -156,7 +156,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val skylineHealth = LatLng(45.86,-123.90)
         val masonGeneralHospital = LatLng(46.95,-125.05)
         val daytonGeneralHospital = LatLng(46.92,-123.10)
+        val whitmanHospitalAndMedicalClinics = LatLng(46.87,-119.62)
         val triStateMemorialHospitalAndMedicalCampus = LatLng(46.60,-117.75)
+        val mayersMemorialHospital = LatLng(43.43,-130.59)
+
+        mMap.addMarker(
+            MarkerOptions().position(mayersMemorialHospital).title("Mayers Memoriral Hospita;")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(whitmanHospitalAndMedicalClinics).title("Whitman Hospital and Medical Clinics")
+        )
         mMap.addMarker(
             MarkerOptions().position(triStateMemorialHospitalAndMedicalCampus).title("Tristate Memorial Hospital and Medical Campus")
         )
