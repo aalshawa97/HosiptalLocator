@@ -139,7 +139,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val sacredHeartChildrensHosptial = LatLng(47.63,-120.39)
         val graysHarborCommunityHospital = LatLng(45.95,-127.36)
         val providenceStPeterHospitalOlympia = LatLng(47.05,-127.33)
+        val sacredHeartChildrenHospitalSpokane = LatLng(46.43,-123.02)
 
+        mMap.addMarker(
+            MarkerOptions().position(sacredHeartChildrenHospitalSpokane).title("Sacred Heart Hospital Spokane")
+        )
         mMap.addMarker(
             MarkerOptions().position(providenceStPeterHospitalOlympia).title("Providence St. Peter Hosptial Olympia")
         )
