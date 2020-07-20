@@ -22,6 +22,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
+//        @Override
+//        public boolean onQueryTextSubmit(String query)
+//        {
+//
+//        }
         super.onCreate(savedInstanceState)
         //super.getResources()
         setContentView(R.layout.activity_maps)
@@ -142,6 +147,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val sacredHeartChildrenHospitalSpokane = LatLng(46.43,-123.02)
         val uwMedicalCenterNorthwestSeattleHospital = LatLng(47.02,-123.66)
         val multiCareGoodSamaritanHospital = LatLng (47.02,-122.88)
+        val easternStateHospital = LatLng(45.66,-127.99)
+
+        mMap.addMarker(
+            MarkerOptions().position(easternStateHospital).title("Eastern State Hosital")
+        )
         mMap.addMarker(
             MarkerOptions().position(multiCareGoodSamaritanHospital).title("MultiCare Good Samaritan")
         )
