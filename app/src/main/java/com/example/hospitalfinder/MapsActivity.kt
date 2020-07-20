@@ -73,6 +73,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val providenceWilametteFallsMedicalCenter = LatLng(45.42,-122.72)
         //val locationType: nt = GooglePlacesApi.TYPE_HOSPITAL
         val legacygoodSamaritan = LatLng(45.42,-122.85)
+        val pioneerMemorialHospital = LatLng(44.83,-120.76)
         val providenceCanbyMedicalPlaza = LatLng(45.42,-122.72)
         val legacyMeridianParkMedicalCenter = LatLng(45.42, -122.72)
         val providenceMedicalPlazaSherwood = LatLng(45.42,-122.72)
@@ -130,7 +131,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val bayAreaHospital = LatLng(45.42, -122.72)
         val redmondClinic = LatLng(44.26,-121.28)
         val sageViewPsychiatrists = LatLng(44.07,-121.41)
+        val centralWashingtonHosptial = LatLng(47.21,-125.11)
+        val providenceStMaryMedicalCenterWallaWalla = LatLng(46.75,-123.56)
 
+        mMap.addMarker(
+            MarkerOptions().position(providenceStMaryMedicalCenterWallaWalla).title("Providence St.Mary Medical Center Walla Walla")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(centralWashingtonHosptial).title("Central Washington Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(pioneerMemorialHospital).title("Pioneer Memorial Hosiptal")
+        )
         mMap.addMarker(
             MarkerOptions().position(sageViewPsychiatrists).title("Sage View Psychiatrists")
         )
