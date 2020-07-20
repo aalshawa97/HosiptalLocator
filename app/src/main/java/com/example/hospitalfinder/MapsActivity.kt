@@ -148,7 +148,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val uwMedicalCenterNorthwestSeattleHospital = LatLng(47.02,-123.66)
         val multiCareGoodSamaritanHospital = LatLng (47.02,-122.88)
         val easternStateHospital = LatLng(45.66,-127.99)
+        val westernStateHospital = LatLng(47.18,-127.05)
 
+        mMap.addMarker(
+            MarkerOptions().position(westernStateHospital).title("Western State Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(easternStateHospital).title("Eastern State Hosital")
         )
