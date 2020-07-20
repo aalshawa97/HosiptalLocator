@@ -27,7 +27,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        {
 //
 //        }
+
         super.onCreate(savedInstanceState)
+        //adapter
         //super.getResources()
         setContentView(R.layout.activity_maps)
 //        setContentView(R.layout.news)
@@ -70,6 +72,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         // Add a marker in Providence Bridgeport and move the camera
         val providenceBridgeport = LatLng(45.39, -122.75)
+        val dignityHealth = LatLng(44.26,-121.28)
         val providenceMercantile = LatLng(45.42, -122.72)
         val providenceStVincent = LatLng(45.46,-122.792)
         //val goodSamaritanRegionalMedicalCenter = LatLng(44.60,-123.25)
@@ -161,7 +164,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mayersMemorialHospital = LatLng(43.43,-130.59)
 
         mMap.addMarker(
-            MarkerOptions().position(mayersMemorialHospital).title("Mayers Memoriral Hospita;")
+            MarkerOptions().position(dignityHealth).title("Dignity Health")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(mayersMemorialHospital).title("Mayers Memoriral Hospital")
         )
         mMap.addMarker(
             MarkerOptions().position(whitmanHospitalAndMedicalClinics).title("Whitman Hospital and Medical Clinics")
