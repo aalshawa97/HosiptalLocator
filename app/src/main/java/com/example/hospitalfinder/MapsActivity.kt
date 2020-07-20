@@ -140,7 +140,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val graysHarborCommunityHospital = LatLng(45.95,-127.36)
         val providenceStPeterHospitalOlympia = LatLng(47.05,-127.33)
         val sacredHeartChildrenHospitalSpokane = LatLng(46.43,-123.02)
-
+        val uwMedicalCenterNorthwestSeattleHospital = LatLng(47.02,-123.66)
+        val multiCareGoodSamaritanHospital = LatLng (47.02,-122.88)
+        mMap.addMarker(
+            MarkerOptions().position(multiCareGoodSamaritanHospital).title("MultiCare Good Samaritan")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(uwMedicalCenterNorthwestSeattleHospital).title("UW Medical Center Northwest Seattle Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(sacredHeartChildrenHospitalSpokane).title("Sacred Heart Hospital Spokane")
         )
