@@ -108,6 +108,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val goodShepardHealthCareSystem = LatLng(45.42,-122.72)
         val vaPortlandHealthCareSystem =  LatLng(45.48,-122.69)
         val oregonClinicCardiology = LatLng(45.42,-122.72)
+        val huntingtonHospital = LatLng(44.26,-121.28)
         val legacySalmonCreek = LatLng(45.42,-122.72)
         val stCharlesMedicalCenter = LatLng(45.42, -122.72)
         val goodSamaritanRegionalMedicalCenter = LatLng(45.42, -122.72)
@@ -162,7 +163,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val whitmanHospitalAndMedicalClinics = LatLng(46.87,-119.62)
         val triStateMemorialHospitalAndMedicalCampus = LatLng(46.60,-117.75)
         val mayersMemorialHospital = LatLng(43.43,-130.59)
+        val stJoesphsMedicalCenter = LatLng(44.26,-121.28)
+        val diginityHealth = LatLng(44.26,-121.28)
 
+        mMap.addMarker(
+            MarkerOptions().position(diginityHealth).title("Dignity Health")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(stJoesphsMedicalCenter).title("St. Joesph's Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(huntingtonHospital).title("Huntington Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(dignityHealth).title("Dignity Health")
         )
