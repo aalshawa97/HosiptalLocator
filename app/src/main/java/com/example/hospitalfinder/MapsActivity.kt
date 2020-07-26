@@ -1,7 +1,8 @@
 //Abdullah Mutaz Alshawa
 // 7/8/20
 // Hospital Locator
-// Locates the directions to hospitals for COVID 19 treatment
+// Locates the directions to hospitals for COVID 19 treatment. The application is linked to Google Maps to give you a Google Maps API when you click on a hospital lankmark.
+// Synopsis: Shows hospitals in California, Idaho, Oregon and Washington. When you click on location on you can use the Google Maps API to navigate to the landmark. The Google Maps application supports people traveling on foot, by vehicle or bus
 
 package com.example.hospitalfinder
 
@@ -9,78 +10,50 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        @Override
-//        public boolean onQueryTextSubmit(String query)
-//        {
-//
-//        }
 
         super.onCreate(savedInstanceState)
-        //adapter
-        //super.getResources()
-        setContentView(R.layout.activity_maps)
-//        setContentView(R.layout.news)
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
-        val mapFragment = supportFragmentManager
+
+    val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
         mapFragment.onResume()
         mapFragment.allowEnterTransitionOverlap
         mapFragment.activity
+        mapFragment.textView.setText("Hello and Welcome!")
 
         if(mapFragment.isRemoving)
             println("Application is closing!")
 
-        //mapFragment.onEnterAmbient()
-        //return inflater.inflate(R.layout.article_view, container, false)
+        }
 
-    }
-
-    /**        setContentView(R.layout.news_articles)
-
-     * Manipulates the map once available.
-     * This callback is triggered when the map is ready to be used.
-     * This is where we can add markers or lines, add listeners or move the camera. In this case,
-     * we just add a marker near Sydney, Australia.
-     * If Google Play services is not installed on the device, the user will be prompted to install
-     * it inside the SupportMapFragment. This method will only be triggered once the user has
-     * installed Google Play services and returned to the app.
-     */
-
-    fun getPhoneNumberFromUserInput()
-    {
-        val number = Integer.valueOf(readLine())
-        return number as Unit
-    }
     override fun onMapReady(googleMap: GoogleMap) {
 
         authenticateFirebase()
         mMap = googleMap
 
-        // Add a marker in Providence Bridgeport and move the camera
+        //Initialize the declared variables
         val providenceBridgeport = LatLng(45.39, -122.75)
         val dignityHealth = LatLng(44.26,-121.28)
+        val stCharlesPrineville = LatLng(44.30,-121.11)
         val providenceMercantile = LatLng(45.42, -122.72)
         val providenceStVincent = LatLng(45.46,-122.792)
-        //val goodSamaritanRegionalMedicalCenter = LatLng(44.60,-123.25)
         val oregonHealthAndScienceUniversity = LatLng(45.48,-122.81)
         val universityOfWashingtonMedicalCenter = LatLng(46.53,-123.75)
         val providenceWilametteFallsMedicalCenter = LatLng(45.42,-122.72)
-        //val locationType: nt = GooglePlacesApi.TYPE_HOSPITAL
-        val legacygoodSamaritan = LatLng(45.42,-122.85)
+        val legacyGoodSamaritan = LatLng(45.42,-122.85)
         val pioneerMemorialHospital = LatLng(44.83,-120.76)
         val providenceCanbyMedicalPlaza = LatLng(45.42,-122.72)
         val legacyMeridianParkMedicalCenter = LatLng(45.42, -122.72)
@@ -152,6 +125,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val uwMedicalCenterNorthwestSeattleHospital = LatLng(47.02,-123.66)
         val multiCareGoodSamaritanHospital = LatLng (47.02,-122.88)
         val easternStateHospital = LatLng(45.66,-127.99)
+        val westValleyMedicalCenter = LatLng(44.26,-121.30)
         val westernStateHospital = LatLng(47.18,-127.05)
         val snoqualmieValleyHospital = LatLng(47.00,-123.62)
         val multiCareTacomaGeneralHospital = LatLng(47.40,-123.13)
@@ -165,397 +139,346 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mayersMemorialHospital = LatLng(43.43,-130.59)
         val stJoesphsMedicalCenter = LatLng(44.26,-121.28)
         val diginityHealth = LatLng(44.26,-121.28)
+        val easternIdahoRegionalMedicalCenter = LatLng(43.33,-121.15)
+        val mountainViewHospital = LatLng(44.26,-121.26)
+        val stLukesNampaMedicalCenter = LatLng(44.654,-121.20)
+        val minidokaMemorial = LatLng(44.26,-121.26)
+        val madisonMemorialHospital = LatLng(44.26, -121.26)
+        val northernNevadaMedicalCenter = LatLng(41.87,-123.03)
+        val childrensHospitalofNevada = LatLng(44.00,-121.40)
 
         mMap.addMarker(
-            MarkerOptions().position(diginityHealth).title("Dignity Health")
+            MarkerOptions().position(childrensHospitalofNevada).title(childrensHospitalofNevada.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(stJoesphsMedicalCenter).title("St. Joesph's Medical Center")
+            MarkerOptions().position(northernNevadaMedicalCenter).title(northernNevadaMedicalCenter.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(huntingtonHospital).title("Huntington Hospital")
+            MarkerOptions().position(mcKenzieWillametteMedicalCenter).title(mcKenzieWillametteMedicalCenter.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(dignityHealth).title("Dignity Health")
+            MarkerOptions().position(coquilleValleyHospital).title(coquilleValleyHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(mayersMemorialHospital).title("Mayers Memoriral Hospital")
+            MarkerOptions().position(westValleyHospital).title(westValleyHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(whitmanHospitalAndMedicalClinics).title("Whitman Hospital and Medical Clinics")
+            MarkerOptions().position(adventistHealthTillamook).title(adventistHealthTillamook.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(triStateMemorialHospitalAndMedicalCampus).title("Tristate Memorial Hospital and Medical Campus")
+            MarkerOptions().position(midColumbiaMedicalCenterEmergencyRoom).title(midColumbiaMedicalCenterEmergencyRoom.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(daytonGeneralHospital).title("Dayton General Hosptial")
+            MarkerOptions().position(madisonMemorialHospital).title(madisonMemorialHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(masonGeneralHospital).title("Mason General Health")
+            MarkerOptions().position(minidokaMemorial).title(minidokaMemorial.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(skylineHealth).title("Skyline Health")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(highlineMedicalCenter).title("Highline Medical Center")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(navalHospital).title("Naval Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(multiCareTacomaGeneralHospital).title("MultiCare Tacoma General Hospital")
-        )
-
-        mMap.addMarker(
-            MarkerOptions().position(snoqualmieValleyHospital).title("Snoqualmie Valley Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(westernStateHospital).title("Western State Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(easternStateHospital).title("Eastern State Hosital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(multiCareGoodSamaritanHospital).title("MultiCare Good Samaritan")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(uwMedicalCenterNorthwestSeattleHospital).title("UW Medical Center Northwest Seattle Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(sacredHeartChildrenHospitalSpokane).title("Sacred Heart Hospital Spokane")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(providenceStPeterHospitalOlympia).title("Providence St. Peter Hosptial Olympia")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(graysHarborCommunityHospital).title("Gray's Harbor Community")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(sacredHeartChildrensHosptial).title("Sacred Heart Children's Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(harrisonMedicalCenter).title("Harrison Medical Center")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(providenceMountCarmelHospital).title("Providence Mount Carmel Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(columbiaBasinHosptial).title("Columbia Basin Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(providenceStMaryMedicalCenterWallaWalla).title("Providence St.Mary Medical Center Walla Walla")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(centralWashingtonHosptial).title("Central Washington Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(pioneerMemorialHospital).title("Pioneer Memorial Hosiptal")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(sageViewPsychiatrists).title("Sage View Psychiatrists")
+            MarkerOptions().position(stLukesNampaMedicalCenter).title(stLukesNampaMedicalCenter.toString())
         )
 
         mMap.addMarker(
-            MarkerOptions().position(redmondClinic).title("Redmond Clinic")
+            MarkerOptions().position(westValleyMedicalCenter).title(westValleyMedicalCenter.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(bayAreaHospital).title("Bay Area Hospital")
+            MarkerOptions().position(mountainViewHospital).title(mountainViewHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(eastMorelandHospital).title("East Moreland Hospital")
+            MarkerOptions().position(easternIdahoRegionalMedicalCenter).title(easternIdahoRegionalMedicalCenter.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(legacyMountHoodMedicalCenter).title("Legacy Mount Hood")
+            MarkerOptions().position(stCharlesPrineville).title(stCharlesMedicalCenter.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(adventistHealthPortland).title("Adventist Health Portland")
+            MarkerOptions().position(diginityHealth).title(diginityHealth.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(stAnthonyHospital).title("St. Anthony Hospital ")
+            MarkerOptions().position(stJoesphsMedicalCenter).title(stJoesphMedicalClinic.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(cottageGroveCommunityMedicalCenter).title("Cottage Grove Community Medical Center")
-        )
-
-        mMap.addMarker(
-            MarkerOptions().position(veteransAffairsMedicalCenterOregon).title("Veterans Affairs Medical Center")
+            MarkerOptions().position(huntingtonHospital).title(huntingtonHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(westValleyHospital).title("West Valley Hospital")
+            MarkerOptions().position(dignityHealth).title(diginityHealth.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(adventistHealthTillamook).title("Adventist Health Center")
+            MarkerOptions().position(mayersMemorialHospital).title(mayersMemorialHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(midColumbiaMedicalCenterEmergencyRoom).title("Mid Columbia Medical Center Emergency Room")
+            MarkerOptions().position(whitmanHospitalAndMedicalClinics).title(whitmanHospitalAndMedicalClinics.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(mcKenzieWillametteMedicalCenter).title("McKenzie Willamette Medical Center")
+            MarkerOptions().position(triStateMemorialHospitalAndMedicalCampus).title(triStateMemorialHospitalAndMedicalCampus.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(coquilleValleyHospital).title("Coquille Valley Hospital")
+            MarkerOptions().position(daytonGeneralHospital).title(daytonGeneralHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(curryGeneralHospital).title("Curry General Hospital")
+            MarkerOptions().position(masonGeneralHospital).title(masonGeneralHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(woodlandParkHospital).title("Woodland Park Hospital")
+            MarkerOptions().position(skylineHealth).title(skylineHealth.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(legacyEmanuelMedicalCenter).title("Legacy Emanuel Medical Center")
+            MarkerOptions().position(highlineMedicalCenter).title(highlineMedicalCenter.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(southernCoosHospitalandHealthCenter).title("Southern Coos Hospital and Health Center")
+            MarkerOptions().position(navalHospital).title(navalHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(columbiaMemorialHospital).title("Columbia Memorial Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(harneyDistrictHospital).title("Harney District Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(stAlphonsusMedicalCenter).title("St. Alphonsus Medical Center")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(salemHealthHospital).title("Salem Health Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(providenceSwindellsResourceCenter).title("Providence Swindells Resource Center")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(grandeRondeHospital).title("Grande Ronde Hospital")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(sacredHeartMedicalCenterUniversityDistrict).title("Sacred Heart Medical Center University District")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(peaceHealthPeaceHarborMedicalCenter).title("Peace Health Peace Harbor Medical Center")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(samariatanLebanonCommunityHospital).title("Samariatan Lebanon Community Hospital")
+            MarkerOptions().position(multiCareTacomaGeneralHospital).title(multiCareTacomaGeneralHospital.toString())
         )
 
         mMap.addMarker(
-            MarkerOptions().position(lakeDistrictMedicalCenter).title("Lake District Hospital")
+            MarkerOptions().position(snoqualmieValleyHospital).title(snoqualmieValleyHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(skyLakesMedicalCenter).title("Sky Lakes medical center Klamath Falls")
+            MarkerOptions().position(westernStateHospital).title(westValleyHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(ProvidenceMedicalCenterMedford).title("Providence Medical Center Medford ")
+            MarkerOptions().position(easternStateHospital).title(easternStateHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(goodSamaritanRegionalMedicalCenter).title("St. Charles Medical Center")
+            MarkerOptions().position(multiCareGoodSamaritanHospital).title(multiCareGoodSamaritanHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(uwMedicalCenterNorthwestSeattleHospital).title(uwMedicalCenterNorthwestSeattleHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(sacredHeartChildrenHospitalSpokane).title(sacredHeartChildrenHospitalSpokane.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceStPeterHospitalOlympia).title(providenceStPeterHospitalOlympia.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(graysHarborCommunityHospital).title(graysHarborCommunityHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(sacredHeartChildrensHosptial).title(sacredHeartChildrensHosptial.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(harrisonMedicalCenter).title(harrisonMedicalCenter.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceMountCarmelHospital).title(providenceMountCarmelHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(columbiaBasinHosptial).title(columbiaBasinHosptial.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceStMaryMedicalCenterWallaWalla).title(providenceStMaryMedicalCenterWallaWalla.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(centralWashingtonHosptial).title(centralWashingtonHosptial.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(pioneerMemorialHospital).title(pioneerMemorialHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(sageViewPsychiatrists).title(sageViewPsychiatrists.toString())
         )
 
         mMap.addMarker(
-            MarkerOptions().position(stCharlesMedicalCenter).title("St. Charles Medical Center")
+            MarkerOptions().position(redmondClinic).title(redmondClinic.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(bayAreaHospital).title(bayAreaHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(eastMorelandHospital).title(eastMorelandHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(legacyMountHoodMedicalCenter).title(legacyMountHoodMedicalCenter.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(adventistHealthPortland).title(adventistHealthPortland.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(stAnthonyHospital).title(stAnthonyHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(cottageGroveCommunityMedicalCenter).title(cottageGroveCommunityMedicalCenter.toString())
         )
 
         mMap.addMarker(
-            MarkerOptions().position(legacySalmonCreek).title("Legacy Salmon Creek")
+            MarkerOptions().position(veteransAffairsMedicalCenterOregon).title(veteransAffairsMedicalCenterOregon.toString())
+        )
+        mMap.addMarker(
+
+            MarkerOptions().position(curryGeneralHospital).title(curryGeneralHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(woodlandParkHospital).title(woodlandParkHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(legacyEmanuelMedicalCenter).title(legacyEmanuelMedicalCenter.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(southernCoosHospitalandHealthCenter).title(southernCoosHospitalandHealthCenter.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(columbiaMemorialHospital).title(columbiaBasinHosptial.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(harneyDistrictHospital).title(harneyDistrictHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(stAlphonsusMedicalCenter).title(stAlphonsusMedicalCenter.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(salemHealthHospital).title(salemHealthHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceSwindellsResourceCenter).title(providenceSwindellsResourceCenter.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(grandeRondeHospital).title(grandeRondeHospital.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(sacredHeartMedicalCenterUniversityDistrict).title(sacredHeartMedicalCenterUniversityDistrict.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(peaceHealthPeaceHarborMedicalCenter).title(peaceHealthPeaceHarborMedicalCenter.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(samariatanLebanonCommunityHospital).title(samariatanLebanonCommunityHospital.toString())
         )
 
         mMap.addMarker(
-            MarkerOptions().position(oregonClinicCardiology).title("Oregon Clinic Cardiology")
+            MarkerOptions().position(lakeDistrictMedicalCenter).title(lakeDistrictMedicalCenter.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(vaPortlandHealthCareSystem).title("Veteran Affairs Portland Health Care System")
+            MarkerOptions().position(skyLakesMedicalCenter).title(skyLakesMedicalCenter.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(ProvidenceMedicalCenterMedford).title(ProvidenceMedicalCenterMedford.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(goodSamaritanRegionalMedicalCenter).title(goodSamaritanRegionalMedicalCenter.toString())
+        )
+
+        mMap.addMarker(
+            MarkerOptions().position(stCharlesMedicalCenter).title(stCharlesMedicalCenter.toString())
+        )
+
+        mMap.addMarker(
+            MarkerOptions().position(legacySalmonCreek).title(legacySalmonCreek.toString())
+        )
+
+        mMap.addMarker(
+            MarkerOptions().position(oregonClinicCardiology).title(oregonClinicCardiology.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(vaPortlandHealthCareSystem).title(vaPortlandHealthCareSystem.toString())
         )
 //
         mMap.addMarker(
-            MarkerOptions().position(oregonHealthAndScienceUniversity).title("Oregon Health and Science University")
+            MarkerOptions().position(oregonHealthAndScienceUniversity).title(oregonHealthAndScienceUniversity.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(goodShepardHealthCareSystem).title("Good Shepard Health Care System")
+            MarkerOptions().position(goodShepardHealthCareSystem).title(goodShepardHealthCareSystem.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(blueMountainHospital).title("Blue Mountain Hospital")
+            MarkerOptions().position(blueMountainHospital).title(blueMountainHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(asanteThreeRiversMedicalCenter).title("Asante Three Rivers Medical Center")
+            MarkerOptions().position(asanteThreeRiversMedicalCenter).title(asanteThreeRiversMedicalCenter.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(samaritanAlbanyGeneralHospital).title("Samaritan Albany General Hospital")
+            MarkerOptions().position(samaritanAlbanyGeneralHospital).title(samaritanAlbanyGeneralHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(stJoesphMedicalClinic).title("St. Joesph Medical Center")
+            MarkerOptions().position(stJoesphMedicalClinic).title(stJoesphMedicalClinic.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(providenceCentrailiaHospital).title("Providence Centrailia Hospital")
+            MarkerOptions().position(providenceCentrailiaHospital).title(providenceCentrailiaHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(kaiserPermanenteWestsideMedicalCenter).title("Kaiser Permanente Westside Medical Center")
+            MarkerOptions().position(kaiserPermanenteWestsideMedicalCenter).title(kaiserPermanenteWestsideMedicalCenter.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(tualityCommunityHospital).title("Tuality Community Hospital")
+            MarkerOptions().position(tualityCommunityHospital).title(tualityCommunityHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(samaritanNorthLincolnHospital).title("Samartian North Lincoln Hospital")
+            MarkerOptions().position(samaritanNorthLincolnHospital).title(samaritanNorthLincolnHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(legacySilverton).title("Legacy Silverton Medical Center")
+            MarkerOptions().position(legacySilverton).title(legacySilverton.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(oregonStateHospital).title("Oregon State Hospital")
+            MarkerOptions().position(oregonStateHospital).title(oregonStateHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(peakMedicalNorthwestIncorporated).title("Peak Medical Northwest Incorporated")
+            MarkerOptions().position(peakMedicalNorthwestIncorporated).title(peakMedicalNorthwestIncorporated.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(shrinersHospitalsForChildren).title("Shriners Hospital for Children")
+            MarkerOptions().position(shrinersHospitalsForChildren).title(shrinersHospitalsForChildren.toString())
         )
         mMap.addMarker(
-                    MarkerOptions().position(providenceHoodRiver).title("Providence Hood River Hospital")
+                    MarkerOptions().position(providenceHoodRiver).title(providenceHoodRiver.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(providenceMilwaukieHospital).title("Providence Milwaukie Hospital")
+            MarkerOptions().position(providenceMilwaukieHospital).title(providenceMilwaukieHospital.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(providenceMedicalGroupBeaverton).title("Providence Medical Group Beaverton")
+            MarkerOptions().position(providenceMedicalGroupBeaverton).title(providenceMedicalGroupBeaverton.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(clackamasPediatricClinic).title("Clackamas Pediatric Clinic")
+            MarkerOptions().position(clackamasPediatricClinic).title(clackamasPediatricClinic.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(oregonClinicSouth).title("Oregon Clinic South")
-        )
-
-        mMap.addMarker(
-            MarkerOptions().position(providenceNewbergMedicalCenter).title("Providence Newberg Medical Center")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(providenceMedicalPlazaSherwood).title("Providence Medical Plaza Sherwood")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(legacyMeridianParkMedicalCenter).title("Legacy Meridian Park Medical Plaza")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(providenceCanbyMedicalPlaza).title("Providence Medical Plaza")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(providenceWilametteFallsMedicalCenter).title("Providence Wilamette Falls Medical Center")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(legacygoodSamaritan).title("Legacy Good Samaritan")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(providenceBridgeport).title("Providence Bridgeport")
-        )
-        mMap.addMarker(
-            MarkerOptions().position(providenceMercantile).title("Providence Mercantile")
+            MarkerOptions().position(oregonClinicSouth).title(oregonClinicSouth.toString())
         )
 
         mMap.addMarker(
-            MarkerOptions().position(providenceStVincent).title("Providence St. Vincent")
+            MarkerOptions().position(providenceNewbergMedicalCenter).title(providenceNewbergMedicalCenter.toString())
         )
         mMap.addMarker(
-            MarkerOptions().position(universityOfWashingtonMedicalCenter).title("University of Washington Medical Center")
+            MarkerOptions().position(providenceMedicalPlazaSherwood).title(providenceMedicalPlazaSherwood.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(legacyMeridianParkMedicalCenter).title(legacyMeridianParkMedicalCenter.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceCanbyMedicalPlaza).title(providenceCanbyMedicalPlaza.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceWilametteFallsMedicalCenter).title(providenceWilametteFallsMedicalCenter.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(legacyGoodSamaritan).title(legacyGoodSamaritan.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceBridgeport).title(providenceBridgeport.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(providenceMercantile).title(providenceMercantile.toString())
+        )
+
+        mMap.addMarker(
+            MarkerOptions().position(providenceStVincent).title(providenceStVincent.toString())
+        )
+        mMap.addMarker(
+            MarkerOptions().position(universityOfWashingtonMedicalCenter).title(universityOfWashingtonMedicalCenter.toString())
         )
         //mMap.addCircle()
         mMap.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
 
 
         val hospitalUrl = "http://maps.google.co.uk/maps?q=Hospital&hl=en"
-        
-        
-       val intent = Intent(Intent.ACTION_VIEW, Uri.parse(hospitalUrl));
-       // val activityIntent = Intent(this,isActivityTransitionRunning::class.java) startActivity(intent)
 
-        //String string = ""
-//            intent.setClassName("com.google.android.apps.maps","com.google.android.maps.MapsActivity");
-//        startActivity(intent);
-       // var phoneNumber = getPhoneNumberFromUserInput();
-       // var appVerifier = window.recaptchaVerifier;
-//        firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-//            .then(function (confirmationResult) {
-//                // SMS sent. Prompt user to type the code from the message, then sign the
-//                // user in with confirmationResult.confirm(code).
-//                window.confirmationResult = confirmationResult;
-//            }).catch(function (error) {
-//                // Error; SMS not senthttps://www.linkedin.com/in/abdullah-alshawa-691b23132/
-//                // ...
-            //});
+
+        Intent(Intent.ACTION_VIEW, Uri.parse(hospitalUrl));
+
+        
+
+
+
+
     }}
 
-//private infix fun Parcelable.startActivity(intent: Intent): Any {
-//
-//}
 
-
-//private fun firebaseAuthWithGoogle(idToken: String) {
-//    val credential = GoogleAuthProvider.getCredential(idToken, null)
-//    auth.signInWithCredential(credential)
-//            .addOnCompleteListener(this) { task ->
-//                if (task.isSuccessful) {
-//                    // Sign in success, update UI with the signed-in user's information
-//                    Log.d(TAG, "signInWithCredential:success")
-//                    val user = auth.currentUser
-//                    updateUI(user)
-//                } else {
-//                    // If sign in fails, display a message to the user.
-//                    Log.w(TAG, "signInWithCredential:failure", task.exception)
-//                    // ...
-//                    Snackbar.make(view, "Authentication Failed.", Snackbar.LENGTH_SHORT).show()
-//                    updateUI(null)
-//                }
-//
-//                // ...
-//            }
-//}
-
-fun findHospitalNearby()
-{
-    var R = 6371; // km
-    val lat2 = 0
-    val lat1 = 0
-    val lon2 = 0
-    val lon1 = 0
-//    var dLat = (lat2-lat1).toRad();
-//    var dLon = (lon2-lon1).toRad();
-//    var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
-//            Math.cos(lat1.toRad()) * Math.cos(lat2.toRad()) *
-//            Math.sin(dLon/2) * Math.sin(dLon/2);
-  //  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-    //var d = R * c;
+fun authenticateFirebase() {
 }
-fun authenticateFirebase()
-{
-//    val getString
-//    val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN).requestIdToken(getString.default_web_client_id)
-//    val requestCode = 0
-//    if (requestCode  == null) {
-//
-//    }
-//    try {
-//        //val builderInference
-//    } catch (e:
-//                     Exception) {
-//    }
-    // var  dbReference
-//    // Turn off phone auth app verification.
-//    val firebase = null
-//
-//    //Initialize the variables
-//    val userName = "userName"
 
-
-//    firebase.auth().settings.appVerificationDisabledForTesting = true;
-//
-//    var phoneNumber = "+16505554567";
-//    var testVerificationCode = "123456";
-//
-//// This will render a fake reCAPTCHA as appVerificationDisabledForTesting is true.
-//// This will resolve after rendering without app verification.
-//    var appVerifier = new firebase.auth.RecaptchaVerifier('recaptcha-container');
-//// signInWithPhoneNumber will call appVerifier.verify() which will resolve with a fake
-//// reCAPTCHA response.
-//    firebase.auth().signInWithPhoneNumber(phoneNumber, appVerifier)
-//        .then(function (confirmationResult) {
-//            // confirmationResult can resolve with the whitelisted testVerificationCode above.
-//            return confirmationResult.confirm(testVerificationCode)
-//        }).catch(function (error) {
-//            // Error; SMS not sent
-//            // ...
-//        });
-}
