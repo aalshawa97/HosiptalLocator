@@ -4,10 +4,4 @@
     <string name="access_token" translatable="false">YOUR_MAPBOX_ACCESS_TOKEN</string>
     <string name="user_location_permission_not_granted">You didn\'t grant location permissions.</string>
     <string name="Welcome">Welcome!</string>
-    <string name="northern_nevada_medical_center">Northern Nevada Medical Center</string>
-    <string name="mcKenzie_willamette_medical_center">McKenzie Willamette Medical Center</string>
-    <string name="coquille_valley_hospital">Coquille Valley Hospital</string>
-    <string name="west_valley_hospital">West Valley Hospital</string>
-    <string name="adventist_health_tillamook">"Adventist Health Tillamook"</string>              "
-    <string name="mid_columbia_medical_center">Mid Columbia Medical Center Emergency Room</string>
 </resources>
