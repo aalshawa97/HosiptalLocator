@@ -174,6 +174,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val utahStateHospital = LatLng(41.56,-120.97)
         val shrinersHospitalsForChildrenSaltLakeCity = LatLng(42.35,-121.08)
         val cacheValleyHospital = LatLng(42.5187368,-121.0647758)
+        val ldsHospital = LatLng(42.3501746,-121.0939713)
+        val timpanogosRegionalHospital = LatLng(42.2008855,-121.0111058)
+        val parkCityHospital = LatLng(40.4956895,-111.9383514)
+        val davisHospitalAndMedicalCenter = LatLng(40.9975814,-112.1011331)
+        val mcKayDeeHospital = LatLng(41.1100, 111.5715)
         mMap.addMarker(
             MarkerOptions().position(mcKayDeeHospital).title("McKay Hospital")
         )
