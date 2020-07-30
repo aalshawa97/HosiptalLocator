@@ -65,6 +65,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Providence Bridgeport and move the camera
+        val penRoseHospital = LatLng(45.4160656,-122.7229924)
         val providenceBridgeport = LatLng(45.39, -122.75)
         val dignityHealth = LatLng(44.26, -121.28)
         val providenceMercantile = LatLng(45.42, -122.72)
@@ -179,6 +180,27 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val parkCityHospital = LatLng(40.4956895,-111.9383514)
         val davisHospitalAndMedicalCenter = LatLng(40.9975814,-112.1011331)
         val mcKayDeeHospital = LatLng(41.1100, 111.5715)
+        val ucHealthGrandViewHospital = LatLng(39.60,-108.51)
+        val encompassHealthRehabilitationHospital = LatLng(39.5952669,-108.5093332)
+        val stFrancisMedicalCenter = LatLng(39.5521225,-108.5094666)
+        val theWomensHospitallOfTexas = LatLng(32.9620665,-103.7423977)
+        mMap.addMarker(
+            MarkerOptions().position(theWomensHospitallOfTexas).title("The women's hospital of Texas!")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(penRoseHospital).title("Penrose Hospitals")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(stFrancisMedicalCenter).title("Encompass Health Rehabilitation Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(encompassHealthRehabilitationHospital).title("Encompass Health Rehabilitation Hospital")
+        )
+
+        mMap.addMarker(
+            MarkerOptions().position(ucHealthGrandViewHospital).title("UC Health Grand View Hospital")
+        )
+
         mMap.addMarker(
             MarkerOptions().position(mcKayDeeHospital).title("McKay Hospital")
         )
