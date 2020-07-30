@@ -184,8 +184,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val encompassHealthRehabilitationHospital = LatLng(39.5952669,-108.5093332)
         val stFrancisMedicalCenter = LatLng(39.5521225,-108.5094666)
         val theWomensHospitalOfTexas = LatLng(32.9620665,-103.7423977)
+        val texasHealthMedicalHearthMethodistHospital = LatLng(34.1545167,-101.5626582)
         mMap.addMarker(
-            MarkerOptions().position(theWomensHospitalOfTexas).title("The women's hospital of Texas!")
+            MarkerOptions().position(texasHealthMedicalHearthMethodistHospital).title("Texas Health Medical Hearth Methodist Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(theWomensHospitalOfTexas).title("The women's hospital of Texas")
         )
         mMap.addMarker(
             MarkerOptions().position(penRoseHospital).title("Penrose Hospitals")
