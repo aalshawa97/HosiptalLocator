@@ -6,9 +6,11 @@
 package com.example.hospitalfinder
 
 import android.content.Intent
+import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
@@ -16,24 +18,16 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+//import com.google.android.po
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        @Override
-//        public boolean onQueryTextSubmit(String query)
-//        {
-//
-//        }
 
         super.onCreate(savedInstanceState)
-        //adapter
-        //super.getResources()
         setContentView(R.layout.activity_maps)
-//        setContentView(R.layout.news)
-        // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
         mapFragment.getMapAsync(this)
@@ -44,8 +38,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         if(mapFragment.isRemoving)
             println("Application is closing!")
 
-        //mapFragment.onEnterAmbient()
-        //return inflater.inflate(R.layout.article_view, container, false)
 
     }
 
@@ -59,6 +51,51 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      * it inside the SupportMapFragment. This method will only be triggered once the user has
      * installed Google Play services and returned to the app.
      */
+    private fun startLocationUpdates(){
+//        if (ActivityCompat.checkSelfPermission(this,
+//                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(this,
+//                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
+//                LOCATION_PERMISSION_REQUEST_CODE)
+//            return
+    }
+    private fun createLocationRequest() {
+        // 1
+//        locationRequest = LocationRequest()
+//        // 2
+//        locationRequest.interval = 10000
+//        // 3
+//        locationRequest.fastestInterval = 5000
+//        locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+//
+//        val builder = LocationSettingsRequest.Builder()
+//            .addLocationRequest(locationRequest)
+//
+//        // 4
+//        val client = LocationServices.getSettingsClient(this)
+//        val task = client.checkLocationSettings(builder.build())
+//
+//        // 5
+//        task.addOnSuccessListener {
+//            locationUpdateState = true
+//            startLocationUpdates()
+//        }
+//        task.addOnFailureListener { e ->
+//            // 6
+//            if (e is ResolvableApiException) {
+//                // Location settings are not satisfied, but this can be fixed
+//                // by showing the user a dialog.
+//                try {
+//                    // Show the dialog by calling startResolutionForResult(),
+//                    // and check the result in onActivityResult().
+//                    e.startResolutionForResult(this@MapsActivity,
+//                        REQUEST_CHECK_SETTINGS)
+//                } catch (sendEx: IntentSender.SendIntentException) {
+//                    // Ignore the error.
+//                }
+//            }
+//        }
+    }
 
     override fun onMapReady(googleMap: GoogleMap) {
 
@@ -73,6 +110,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val oregonHealthAndScienceUniversity = LatLng(45.48, -122.81)
         val universityOfWashingtonMedicalCenter = LatLng(46.53, -123.75)
         val providenceWilametteFallsMedicalCenter = LatLng(45.42, -122.72)
+        val johnHopkinsHospital = LatLng(39.3299013,-76.6227064)
         val legacygoodSamaritan = LatLng(45.42, -122.85)
         val pioneerMemorialHospital = LatLng(44.83, -120.76)
         val providenceCanbyMedicalPlaza = LatLng(45.42, -122.72)
@@ -185,6 +223,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val stFrancisMedicalCenter = LatLng(39.5521225,-108.5094666)
         val theWomensHospitalOfTexas = LatLng(32.9620665,-103.7423977)
         val texasHealthMedicalHearthMethodistHospital = LatLng(34.1545167,-101.5626582)
+
+        mMap.addMarker(
+            MarkerOptions().position(johnHopkinsHospital).title("John Hopkins University")
+        )
         mMap.addMarker(
             MarkerOptions().position(texasHealthMedicalHearthMethodistHospital).title("Texas Health Medical Hearth Methodist Hospital")
         )
