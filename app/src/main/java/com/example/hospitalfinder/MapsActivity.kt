@@ -223,7 +223,26 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val stFrancisMedicalCenter = LatLng(39.5521225,-108.5094666)
         val theWomensHospitalOfTexas = LatLng(32.9620665,-103.7423977)
         val texasHealthMedicalHearthMethodistHospital = LatLng(34.1545167,-101.5626582)
-
+        val texasMedicalCenter = LatLng(39.3299013,-76.6227064)
+        val texasOrthopedicHospital = LatLng(32.9620665,-103.7423977)
+        val iraanGeneralHospital = LatLng(32.9620665,-103.7423977)
+        val baylorScottAndWhiteMedicalCenter = LatLng(30.4422841,-109.9256475)
+        val reevesCountyHospitalDistrict = LatLng(33.105864,-107.6982278)
+        mMap.addMarker(
+            MarkerOptions().position(baylorScottAndWhiteMedicalCenter).title("Baylor Scott and White Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(reevesCountyHospitalDistrict).title("Reeves County Hospital District")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(texasMedicalCenter).title("Texas Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(iraanGeneralHospital).title("Iraan General Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(texasOrthopedicHospital).title("Texas Orthopedic Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(johnHopkinsHospital).title("John Hopkins University")
         )
