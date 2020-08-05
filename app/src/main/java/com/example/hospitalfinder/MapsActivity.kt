@@ -10,6 +10,7 @@ import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -228,6 +229,25 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val iraanGeneralHospital = LatLng(32.9620665,-103.7423977)
         val baylorScottAndWhiteMedicalCenter = LatLng(30.4422841,-109.9256475)
         val reevesCountyHospitalDistrict = LatLng(33.105864,-107.6982278)
+        val hcaHoustonHealthcareMainland = LatLng(29.9604338,-97.8076371)
+        val texasHealthHarrisMethodistHospital = LatLng(32.8196653,-103.7431051)
+        val texasHealthPresbyterianHospitalDenton = LatLng(33.7563847,-103.4794332)
+        val universityOfUtahHospital = LatLng(43.2158724,-121.7791681)
+        mMap.addMarker(
+            MarkerOptions().position(universityOfUtahHospital).title("University Of Utah Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(texasHealthPresbyterianHospitalDenton).title("Texas Health Presbyterian Hospital Denton")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(texasHealthHarrisMethodistHospital).title("Texas Health Harris Methodist Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(texasHealthMedicalHearthMethodistHospital).title("Texas Health Medical Hearth Methodist Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(hcaHoustonHealthcareMainland).title("HCA Houston Healthcare Mainland")
+        )
         mMap.addMarker(
             MarkerOptions().position(baylorScottAndWhiteMedicalCenter).title("Baylor Scott and White Medical Center")
         )
@@ -671,6 +691,38 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         )
         mMap.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
 
+        //Medicine storage
+        val honey = "Honey"
+        val oliveOil = "Olive Oil"
+        val blackCarawaySeeds = "Black Caraway Seeds"
 
     }
+
+    private lateinit var constraintLayout: ConstraintLayout
+
+//    override fun onCreate(savedInstanceState: Bundle?) {
+//        super.onCreate(savedInstanceState)
+//
+//        // Instantiate an ImageView and define its properties
+//        val i = ImageView(this).apply {
+//            setImageResource(R.drawable.my_image)
+//            contentDescription = resources.getString(R.string.my_image_desc)
+//
+//            // set the ImageView bounds to match the Drawable's dimensions
+//            adjustViewBounds = true
+//            layoutParams = ViewGroup.LayoutParams(
+//                ViewGroup.LayoutParams.WRAP_CONTENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT)
+//        }
+//
+//        // Create a ConstraintLayout in which to add the ImageView
+//        constraintLayout = ConstraintLayout(this).apply {
+//
+//            // Add the ImageView to the layout.
+//            addView(i)
+//        }
+//
+//        // Set the layout as the content view.
+//        setContentView(constraintLayout)
+//    }
     }
