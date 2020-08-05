@@ -244,6 +244,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val universityOfUtahHospital = LatLng(43.2158724,-121.7791681)
         val medicalCenterOfOdessa = LatLng(31.8438456,-104.8752377)
         val memorialHospitalOfTexasCounty = LatLng(25.4277121,-107.1985538)
+        val theWomansHospitalOfTexasPediatrics = LatLng(28.3151712,-103.0696408)
+        mMap.addMarker(
+            MarkerOptions().position(theWomansHospitalOfTexasPediatrics).title("Memorial Hospital Of Texas County")
+        )
         mMap.addMarker(
             MarkerOptions().position(memorialHospitalOfTexasCounty).title("Memorial Hospital Of Texas County")
         )
