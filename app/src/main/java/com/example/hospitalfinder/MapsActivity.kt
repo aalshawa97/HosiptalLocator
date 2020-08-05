@@ -5,20 +5,17 @@
 
 package com.example.hospitalfinder
 
-import android.content.Intent
-import android.content.pm.PackageManager
-import android.net.Uri
 import android.os.Bundle
+import android.text.style.ImageSpan
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.app.ActivityCompat
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+
 //import com.google.android.po
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -35,6 +32,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.onResume()
         mapFragment.allowEnterTransitionOverlap
         mapFragment.activity
+
+//        class ExampleFragment : Fragment() {
+//
+//            override fun onCreateView(
+//                inflater: LayoutInflater,
+//                container: ViewGroup?,
+//                savedInstanceState: Bundle?
+//            ): View {
+//                // Inflate the layout for this fragment
+//                return inflater.inflate(R.layout.example_fragment, container, false)
+//            }
+//        }
 
         if(mapFragment.isRemoving)
             println("Application is closing!")
@@ -233,6 +242,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val texasHealthHarrisMethodistHospital = LatLng(32.8196653,-103.7431051)
         val texasHealthPresbyterianHospitalDenton = LatLng(33.7563847,-103.4794332)
         val universityOfUtahHospital = LatLng(43.2158724,-121.7791681)
+        val medicalCenterOfOdessa = LatLng(31.8438456,-104.8752377)
+        mMap.addMarker(
+            MarkerOptions().position(medicalCenterOfOdessa).title("Medical Center of Odessa")
+        )
         mMap.addMarker(
             MarkerOptions().position(universityOfUtahHospital).title("University Of Utah Hospital")
         )
@@ -695,7 +708,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val honey = "Honey"
         val oliveOil = "Olive Oil"
         val blackCarawaySeeds = "Black Caraway Seeds"
-
+//<                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         Fragment medicineFragment = new Fragment
+//        val `is` = ImageSpan(context, resId)
+//        text.setSpan(`is`, index, index + strLength, 0)
     }
 
     private lateinit var constraintLayout: ConstraintLayout
