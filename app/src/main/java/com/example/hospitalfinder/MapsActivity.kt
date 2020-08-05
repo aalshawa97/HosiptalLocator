@@ -243,6 +243,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val texasHealthPresbyterianHospitalDenton = LatLng(33.7563847,-103.4794332)
         val universityOfUtahHospital = LatLng(43.2158724,-121.7791681)
         val medicalCenterOfOdessa = LatLng(31.8438456,-104.8752377)
+        val memorialHospitalOfTexasCounty = LatLng(25.4277121,-107.1985538)
+        mMap.addMarker(
+            MarkerOptions().position(memorialHospitalOfTexasCounty).title("Memorial Hospital Of Texas County")
+        )
         mMap.addMarker(
             MarkerOptions().position(medicalCenterOfOdessa).title("Medical Center of Odessa")
         )
