@@ -246,6 +246,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val memorialHospitalOfTexasCounty = LatLng(25.4277121,-107.1985538)
         val theWomansHospitalOfTexasPediatrics = LatLng(28.3151712,-103.0696408)
         val headacheAndMigraneTreatmentCenter = LatLng(45.4168815,-122.7236538)
+        val herberValleyHospital = LatLng(45.4160704,-122.7229424)
+        mMap.addMarker(
+            MarkerOptions().position(herberValleyHospital).title("Herber Valley Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(headacheAndMigraneTreatmentCenter).title("Headache and Migrane Treatment Center")
         )
