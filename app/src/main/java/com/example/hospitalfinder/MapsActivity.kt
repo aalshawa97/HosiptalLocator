@@ -5,6 +5,7 @@
 
 package com.example.hospitalfinder
 
+
 import android.os.Bundle
 import android.text.style.ImageSpan
 import androidx.appcompat.app.AppCompatActivity
@@ -15,7 +16,6 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-
 //import com.google.android.po
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
@@ -247,9 +247,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val theWomansHospitalOfTexasPediatrics = LatLng(28.3151712,-103.0696408)
         val headacheAndMigraneTreatmentCenter = LatLng(45.4168815,-122.7236538)
         val herberValleyHospital = LatLng(45.4160704,-122.7229424)
+        val shrinersSaltLakeCity = LatLng(45.416029,-122.7229606)
+
+        mMap.addMarker(
+            MarkerOptions().position(shrinersSaltLakeCity).title("Shriners Salt Lake City")
+        )
         mMap.addMarker(
             MarkerOptions().position(herberValleyHospital).title("Herber Valley Hospital")
         )
+
+//        mHerberValleyHospital.setTag(0)
         mMap.addMarker(
             MarkerOptions().position(headacheAndMigraneTreatmentCenter).title("Headache and Migrane Treatment Center")
         )
