@@ -261,9 +261,36 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val hcaHoustonMainland = LatLng(45.4474965,-122.7386516)
         val setonMedicalCenterHarkerHeights = LatLng(32.2215139,-98.8221159)
         val memorialHospitalOfTexasCounty = LatLng(32.8011548,-103.7446915)
+        val nellJRedfieldMemorialHospital = LatLng(43.393482,-121.8445067)
+        val benewahCommunityHospital = LatLng(46.2976093,-124.1433382)
+        val weiserMemorialHospital = LatLng(45.4160684,-122.7229575)
+        val minidokaMemorialHospital = LatLng(43.8637729,-123.0177321)
+        val christusSantaRosaHospitalWestoverHills = LatLng(28.5893737,-101.1299454)
+        val texasChildrensHospital = LatLng(28.5893737,-101.1299454)
         // Add markers to the map API
+       mMap.addMarker(
+           MarkerOptions().position(christusSantaRosaHospitalWestoverHills).title("Christus Santa Rosa Hospital Westover Hills")
+       )
+        mMap.addMarker(
+            MarkerOptions().position(texasChildrensHospital).title("Texas Children's Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(benewahCommunityHospital).title("Benewah Community Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(minidokaMemorialHospital).title("Minidoka Memorial Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(weiserMemorialHospital).title("Weiser Memorial Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(nellJRedfieldMemorialHospital).title("Nell J. Redfield Memorial Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(memorialHospitalOfTexasCounty).title("Seton Medical Center Harker Heights")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(hcaHoustonMainland).title("HCA Houston Mainland")
         )
         mMap.addMarker(
             MarkerOptions().position(setonMedicalCenterHarkerHeights).title("Seton Medical Center Harker Heights")
