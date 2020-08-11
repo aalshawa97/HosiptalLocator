@@ -259,10 +259,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val baylorScottMedical = LatLng(45.4160431,-122.7230584)
         val firstTexasHospitalCyFair = LatLng(36.5292898,-127.1325503)
         val memorialHermannTexasMedicalCenter = LatLng(29.7048122,-95.4173518)
-
+        val scottishRiteForChildren = LatLng(32.8021236,-96.8163139)
         // Add markers to the map API
         mMap.addMarker(
             MarkerOptions().position(memorialHermannTexasMedicalCenter).title("Memorial Hermann Texas Medical Center")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(scottishRiteForChildren).title("Scottish Rite For Children")
         )
         mMap.addMarker(
             MarkerOptions().position(firstTexasHospitalCyFair).title("First Texas Hospital CyFair")
