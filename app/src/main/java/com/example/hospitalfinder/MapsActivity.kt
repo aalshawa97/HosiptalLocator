@@ -243,12 +243,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val iraanGeneralHospital = LatLng(32.9620665,-103.7423977)
         val baylorScottAndWhiteMedicalCenter = LatLng(30.4422841,-109.9256475)
         val reevesCountyHospitalDistrict = LatLng(33.105864,-107.6982278)
-        val hcaHoustonHealthcareMainland = LatLng(29.9604338,-97.8076371)
         val texasHealthHarrisMethodistHospital = LatLng(32.8196653,-103.7431051)
         val texasHealthPresbyterianHospitalDenton = LatLng(33.7563847,-103.4794332)
         val universityOfUtahHospital = LatLng(43.2158724,-121.7791681)
         val medicalCenterOfOdessa = LatLng(31.8438456,-104.8752377)
-        val memorialHospitalOfTexasCounty = LatLng(25.4277121,-107.1985538)
         val theWomansHospitalOfTexasPediatrics = LatLng(28.3151712,-103.0696408)
         val headacheAndMigraneTreatmentCenter = LatLng(45.4168815,-122.7236538)
         val herberValleyHospital = LatLng(45.4160704,-122.7229424)
@@ -260,7 +258,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val firstTexasHospitalCyFair = LatLng(36.5292898,-127.1325503)
         val memorialHermannTexasMedicalCenter = LatLng(29.7048122,-95.4173518)
         val scottishRiteForChildren = LatLng(32.8021236,-96.8163139)
+        val hcaHoustonMainland = LatLng(45.4474965,-122.7386516)
+        val setonMedicalCenterHarkerHeights = LatLng(32.2215139,-98.8221159)
+        val memorialHospitalOfTexasCounty = LatLng(32.8011548,-103.7446915)
         // Add markers to the map API
+        mMap.addMarker(
+            MarkerOptions().position(memorialHospitalOfTexasCounty).title("Seton Medical Center Harker Heights")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(setonMedicalCenterHarkerHeights).title("Seton Medical Center Harker Heights")
+        )
         mMap.addMarker(
             MarkerOptions().position(memorialHermannTexasMedicalCenter).title("Memorial Hermann Texas Medical Center")
         )
@@ -311,9 +318,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(
             MarkerOptions().position(texasHealthMedicalHearthMethodistHospital).title("Texas Health Medical Hearth Methodist Hospital")
         )
-        mMap.addMarker(
-            MarkerOptions().position(hcaHoustonHealthcareMainland).title("HCA Houston Healthcare Mainland")
-        )
+//        mMap.addMarker(
+//            MarkerOptions().position(hcaHoustonHealthcareMainland).title("HCA Houston Healthcare Mainland")
+//        )
         mMap.addMarker(
             MarkerOptions().position(baylorScottAndWhiteMedicalCenter).title("Baylor Scott and White Medical Center")
         )
