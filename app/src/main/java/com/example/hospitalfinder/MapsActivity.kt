@@ -19,6 +19,7 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_maps.*
 import kotlinx.android.synthetic.main.fragment_item_list.*
+import java.util.*
 
 //import com.google.android.po
 
@@ -255,6 +256,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val brighamCityCommunityHospital = LatLng(45.4160255,-122.7230086)
         val utSouthwesternMedicalSchool = LatLng(32.8159489,-96.8477666)
         val childrenMedicalCenterDallas = LatLng(32.8087663,-96.8412482)
+        val baylorScottMedical = LatLng(45.4160431,-122.7230584)
+        mMap.addMarker(
+            MarkerOptions().position(baylorScottMedical).title("Baylor Scott")
+        )
         mMap.addMarker(
             MarkerOptions().position(utSouthwesternMedicalSchool).title("utSouthwesternMedicalSchool")
         )
@@ -748,6 +753,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val oliveOil = "Olive Oil"
         val blackCarawaySeeds = "Black Caraway Seeds"
         val myArray3 = arrayOf<String>(honey,oliveOil,blackCarawaySeeds)
+        println(Arrays.deepToString(myArray3))
+
+//        for (int i = 0; i < aNums.length; i++) {
+//    String strToPrint = "aNums[" + i + "]=" + aNums[i];
+//}
         //val numbersMap = map(1)
 
 //drawerToggleDelegate.
