@@ -267,10 +267,28 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val minidokaMemorialHospital = LatLng(43.8637729,-123.0177321)
         val christusSantaRosaHospitalWestoverHills = LatLng(28.5893737,-101.1299454)
         val texasChildrensHospital = LatLng(28.5893737,-101.1299454)
+        val surgicalHospitalOfOkhlahoma = LatLng(39.2089561,-128.0783334)
+        val mercyHospitalOkhlahomaCity = LatLng(35.493318,-97.6409485)
+        val curaHealth = LatLng(35.4931561,-97.6409498)
+        val communityHospitalNorth = LatLng(35.4931561,-97.6409498)
+        //val selectSpecialityHospitalOklahomaCity = LatLng()
         // Add markers to the map API
        mMap.addMarker(
-           MarkerOptions().position(christusSantaRosaHospitalWestoverHills).title("Christus Santa Rosa Hospital Westover Hills")
+           MarkerOptions().position(curaHealth).title("Curahealth")
        )
+        mMap.addMarker(
+            MarkerOptions().position(communityHospitalNorth).title("Community Hospital North")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(surgicalHospitalOfOkhlahoma).title("Surgical Hospital Of Okhlahoma")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(mercyHospitalOkhlahomaCity).title("Mercy Hospital of Okhlahoma City")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(christusSantaRosaHospitalWestoverHills).title("Christus Santa Rosa Hospital Westover Hills")
+        )
+
         mMap.addMarker(
             MarkerOptions().position(texasChildrensHospital).title("Texas Children's Hospital")
         )
