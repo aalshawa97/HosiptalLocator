@@ -20,6 +20,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_maps.*
 import kotlinx.android.synthetic.main.fragment_item_list.*
 import java.util.*
+//import pythonAppiumClient
+
+//from appium import webdriver
 
 //import com.google.android.po
 
@@ -271,11 +274,15 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mercyHospitalOkhlahomaCity = LatLng(35.493318,-97.6409485)
         val curaHealth = LatLng(35.4931561,-97.6409498)
         val communityHospitalNorth = LatLng(35.4931561,-97.6409498)
+        val oklahomaHeartHospitalHeart = LatLng(38.979045,-128.6869605)
         //val selectSpecialityHospitalOklahomaCity = LatLng()
         // Add markers to the map API
        mMap.addMarker(
-           MarkerOptions().position(curaHealth).title("Curahealth")
+           MarkerOptions().position(oklahomaHeartHospitalHeart).title("Oklahoma Heart Hospital")
        )
+        mMap.addMarker(
+            MarkerOptions().position(curaHealth).title("Curahealth")
+        )
         mMap.addMarker(
             MarkerOptions().position(communityHospitalNorth).title("Community Hospital North")
         )
