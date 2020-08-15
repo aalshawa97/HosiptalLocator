@@ -278,11 +278,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val westTennesseeHealthcareVolunteer = LatLng(35.6115483,-91.4767948)
         val universityOfTennesseeMedicalCenter = LatLng(35.6115483,-91.2752639)
         val leBonheurChildrensHospital = LatLng(35.6115483,-91.4764742)
+        val vanderbiltWilsonCountyHospital = LatLng(35.6115483,-91.4764742)
+
         //val selectSpecialityHospitalOklahomaCity = LatLng()
         // Add markers to the map API
        mMap.addMarker(
            MarkerOptions().position(leBonheurChildrensHospital).title("Le Bonheur Children's Hospital")
        )
+        mMap.addMarker(
+            MarkerOptions().position(vanderbiltWilsonCountyHospital).title("Vanderbilt Wilson County Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(universityOfTennesseeMedicalCenter).title("West Tennessee Healthcare Volunteer")
         )
