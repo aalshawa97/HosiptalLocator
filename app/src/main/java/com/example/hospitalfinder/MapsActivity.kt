@@ -281,7 +281,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         //val selectSpecialityHospitalOklahomaCity = LatLng()
         // Add markers to the map API
        mMap.addMarker(
-           MarkerOptions().position(leBonheurChildrensHospital).title("Le Bonheur Children's Hospitalgit")
+           MarkerOptions().position(leBonheurChildrensHospital).title("Le Bonheur Children's Hospital")
        )
         mMap.addMarker(
             MarkerOptions().position(universityOfTennesseeMedicalCenter).title("West Tennessee Healthcare Volunteer")
