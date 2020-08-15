@@ -286,7 +286,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
        mMap.addMarker(
            MarkerOptions().position(cumberlandMedicalHospital).title("Cumberland Medical Hospital")
        )
+        mMap.addMarker(
             MarkerOptions().position(jacksonMadisonCountyGeneralHospital).title("Jackson Madison County General Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(leBonheurChildrensHospital).title("Le Bonheur Children's Hospital")
         )
