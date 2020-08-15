@@ -280,11 +280,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val leBonheurChildrensHospital = LatLng(35.6115483,-91.4764742)
         val vanderbiltWilsonCountyHospital = LatLng(35.6115483,-91.4764742)
         val jacksonMadisonCountyGeneralHospital = LatLng(45.4160573,-122.7229612)
+        val cumberlandMedicalHospital =  LatLng(45.4160573,-122.7229612)
         //val selectSpecialityHospitalOklahomaCity = LatLng()
         // Add markers to the map API
        mMap.addMarker(
-           MarkerOptions().position(jacksonMadisonCountyGeneralHospital).title("Jackson Madison County General Hospital")
+           MarkerOptions().position(cumberlandMedicalHospital).title("Cumberland Medical Hospital")
        )
+            MarkerOptions().position(jacksonMadisonCountyGeneralHospital).title("Jackson Madison County General Hospital")
         mMap.addMarker(
             MarkerOptions().position(leBonheurChildrensHospital).title("Le Bonheur Children's Hospital")
         )
