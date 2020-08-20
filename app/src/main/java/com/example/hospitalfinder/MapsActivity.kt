@@ -281,12 +281,20 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val vanderbiltWilsonCountyHospital = LatLng(35.6115483,-91.4764742)
         val jacksonMadisonCountyGeneralHospital = LatLng(45.4160573,-122.7229612)
         val cumberlandMedicalHospital =  LatLng(45.4160573,-122.7229612)
+        val virginiaHospitalCenter = LatLng(37.7989022,-79.6979156)
         val westTennesseeHospital = LatLng(37.8891789,-123.7167999)
         //val selectSpecialityHospitalOklahomaCity = LatLng()
-        // Add markers to the map API
+//        // Add markers to the map API
+//        public void displayMedicine()
+//        {
+//
+//        }
        mMap.addMarker(
-           MarkerOptions().position(westTennesseeHospital).title("West Tennessee Hospital")
+           MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center")
        )
+        mMap.addMarker(
+            MarkerOptions().position(westTennesseeHospital).title("West Tennessee Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(cumberlandMedicalHospital).title("Cumberland Medical Hospital")
         )
