@@ -284,17 +284,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val virginiaHospitalCenter = LatLng(37.7989022,-79.6979156)
         val westTennesseeHospital = LatLng(37.8891789,-123.7167999)
         val sentaraVirginiaBeachGeneralHospital = LatLng(45.4159953,-122.7229961)
-        //val selectSpecialityHospitalOklahomaCity = LatLng()
-//        // Add markers to the map API
-//        public void displayMedicine()
-/*        { }*/
+        val senataraPrincessAnneHospital = LatLng(45.4160653,-122.7229121)
+
         mMap.addMarker(
 
                 MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
                 )
         mMap.addMarker(
-           MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center")
-       )
+           MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center"))
+
+        mMap.addMarker(
+            MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center")
+                   )
         mMap.addMarker(
             MarkerOptions().position(westTennesseeHospital).title("West Tennessee Hospital")
         )
@@ -314,7 +315,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             MarkerOptions().position(universityOfTennesseeMedicalCenter).title("West Tennessee Healthcare Volunteer")
         )
         mMap.addMarker(
-            MarkerOptions().position(westTennesseeHealthcareVolunteer).title("West Tennessee Healthcare Volunteer")
+            MarkerOptions().position(senataraPrincessAnneHospital).title("sentara Princess Anne Hospital")
         )
         mMap.addMarker(
             MarkerOptions().position(oklahomaHeartHospitalHeart).title("Oklahoma Heart Hospital")
