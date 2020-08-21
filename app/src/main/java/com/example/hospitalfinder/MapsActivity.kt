@@ -283,13 +283,16 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val cumberlandMedicalHospital =  LatLng(45.4160573,-122.7229612)
         val virginiaHospitalCenter = LatLng(37.7989022,-79.6979156)
         val westTennesseeHospital = LatLng(37.8891789,-123.7167999)
+        val sentaraVirginiaBeachGeneralHospital = LatLng(45.4159953,-122.7229961)
         //val selectSpecialityHospitalOklahomaCity = LatLng()
 //        // Add markers to the map API
 //        public void displayMedicine()
-//        {
-//
-//        }
-       mMap.addMarker(
+/*        { }*/
+        mMap.addMarker
+        (
+                MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
+                )
+        mMap.addMarker(
            MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center")
        )
         mMap.addMarker(
