@@ -288,8 +288,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        // Add markers to the map API
 //        public void displayMedicine()
 /*        { }*/
-        mMap.addMarker
-        (
+        mMap.addMarker(
+
                 MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
                 )
         mMap.addMarker(
