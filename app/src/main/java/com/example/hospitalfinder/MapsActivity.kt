@@ -286,10 +286,26 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val senataraPrincessAnneHospital = LatLng(45.4160653,-122.7229121)
         val virginiaHospitalCenter = LatLng(45.4160653,-122.7229121)
         val naturalMedicineUniversity = LatLng(45.4934574,-122.807967)
+        val bonSecoursRichmondCommunityHosptial = LatLng(35.8205637,-135.810595)
+//        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
+//
+//            override fun analyze(imageProxy: ImageProxy) {
+//                val mediaImage = imageProxy.image
+//                if (mediaImage != null) {
+//                    val image = InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees)
+//                    // Pass image to an ML Kit Vision API
+//                    // ...
+//                }
+//            }
+//        }
         mMap.addMarker(
 
-                MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
+                MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
                 )
+        mMap.addMarker(
+
+            MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
+        )
         mMap.addMarker(
            MarkerOptions().position(naturalMedicineUniversity).title("Natural Medicine University")
         )
