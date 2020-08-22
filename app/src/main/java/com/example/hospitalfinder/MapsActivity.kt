@@ -281,21 +281,18 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val vanderbiltWilsonCountyHospital = LatLng(35.6115483,-91.4764742)
         val jacksonMadisonCountyGeneralHospital = LatLng(45.4160573,-122.7229612)
         val cumberlandMedicalHospital =  LatLng(45.4160573,-122.7229612)
-        val virginiaHospitalCenter = LatLng(37.7989022,-79.6979156)
         val westTennesseeHospital = LatLng(37.8891789,-123.7167999)
         val sentaraVirginiaBeachGeneralHospital = LatLng(45.4159953,-122.7229961)
         val senataraPrincessAnneHospital = LatLng(45.4160653,-122.7229121)
-
+        val virginiaHospitalCenter = LatLng(45.4160653,-122.7229121)
         mMap.addMarker(
 
                 MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
                 )
         mMap.addMarker(
-           MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center"))
+           MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center")
+        )
 
-        mMap.addMarker(
-            MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center")
-                   )
         mMap.addMarker(
             MarkerOptions().position(westTennesseeHospital).title("West Tennessee Hospital")
         )
