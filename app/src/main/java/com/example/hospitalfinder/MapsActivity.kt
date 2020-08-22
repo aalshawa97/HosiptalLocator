@@ -287,6 +287,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val virginiaHospitalCenter = LatLng(45.4160653,-122.7229121)
         val naturalMedicineUniversity = LatLng(45.4934574,-122.807967)
         val bonSecoursRichmondCommunityHosptial = LatLng(35.8205637,-135.810595)
+        val ascensionStThomasHospital = LatLng(45.41557,-122.7313178)
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
 //
 //            override fun analyze(imageProxy: ImageProxy) {
@@ -302,9 +303,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
                 MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
                 )
+
         mMap.addMarker(
 
             MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
+        )
+        mMap.addMarker(
+
+            MarkerOptions().position(ascensionStThomasHospital).title("Ascension St. Thomas Hospital")
         )
         mMap.addMarker(
            MarkerOptions().position(naturalMedicineUniversity).title("Natural Medicine University")
