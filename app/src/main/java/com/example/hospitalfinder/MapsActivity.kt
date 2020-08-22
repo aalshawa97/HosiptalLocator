@@ -285,12 +285,17 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val sentaraVirginiaBeachGeneralHospital = LatLng(45.4159953,-122.7229961)
         val senataraPrincessAnneHospital = LatLng(45.4160653,-122.7229121)
         val virginiaHospitalCenter = LatLng(45.4160653,-122.7229121)
+        val naturalMedicineUniversity = LatLng(45.4934574,-122.807967)
         mMap.addMarker(
 
                 MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
                 )
         mMap.addMarker(
-           MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center")
+           MarkerOptions().position(naturalMedicineUniversity).title("Natural Medicine University")
+        )
+
+        mMap.addMarker(
+            MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center")
         )
 
         mMap.addMarker(
