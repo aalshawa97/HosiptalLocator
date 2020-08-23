@@ -291,6 +291,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val bonSecoursRichmondCommunityHosptial = LatLng(35.8205637,-135.810595)
         val ascensionStThomasHospital = LatLng(45.41557,-122.7313178)
         val eastTennesseeHospital = LatLng(45.416067,-122.7229058)
+        val nashvilleGeneralHospital = LatLng(45.416067,-122.7229058)
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
 //
 //            override fun analyze(imageProxy: ImageProxy) {
@@ -307,6 +308,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
                 )
 
+        mMap.addMarker(
+
+            MarkerOptions().position(nashvilleGeneralHospital).title("nashvilleGeneralHospital")
+        )
         mMap.addMarker(
 
             MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
@@ -897,7 +902,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val honey = "Honey"
         val oliveOil = "Olive Oil"
         val blackCarawaySeeds = "Black Caraway Seeds"
-        val myArray3 = arrayOf<String>(honey,oliveOil,blackCarawaySeeds)
+        //val myArray3 = arrayOf<String>(honey,oliveOil,blackCarawaySeeds)
        // println(Arrays.deepToString(myArray3))
 
 //        for (int i = 0; i < aNums.length; i++) {
