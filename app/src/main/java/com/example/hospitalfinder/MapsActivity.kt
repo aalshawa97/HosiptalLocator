@@ -20,7 +20,9 @@ import com.google.android.gms.maps.model.MarkerOptions
 import kotlinx.android.synthetic.main.activity_maps.*
 import kotlinx.android.synthetic.main.fragment_item_list.*
 import java.util.*
-//import pythonAppiumClient
+
+
+//import pythonAppiumClient[
 
 //from appium import webdriver
 
@@ -53,8 +55,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //            }
 //        }
 
-        if(mapFragment.isRemoving)
-            println("Application is closing!")
+//        if(mapFragment.isRemoving)
+//            println("Application is closing!")
 
 
     }
@@ -307,6 +309,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(
 
             MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(westTennesseeHealthcareVolunteer).title("West Tennessee Healthcare Volunteer")
         )
         mMap.addMarker(
 
