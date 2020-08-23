@@ -290,6 +290,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val naturalMedicineUniversity = LatLng(45.4934574,-122.807967)
         val bonSecoursRichmondCommunityHosptial = LatLng(35.8205637,-135.810595)
         val ascensionStThomasHospital = LatLng(45.41557,-122.7313178)
+        val eastTennesseeHospital = LatLng(45.416067,-122.7229058)
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
 //
 //            override fun analyze(imageProxy: ImageProxy) {
@@ -312,6 +313,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         )
         mMap.addMarker(
             MarkerOptions().position(westTennesseeHealthcareVolunteer).title("West Tennessee Healthcare Volunteer")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(eastTennesseeHospital).title("eastTennesseeHospital")
         )
         mMap.addMarker(
 
