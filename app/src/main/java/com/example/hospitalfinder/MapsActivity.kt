@@ -1,25 +1,22 @@
 //Abdullah Mutaz Alshawa
 // 7/8/20
 // Hospital Locator
-// Locates the directions to hospitals for COVID 19 treatment
+// Locates the directions to hospitals for COVID 19 treatment using the Google Maps API
 
 package com.example.hospitalfinder
 
 
 import android.os.Bundle
-import android.text.style.ImageSpan
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.lifecycle.Transformations.map
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
-import kotlinx.android.synthetic.main.activity_maps.*
-import kotlinx.android.synthetic.main.fragment_item_list.*
-import java.util.*
+import javax.xml.parsers.DocumentBuilder
+import javax.xml.parsers.DocumentBuilderFactory
 
 
 //import pythonAppiumClient[
@@ -31,6 +28,8 @@ import java.util.*
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+    //val doc: DocumentsContract.Document by lazy { docBuilder.newDocument() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -899,9 +898,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
 
         //Medicine storage
-        val honey = "Honey"
-        val oliveOil = "Olive Oil"
-        val blackCarawaySeeds = "Black Caraway Seeds"
+//        val honey = "Honey"
+//        val oliveOil = "Olive Oil"
+//        val blackCarawaySeeds = "Black Caraway Seeds"
         //val myArray3 = arrayOf<String>(honey,oliveOil,blackCarawaySeeds)
        // println(Arrays.deepToString(myArray3))
 
