@@ -894,7 +894,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val oliveOil = "Olive Oil"
         val blackCarawaySeeds = "Black Caraway Seeds"
         val myArray3 = arrayOf<String>(honey,oliveOil,blackCarawaySeeds)
-        println(Arrays.deepToString(myArray3))
+       // println(Arrays.deepToString(myArray3))
 
 //        for (int i = 0; i < aNums.length; i++) {
 //    String strToPrint = "aNums[" + i + "]=" + aNums[i];
@@ -936,3 +936,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        setContentView(constraintLayout)
 //    }
     }
+
+//    fun classifyText(text:String): Int{
+//        //val class_1_probability = findProbabilityGivenSample(text, positiveBagOf)
+//    }
