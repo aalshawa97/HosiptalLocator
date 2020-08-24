@@ -5,6 +5,7 @@
 
 package com.example.hospitalfinder
 
+//sfdx force:lightning:local:setup -p android
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -300,6 +301,7 @@ sealed class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val speareMemorialHospital = LatLng(45.416067,-122.7229058)
         val vibraSpecialityHospital = LatLng(45.4160765,-122.722965)
         val lakesRegionalGeneralHospital = LatLng(45.4160094,-122.7229664)
+        val lakeOswegoZoomCare = LatLng(45.4159901,-122.7230287)
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
 //
 //            override fun analyze(imageProxy: ImageProxy) {
@@ -313,9 +315,12 @@ sealed class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
         map.addMarker(
 
-                MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
+                MarkerOptions().position(lakeOswegoZoomCare).title("Zoom Care in Lake Oswego, Oregon")
                 )
+        map.addMarker(
 
+            MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
+        )
         map.addMarker(
 
             MarkerOptions().position(vibraSpecialityHospital).title("Vibra Speciality Hospital")
