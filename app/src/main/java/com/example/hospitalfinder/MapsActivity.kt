@@ -291,6 +291,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val ascensionStThomasHospital = LatLng(45.41557,-122.7313178)
         val eastTennesseeHospital = LatLng(45.416067,-122.7229058)
         val nashvilleGeneralHospital = LatLng(45.416067,-122.7229058)
+        val freseniusMedicalCareAtLegacyGoodSamaritanHospital = LatLng(45.416055,-122.7229539)
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
 //
 //            override fun analyze(imageProxy: ImageProxy) {
@@ -307,6 +308,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
                 )
 
+        mMap.addMarker(
+
+            MarkerOptions().position(freseniusMedicalCareAtLegacyGoodSamaritanHospital).title("Fresenius Medical Care At Legacy Good Samaritan                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           Hospital")
+        )
         mMap.addMarker(
 
             MarkerOptions().position(nashvilleGeneralHospital).title("nashvilleGeneralHospital")
