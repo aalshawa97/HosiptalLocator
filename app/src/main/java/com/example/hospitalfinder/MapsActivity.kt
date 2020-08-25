@@ -42,6 +42,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.allowEnterTransitionOverlap
         mapFragment.activity
 
+        val scope = "World"
+       // println("Hello, $scope!")
+
 //        class ExampleFragment : Fragment() {
 //
 //            override fun onCreateView(
@@ -121,6 +124,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker in Providence Bridgeport and move the camera
+        val rileyHospitalForChildren = LatLng(45.416043,-122.7229752)
         val penRoseHospital = LatLng(45.4160656,-122.7229924)
         val providenceBridgeport = LatLng(45.39, -122.75)
         val dignityHealth = LatLng(44.26, -121.28)
@@ -292,6 +296,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val eastTennesseeHospital = LatLng(45.416067,-122.7229058)
         val nashvilleGeneralHospital = LatLng(45.416067,-122.7229058)
         val freseniusMedicalCareAtLegacyGoodSamaritanHospital = LatLng(45.416055,-122.7229539)
+//
+//
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
 //
 //            override fun analyze(imageProxy: ImageProxy) {
@@ -315,6 +321,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(
 
             MarkerOptions().position(nashvilleGeneralHospital).title("nashvilleGeneralHospital")
+        )
+        mMap.addMarker(
+
+            MarkerOptions().position(rileyHospitalForChildren).title("rileyHospitalForChildren")
         )
         mMap.addMarker(
 
