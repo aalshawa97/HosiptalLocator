@@ -297,6 +297,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val nashvilleGeneralHospital = LatLng(45.416067,-122.7229058)
         val iuHealthUniversity = LatLng(45.416043,-122.7229752)
         val freseniusMedicalCareAtLegacyGoodSamaritanHospital = LatLng(45.416055,-122.7229539)
+        val kindredHospitalIndianapolis = LatLng(42.2614601,-122.4086393)
 //
 //
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
@@ -321,7 +322,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         )
         mMap.addMarker(
 
-            MarkerOptions().position(nashvilleGeneralHospital).title("nashvilleGeneralHospital")
+            MarkerOptions().position(kindredHospitalIndianapolis).title("Kindred Hospital Indianapolis")
+        )
+        mMap.addMarker(
+
+            MarkerOptions().position(nashvilleGeneralHospital).title("Nashville General Hospital")
         )
         mMap.addMarker(
 
