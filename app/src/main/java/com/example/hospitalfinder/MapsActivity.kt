@@ -302,6 +302,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val freseniusMedicalCareAtLegacyGoodSamaritanHospital = LatLng(45.416055,-122.7229539)
         val kindredHospitalIndianapolis = LatLng(42.2614601,-122.4086393)
         val mbfJbrHospital = LatLng(45.4160732,-122.7229641)
+        val emiratesHospitalJumeriahBeach = LatLng(45.4160732,-122.7229641)
 //
 //
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
@@ -309,9 +310,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //            override fun analyze(imageProxy: ImageProxy) {
 //                val mediaImage = imageProxy.image
 //                if (mediaImage != null) {
-//                    val image = InputImage.fromMediaImage(mediaImage, imageProxy.imageInfo.rotationDegrees)
-//                    // Pass image to an ML Kit Vision API
-//                    // ...
+//                    val image = InputImage.fromMediaImage(mediaImage, imageP//                    // ...//                    // Pass image to an ML Kit Vision APIroxy.imageInfo.rotationDegrees)
 //                }
 //            }
 //        }
@@ -320,6 +319,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
                 )
 
+        mMap.addMarker(
+
+            MarkerOptions().position(emiratesHospitalJumeriahBeach).title("Emirates Hospital Jumeriah Beach")
+        )
         mMap.addMarker(
 
             MarkerOptions().position(mbfJbrHospital).title("MBF JBR Hospital")
