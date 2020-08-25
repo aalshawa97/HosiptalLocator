@@ -301,6 +301,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val medeor247HospitalDubaiConsulatesArea = LatLng(45.4512965,-122.7818506)
         val freseniusMedicalCareAtLegacyGoodSamaritanHospital = LatLng(45.416055,-122.7229539)
         val kindredHospitalIndianapolis = LatLng(42.2614601,-122.4086393)
+        val mbfJbrHospital = LatLng(45.4160732,-122.7229641)
 //
 //
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
@@ -319,6 +320,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
                 )
 
+        mMap.addMarker(
+
+            MarkerOptions().position(mbfJbrHospital).title("MBF JBR Hospital")
+        )
         mMap.addMarker(
 
             MarkerOptions().position(canadianSpecialistHospital).title("Canadian Specialist Hospital")
