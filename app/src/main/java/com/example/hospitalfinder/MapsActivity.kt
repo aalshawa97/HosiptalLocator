@@ -25,16 +25,13 @@ import javax.xml.parsers.DocumentBuilderFactory
 
 //import com.google.android.po
 
-sealed class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
-    private lateinit var map: GoogleMap
+    private lateinit var mMap: GoogleMap
     val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
     //val doc: DocumentsContract.Document by lazy { docBuilder.newDocument() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-//        String name = "Welcome To The Hospital Finder"
-//        greeting.setText(getString(R.string.hello, name));
-//
 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_maps)
@@ -121,12 +118,10 @@ sealed class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     override fun onMapReady(googleMap: GoogleMap) {
 
-        map = googleMap
+        mMap = googleMap
 
-        var hashMap : HashMap<String, Int> = HashMap<String, Int>()
         // Add a marker in Providence Bridgeport and move the camera
         val penRoseHospital = LatLng(45.4160656,-122.7229924)
-        hashMap.put("penRoseHospital",0)
         val providenceBridgeport = LatLng(45.39, -122.75)
         val dignityHealth = LatLng(44.26, -121.28)
         val providenceMercantile = LatLng(45.42, -122.72)
@@ -296,10 +291,6 @@ sealed class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val ascensionStThomasHospital = LatLng(45.41557,-122.7313178)
         val eastTennesseeHospital = LatLng(45.416067,-122.7229058)
         val nashvilleGeneralHospital = LatLng(45.416067,-122.7229058)
-        val newLondonHospital = LatLng(38.3476097,-132.9082667)
-        val speareMemorialHospital = LatLng(45.416067,-122.7229058)
-        val vibraSpecialityHospital = LatLng(45.4160765,-122.722965)
-        val lakesRegionalGeneralHospital = LatLng(45.4160094,-122.7229664)
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
 //
 //            override fun analyze(imageProxy: ImageProxy) {
@@ -311,615 +302,600 @@ sealed class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
-        map.addMarker(
+        mMap.addMarker(
 
                 MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
                 )
 
-        map.addMarker(
-
-            MarkerOptions().position(vibraSpecialityHospital).title("Vibra Speciality Hospital")
-        )
-        map.addMarker(
-
-            MarkerOptions().position(lakesRegionalGeneralHospital).title("Lakes Regional General Hospital")
-        )
-        map.addMarker(
-
-            MarkerOptions().position(speareMemorialHospital).title("Speare Memorial Hospital")
-        )
-        map.addMarker(
-
-            MarkerOptions().position(newLondonHospital).title("New London Hospital")
-        )
-        map.addMarker(
+        mMap.addMarker(
 
             MarkerOptions().position(nashvilleGeneralHospital).title("nashvilleGeneralHospital")
         )
-        map.addMarker(
+        mMap.addMarker(
 
             MarkerOptions().position(sentaraVirginiaBeachGeneralHospital).title("Sentara Virginia Beach General Hospital")
         )
-        map.addMarker(           MarkerOptions().position(westTennesseeHealthcareVolunteer).title("West Tennessee Healthcare Volunteer")
+        mMap.addMarker(
+            MarkerOptions().position(westTennesseeHealthcareVolunteer).title("West Tennessee Healthcare Volunteer")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(eastTennesseeHospital).title("eastTennesseeHospital")
         )
-        map.addMarker(
+        mMap.addMarker(
 
             MarkerOptions().position(ascensionStThomasHospital).title("Ascension St. Thomas Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
            MarkerOptions().position(naturalMedicineUniversity).title("Natural Medicine University")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(virginiaHospitalCenter).title("Virginia Hospital Center")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(westTennesseeHospital).title("West Tennessee Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(cumberlandMedicalHospital).title("Cumberland Medical Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(jacksonMadisonCountyGeneralHospital).title("Jackson Madison County General Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(leBonheurChildrensHospital).title("Le Bonheur Children's Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(vanderbiltWilsonCountyHospital).title("Vanderbilt Wilson County Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(universityOfTennesseeMedicalCenter).title("West Tennessee Healthcare Volunteer")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(senataraPrincessAnneHospital).title("sentara Princess Anne Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(oklahomaHeartHospitalHeart).title("Oklahoma Heart Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(curaHealth).title("Curahealth")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(communityHospitalNorth).title("Community Hospital North")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(surgicalHospitalOfOkhlahoma).title("Surgical Hospital Of Okhlahoma")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(mercyHospitalOkhlahomaCity).title("Mercy Hospital of Okhlahoma City")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(christusSantaRosaHospitalWestoverHills).title("Christus Santa Rosa Hospital Westover Hills")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(texasChildrensHospital).title("Texas Children's Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(benewahCommunityHospital).title("Benewah Community Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(minidokaMemorialHospital).title("Minidoka Memorial Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(weiserMemorialHospital).title("Weiser Memorial Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(nellJRedfieldMemorialHospital).title("Nell J. Redfield Memorial Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(memorialHospitalOfTexasCounty).title("Seton Medical Center Harker Heights")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(hcaHoustonMainland).title("HCA Houston Mainland")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(setonMedicalCenterHarkerHeights).title("Seton Medical Center Harker Heights")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(memorialHermannTexasMedicalCenter).title("Memorial Hermann Texas Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(scottishRiteForChildren).title("Scottish Rite For Children")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(firstTexasHospitalCyFair).title("First Texas Hospital CyFair")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(baylorScottMedical).title("Baylor Scott")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(utSouthwesternMedicalSchool).title("utSouthwesternMedicalSchool")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(childrenMedicalCenterDallas).title("Children's Medical Center Dallas")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(shrinersSaltLakeCity).title("Shriners Salt Lake City")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(herberValleyHospital).title("Herber Valley Hospital")
         )
 
 //        mHerberValleyHospital.setTag(0)
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(headacheAndMigraneTreatmentCenter).title("Headache and Migrane Treatment Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(theWomansHospitalOfTexasPediatrics).title("Memorial Hospital Of Texas County")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(memorialHospitalOfTexasCounty).title("Memorial Hospital Of Texas County")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(medicalCenterOfOdessa).title("Medical Center of Odessa")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(universityOfUtahHospital).title("University Of Utah Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(texasHealthPresbyterianHospitalDenton).title("Texas Health Presbyterian Hospital Denton")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(texasHealthHarrisMethodistHospital).title("Texas Health Harris Methodist Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(texasHealthMedicalHearthMethodistHospital).title("Texas Health Medical Hearth Methodist Hospital")
         )
 //        mMap.addMarker(
 //            MarkerOptions().position(hcaHoustonHealthcareMainland).title("HCA Houston Healthcare Mainland")
 //        )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(baylorScottAndWhiteMedicalCenter).title("Baylor Scott and White Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(reevesCountyHospitalDistrict).title("Reeves County Hospital District")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(texasMedicalCenter).title("Texas Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(iraanGeneralHospital).title("Iraan General Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(texasOrthopedicHospital).title("Texas Orthopedic Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(johnHopkinsHospital).title("John Hopkins University")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(texasHealthMedicalHearthMethodistHospital).title("Texas Health Medical Hearth Methodist Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(theWomensHospitalOfTexas).title("The women's hospital of Texas")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(penRoseHospital).title("Penrose Hospitals")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(stFrancisMedicalCenter).title("Encompass Health Rehabilitation Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(encompassHealthRehabilitationHospital).title("Encompass Health Rehabilitation Hospital")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(ucHealthGrandViewHospital).title("UC Health Grand View Hospital")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(mcKayDeeHospital).title("McKay Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(davisHospitalAndMedicalCenter).title("Davis Hosputal And Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(parkCityHospital).title("Park City Hospital")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(timpanogosRegionalHospital).title("Timpanogos Regional Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(ldsHospital).title("Cache Valley Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(cacheValleyHospital).title("Cache Valley Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(notreDameHospitalCcsmtlHeadOffice).title("Notre Dame Hospital CCSMTL Head Office")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(shrinersHospitalsForChildrenSaltLakeCity).title("Shriners Hospitals For Children Salt Lake City")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(utahStateHospital).title("Utah State Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(mesaViewRegionalHospital).title("Mesa View Regional Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(springValleyHospitalMedicalCenter)
                 .title("Mike O'Callaghan Military Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(boulderCityHospital).title("Boulder City Hospital")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(mikeOcallaghanMilitaryMedicalCenter)
                 .title("Mike O'Callaghan Military Medical Center")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(renownRegionalMedicalCenter)
                 .title("Renown Regional Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(hendersonHospital).title("Henderson Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(carsonTahoeRegionalMedicalCenter)
                 .title("Carson Tahoe Regional Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(northEasternNevadaRegionalHosptital)
                 .title("North Eastern Nevada Regional Hosptital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(sunriseHospitalMedicalCenter)
                 .title("Sunrise Hospital Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(pershingGeneralHospital).title("Pershing General Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(mountGrantGeneralHospital)
                 .title("Mount Grant General Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(northVistaHospital).title("North Vista Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(southernHillsHospitalAndMedicalCenter)
                 .title("Southern Hills Hospital and Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(diginityHealthStRoseDominicanHospital).title("Dignity Health")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(stJoesphsMedicalCenter).title("St. Joesph's Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(huntingtonHospital).title("Huntington Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(dignityHealth).title("Dignity Health")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(mayersMemorialHospital).title("Mayers Memoriral Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(whitmanHospitalAndMedicalClinics)
                 .title("Whitman Hospital and Medical Clinics")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(triStateMemorialHospitalAndMedicalCampus)
                 .title("Tristate Memorial Hospital and Medical Campus")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(daytonGeneralHospital).title("Dayton General Hosptial")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(masonGeneralHospital).title("Mason General Health")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(skylineHealth).title("Skyline Health")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(highlineMedicalCenter).title("Highline Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(navalHospital).title("Naval Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(multiCareTacomaGeneralHospital)
                 .title("MultiCare Tacoma General Hospital")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(snoqualmieValleyHospital).title("Snoqualmie Valley Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(westernStateHospital).title("Western State Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(easternStateHospital).title("Eastern State Hosital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(multiCareGoodSamaritanHospital)
                 .title("MultiCare Good Samaritan")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(uwMedicalCenterNorthwestSeattleHospital)
                 .title("UW Medical Center Northwest Seattle Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(sacredHeartChildrenHospitalSpokane)
                 .title("Sacred Heart Hospital Spokane")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceStPeterHospitalOlympia)
                 .title("Providence St. Peter Hosptial Olympia")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(graysHarborCommunityHospital).title("Gray's Harbor Community")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(sacredHeartChildrensHosptial)
                 .title("Sacred Heart Children's Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(harrisonMedicalCenter).title("Harrison Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceMountCarmelHospital)
                 .title("Providence Mount Carmel Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(columbiaBasinHosptial).title("Columbia Basin Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceStMaryMedicalCenterWallaWalla)
                 .title("Providence St.Mary Medical Center Walla Walla")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(centralWashingtonHosptial).title("Central Washington Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(pioneerMemorialHospital).title("Pioneer Memorial Hosiptal")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(sageViewPsychiatrists).title("Sage View Psychiatrists")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(redmondClinic).title("Redmond Clinic")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(bayAreaHospital).title("Bay Area Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(eastMorelandHospital).title("East Moreland Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(legacyMountHoodMedicalCenter).title("Legacy Mount Hood")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(adventistHealthPortland).title("Adventist Health Portland")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(stAnthonyHospital).title("St. Anthony Hospital ")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(cottageGroveCommunityMedicalCenter)
                 .title("Cottage Grove Community Medical Center")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(veteransAffairsMedicalCenterOregon)
                 .title("Veterans Affairs Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(westValleyHospital).title("West Valley Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(adventistHealthTillamook).title("Adventist Health Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(midColumbiaMedicalCenterEmergencyRoom)
                 .title("Mid Columbia Medical Center Emergency Room")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(mcKenzieWillametteMedicalCenter)
                 .title("McKenzie Willamette Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(coquilleValleyHospital).title("Coquille Valley Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(curryGeneralHospital).title("Curry General Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(woodlandParkHospital).title("Woodland Park Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(legacyEmanuelMedicalCenter)
                 .title("Legacy Emanuel Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(southernCoosHospitalandHealthCenter)
                 .title("Southern Coos Hospital and Health Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(columbiaMemorialHospital).title("Columbia Memorial Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(harneyDistrictHospital).title("Harney District Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(stAlphonsusMedicalCenter).title("St. Alphonsus Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(salemHealthHospital).title("Salem Health Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceSwindellsResourceCenter)
                 .title("Providence Swindells Resource Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(grandeRondeHospital).title("Grande Ronde Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(sacredHeartMedicalCenterUniversityDistrict)
                 .title("Sacred Heart Medical Center University District")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(peaceHealthPeaceHarborMedicalCenter)
                 .title("Peace Health Peace Harbor Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(samariatanLebanonCommunityHospital)
                 .title("Samariatan Lebanon Community Hospital")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(lakeDistrictMedicalCenter).title("Lake District Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(skyLakesMedicalCenter)
                 .title("Sky Lakes medical center Klamath Falls")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(ProvidenceMedicalCenterMedford)
                 .title("Providence Medical Center Medford ")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(goodSamaritanRegionalMedicalCenter)
                 .title("St. Charles Medical Center")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(stCharlesMedicalCenter).title("St. Charles Medical Center")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(legacySalmonCreek).title("Legacy Salmon Creek")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(oregonClinicCardiology).title("Oregon Clinic Cardiology")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(vaPortlandHealthCareSystem)
                 .title("Veteran Affairs Portland Health Care System")
         )
 //
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(oregonHealthAndScienceUniversity)
                 .title("Oregon Health and Science University")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(goodShepardHealthCareSystem)
                 .title("Good Shepard Health Care System")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(blueMountainHospital).title("Blue Mountain Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(asanteThreeRiversMedicalCenter)
                 .title("Asante Three Rivers Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(samaritanAlbanyGeneralHospital)
                 .title("Samaritan Albany General Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(stJoesphMedicalClinic).title("St. Joesph Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceCentrailiaHospital)
                 .title("Providence Centrailia Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(kaiserPermanenteWestsideMedicalCenter)
                 .title("Kaiser Permanente Westside Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(tualityCommunityHospital).title("Tuality Community Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(samaritanNorthLincolnHospital)
                 .title("Samartian North Lincoln Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(legacySilverton).title("Legacy Silverton Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(oregonStateHospital).title("Oregon State Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(peakMedicalNorthwestIncorporated)
                 .title("Peak Medical Northwest Incorporated")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(shrinersHospitalsForChildrenQuebec)
                 .title("Shriners Hospital for Children, Quebec")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceHoodRiver).title("Providence Hood River Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceMilwaukieHospital)
                 .title("Providence Milwaukie Hospital")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceMedicalGroupBeaverton)
                 .title("Providence Medical Group Beaverton")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(clackamasPediatricClinic).title("Clackamas Pediatric Clinic")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(oregonClinicSouth).title("Oregon Clinic South")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceNewbergMedicalCenter)
                 .title("Providence Newberg Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceMedicalPlazaSherwood)
                 .title("Providence Medical Plaza Sherwood")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(legacyMeridianParkMedicalCenter)
                 .title("Legacy Meridian Park Medical Plaza")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceCanbyMedicalPlaza).title("Providence Medical Plaza")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceWilametteFallsMedicalCenter)
                 .title("Providence Wilamette Falls Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(legacygoodSamaritan).title("Legacy Good Samaritan")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceBridgeport).title("Providence Bridgeport")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceMercantile).title("Providence Mercantile")
         )
 
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(providenceStVincent).title("Providence St. Vincent")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(universityOfWashingtonMedicalCenter)
                 .title("University of Washington Medical Center")
         )
-        map.addMarker(
+        mMap.addMarker(
             MarkerOptions().position(brighamCityCommunityHospital)
                 .title("Brigham City Community Hospital")
         )
-        map.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
 
         //Medicine storage
 //        val honey = "Honey"
