@@ -295,6 +295,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val ascensionStThomasHospital = LatLng(45.41557,-122.7313178)
         val eastTennesseeHospital = LatLng(45.416067,-122.7229058)
         val nashvilleGeneralHospital = LatLng(45.416067,-122.7229058)
+        val iuHealthUniversity = LatLng(45.416043,-122.7229752)
         val freseniusMedicalCareAtLegacyGoodSamaritanHospital = LatLng(45.416055,-122.7229539)
 //
 //
@@ -325,6 +326,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(
 
             MarkerOptions().position(rileyHospitalForChildren).title("rileyHospitalForChildren")
+        )
+        mMap.addMarker(
+
+            MarkerOptions().position(iuHealthUniversity).title("IU Health Hospital Hospital")
         )
         mMap.addMarker(
 
