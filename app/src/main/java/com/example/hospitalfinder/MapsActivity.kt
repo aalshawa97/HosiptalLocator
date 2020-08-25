@@ -297,6 +297,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val nashvilleGeneralHospital = LatLng(45.416067,-122.7229058)
         val iuHealthUniversity = LatLng(45.416043,-122.7229752)
         val  kingsCollegeHospital = LatLng(45.4160732,-122.7229641)
+        val canadianSpecialistHospital = LatLng(45.4160732,-122.7229641)
         val medeor247HospitalDubaiConsulatesArea = LatLng(45.4512965,-122.7818506)
         val freseniusMedicalCareAtLegacyGoodSamaritanHospital = LatLng(45.416055,-122.7229539)
         val kindredHospitalIndianapolis = LatLng(42.2614601,-122.4086393)
@@ -318,6 +319,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
                 )
 
+        mMap.addMarker(
+
+            MarkerOptions().position(canadianSpecialistHospital).title("Canadian Specialist Hospital")
+        )
         mMap.addMarker(
 
             MarkerOptions().position(medeor247HospitalDubaiConsulatesArea).title("Fresenius Medical Care At Hospital")
