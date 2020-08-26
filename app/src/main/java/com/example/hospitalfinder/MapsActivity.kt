@@ -304,8 +304,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mbfJbrHospital = LatLng(45.4160732,-122.7229641)
         val thumbayHospitalDubai = LatLng(45.4160732,-122.7229641)
         val alZahraHospital = LatLng(45.4160732,-122.7229641)
+        val nmcRoyalHospital = LatLng(45.4160732,-122.7229641)
+        val drSulaimanAlHabibHospitalInDubai = LatLng(45.4160732,-122.7229641)
         val mediclinicCityHospitalNorthWing = LatLng(45.4160732,-122.7229641)
         val emiratesHospitalJumeriahBeach = LatLng(45.4160732,-122.7229641)
+        val gargashHospitalInDubai = LatLng(45.4160732,-122.7229641)
 //
 //
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
@@ -319,7 +322,22 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
         mMap.addMarker(
 
-                MarkerOptions().position(mediclinicCityHospitalNorthWing).title("Mediclinic City Hospital North Wing")
+                MarkerOptions().position(gargashHospitalInDubai).title("Gargash Hospital In Dubai")
+        )
+
+        mMap.addMarker(
+
+            MarkerOptions().position(drSulaimanAlHabibHospitalInDubai).title("Dr Sulaiman Al Habib Hospital In Dubai")
+        )
+
+        mMap.addMarker(
+
+            MarkerOptions().position(nmcRoyalHospital).title("NMC Royal Hospital City Hospital North Wing")
+        )
+
+        mMap.addMarker(
+
+            MarkerOptions().position(mediclinicCityHospitalNorthWing).title("Mediclinic City Hospital North Wing")
         )
 
         mMap.addMarker(
