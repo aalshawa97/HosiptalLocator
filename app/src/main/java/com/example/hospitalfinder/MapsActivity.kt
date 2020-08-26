@@ -304,6 +304,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mbfJbrHospital = LatLng(45.4160732,-122.7229641)
         val thumbayHospitalDubai = LatLng(45.4160732,-122.7229641)
         val alZahraHospital = LatLng(45.4160732,-122.7229641)
+        val mediclinicCityHospitalNorthWing = LatLng(45.4160732,-122.7229641)
         val emiratesHospitalJumeriahBeach = LatLng(45.4160732,-122.7229641)
 //
 //
@@ -318,7 +319,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
         mMap.addMarker(
 
-                MarkerOptions().position(alZahraHospital).title("Al Zahra Hospital")
+                MarkerOptions().position(mediclinicCityHospitalNorthWing).title("Mediclinic City Hospital North Wing")
+        )
+
+        mMap.addMarker(
+
+            MarkerOptions().position(alZahraHospital).title("Al Zahra Hospital")
         )
 
         mMap.addMarker(
