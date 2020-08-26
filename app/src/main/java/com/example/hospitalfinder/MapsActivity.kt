@@ -302,13 +302,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val freseniusMedicalCareAtLegacyGoodSamaritanHospital = LatLng(45.416055,-122.7229539)
         val kindredHospitalIndianapolis = LatLng(42.2614601,-122.4086393)
         val mbfJbrHospital = LatLng(45.4160732,-122.7229641)
-        val thumbayHospitalDubai = LatLng(45.4160732,-122.7229641)
+        val thumbayHospitalDubai = LatLng(45.4160732,-122.7223333339641)
         val alZahraHospital = LatLng(45.4160732,-122.7229641)
         val nmcRoyalHospital = LatLng(45.4160732,-122.7229641)
         val drSulaimanAlHabibHospitalInDubai = LatLng(45.4160732,-122.7229641)
         val mediclinicCityHospitalNorthWing = LatLng(45.4160732,-122.7229641)
         val emiratesHospitalJumeriahBeach = LatLng(45.4160732,-122.7229641)
         val gargashHospitalInDubai = LatLng(45.4160732,-122.7229641)
+        val providenceExpressCareKruseWay = LatLng(45.4171074,-122.7262975)
 //
 //
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
@@ -323,8 +324,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap.addMarker(
 
                 MarkerOptions().position(gargashHospitalInDubai).title("Gargash Hospital In Dubai")
+                MarkerOptions().position(providenceExpressCareKruseWay).title("Providence Express Care Kruse Way")
         )
+        mMap.addMarker(
 
+            MarkerOptions().position(gargashHospitalInDubai).title("Gargash Hospital In Dubai")
+        )
         mMap.addMarker(
 
             MarkerOptions().position(drSulaimanAlHabibHospitalInDubai).title("Dr Sulaiman Al Habib Hospital In Dubai")
