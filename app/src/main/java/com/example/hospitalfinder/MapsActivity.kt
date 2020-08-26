@@ -302,6 +302,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val freseniusMedicalCareAtLegacyGoodSamaritanHospital = LatLng(45.416055,-122.7229539)
         val kindredHospitalIndianapolis = LatLng(42.2614601,-122.4086393)
         val mbfJbrHospital = LatLng(45.4160732,-122.7229641)
+        val thumbayHospitalDubai = LatLng(45.4160732,-122.7229641)
         val emiratesHospitalJumeriahBeach = LatLng(45.4160732,-122.7229641)
 //
 //
@@ -316,8 +317,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
         mMap.addMarker(
 
-                MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
-                )
+                MarkerOptions().position(thumbayHospitalDubai).title("Thumbay Hospital Dubai")
+        )
+
+        mMap.addMarker(
+
+            MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
+        )
 
         mMap.addMarker(
 
