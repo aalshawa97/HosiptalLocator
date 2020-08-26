@@ -323,7 +323,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
         mMap.addMarker(
 
-                MarkerOptions().position(gargashHospitalInDubai).title("Gargash Hospital In Dubai")
                 MarkerOptions().position(providenceExpressCareKruseWay).title("Providence Express Care Kruse Way")
         )
         mMap.addMarker(
