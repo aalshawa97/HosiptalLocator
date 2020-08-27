@@ -313,6 +313,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val providenceExpressCareKruseWay = LatLng(45.4171074,-122.7262975)
         val newHampshireHospital = LatLng(43.821318,-72.6407463)
         val newLondonHospital = LatLng(43.8103583,-72.640777)
+        val brighamAndWomensHospital = LatLng(45.5441086,-122.4198746)
         val newEnglandBaptistHospital = LatLng(45.4160577,-122.7229065)
         val shrinersHospitalForChildrenBoston = LatLng(36.884958,-132.6318486)
 //
@@ -326,6 +327,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
+        mMap.addMarker(
+            MarkerOptions().position(brighamAndWomensHospital).title("Brigham And Womens Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(newEnglandBaptistHospital).title("Shriners Hospital For Children Boston")
         )

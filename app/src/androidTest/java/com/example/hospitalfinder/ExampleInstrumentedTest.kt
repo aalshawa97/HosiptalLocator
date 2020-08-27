@@ -21,4 +21,10 @@ class ExampleInstrumentedTest {
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
         assertEquals("com.example.hospitalfinder", appContext.packageName)
     }
+    @Test
+    fun useDbContext() {
+        // Context of the app under test.
+        val dbContext = InstrumentationRegistry.getInstrumentation().targetContext
+        assertEquals("com.example.hospitalfinder", dbContext.packageName)
+    }
 }
