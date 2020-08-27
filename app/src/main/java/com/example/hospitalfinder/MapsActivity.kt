@@ -311,6 +311,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val gargashHospitalInDubai = LatLng(45.4160732,-122.7229641)
         val peakMedicalNorthwest = LatLng(45.4166679,-122.7268154)
         val providenceExpressCareKruseWay = LatLng(45.4171074,-122.7262975)
+        val newHampshireHospital = LatLng(43.821318,-72.6407463)
 //
 //
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
@@ -322,6 +323,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
+        mMap.addMarker(
+            MarkerOptions().position(newHampshireHospital).title("New Hampshire Hospital")
+        )
         mMap.addMarker(
 
                 MarkerOptions().position(peakMedicalNorthwest).title("Peak Medical Northwest")
