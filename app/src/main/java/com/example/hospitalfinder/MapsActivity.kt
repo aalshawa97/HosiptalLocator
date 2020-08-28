@@ -29,6 +29,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
     //val a: dynamic = "abc"
+    //println("Hello World")
     val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
     //val doc: DocumentsContract.Document by lazy { docBuilder.newDocument() }
 
@@ -317,6 +318,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val brighamAndWomensHospital = LatLng(45.5441086,-122.4198746)
         val massGeneralHospital = LatLng(45.4159941,-122.7229692)
         val newEnglandBaptistHospital = LatLng(45.4160577,-122.7229065)
+        val floatingHospitalForChildrenHospital = LatLng(45.5054205,-122.4375266)
+        val massachusettsGeneralHospital = LatLng(45.4160544,-122.7229401)
         val shrinersHospitalForChildrenBoston = LatLng(36.884958,-132.6318486)
 //
 //
@@ -329,6 +332,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
+        mMap.addMarker(
+            MarkerOptions().position(massachusettsGeneralHospital).title("Massachusetts General Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(floatingHospitalForChildrenHospital).title("Floating Hospital For Children Hospital")
+        )
         mMap.addMarker(
             MarkerOptions().position(massGeneralHospital).title("Mass General Hospital")
         )
