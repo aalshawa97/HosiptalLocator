@@ -28,6 +28,7 @@ import javax.xml.parsers.DocumentBuilderFactory
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private lateinit var mMap: GoogleMap
+    //val a: dynamic = "abc"
     val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
     //val doc: DocumentsContract.Document by lazy { docBuilder.newDocument() }
 
@@ -123,7 +124,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         mMap = googleMap
 
-        // Add a marker in Providence Bridgeport and move the camera
+        // Add a marker for each hospital
         val rileyHospitalForChildren = LatLng(45.416043,-122.7229752)
         val penRoseHospital = LatLng(45.4160656,-122.7229924)
         val providenceBridgeport = LatLng(45.39, -122.75)
