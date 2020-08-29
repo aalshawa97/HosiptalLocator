@@ -321,7 +321,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val floatingHospitalForChildrenHospital = LatLng(45.5054205,-122.4375266)
         val massachusettsGeneralHospital = LatLng(45.4160544,-122.7229401)
         val shrinersHospitalForChildrenBoston = LatLng(36.884958,-132.6318486)
-//
+        val massachusettsInstiuteofTechnologyMedicalCenterPediatrics = LatLng(42.3361037,-71.1588672)
 //
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
 //
@@ -334,6 +334,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
         mMap.addMarker(
             MarkerOptions().position(massachusettsGeneralHospital).title("Massachusetts General Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(massachusettsInstiuteofTechnologyMedicalCenterPediatrics).title("Massachusetts Instiute of Technology Medical Center Pediatrics")
         )
         mMap.addMarker(
             MarkerOptions().position(floatingHospitalForChildrenHospital).title("Floating Hospital For Children Hospital")
