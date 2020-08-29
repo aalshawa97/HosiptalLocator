@@ -31,9 +31,21 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      private lateinit var mMap: GoogleMap
 
     val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+
+    private fun getUrl(latitude: Double, longitude: Double, nearbyPlace: String): String {
+        val googlePlaceUrl = StringBuilder("https://maps/googleapis.com/maps/api/place/nearbysearch/json?")
+        googlePlaceUrl.append("location=$latitude,$longitude")
+        //googlePlaceUrl.append("&radius=$PROXIMITY_RADIUS")
+        googlePlaceUrl.append("&keyword=hospital")
+        googlePlaceUrl.append("&sensor=true")
+        googlePlaceUrl.append("&key=" + "MYKEY")
+        //Log.d("MapsActivity", "url = $googlePlaceUrl")
+        return googlePlaceUrl.toString()
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
+        getUrl(1.0,1.0,"Providence Mercantile")
         setContentView(R.layout.activity_maps)
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
