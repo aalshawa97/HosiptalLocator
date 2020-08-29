@@ -32,7 +32,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
 
-    private fun getUrl(latitude: Double, longitude: Double, nearbyPlace: String): String {
+    private fun getUrl(latitude: Double, longitude: Double, nearByPlace: String): String {
         val googlePlaceUrl = StringBuilder("https://maps/googleapis.com/maps/api/place/nearbysearch/json?")
         googlePlaceUrl.append("location=$latitude,$longitude")
         //googlePlaceUrl.append("&radius=$PROXIMITY_RADIUS")
@@ -45,7 +45,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
-        getUrl(1.0,1.0,"Providence Mercantile")
+        getUrl(45.4160844,-122.7229328, "Providence Mercantile")
         setContentView(R.layout.activity_maps)
         val mapFragment = supportFragmentManager
                 .findFragmentById(R.id.map) as SupportMapFragment
@@ -54,7 +54,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mapFragment.allowEnterTransitionOverlap
         mapFragment.activity
 
-        val scope = "World"
+        //val scope = "World"
        // println("Hello, $scope!")
 
 //        class ExampleFragment : Fragment() {
@@ -156,6 +156,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val clackamasPediatricClinic = LatLng(45.44, -122.80)
         val providenceMedicalGroupBeaverton = LatLng(45.42, -122.72)
         val legacyEmanuelMedicalCenter = LatLng(45.42, -122.72)
+        val bostonUniversityHospital = LatLng(45.4160844,-122.7229328)
         val providenceMilwaukieHospital = LatLng(45.45, -123.06)
         val providenceHoodRiver = LatLng(45.56, -122.69)
         val shrinersHospitalsForChildrenQuebec = LatLng(45.4716222,-73.6035359)
@@ -326,7 +327,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val newHampshireHospital = LatLng(43.821318,-72.6407463)
         val newLondonHospital = LatLng(43.8103583,-72.640777)
         val brighamAndWomensHospital = LatLng(45.5441086,-122.4198746)
-        val massGeneralHospital = LatLng(45.4159941,-122.7229692)
         val newEnglandBaptistHospital = LatLng(45.4160577,-122.7229065)
         val floatingHospitalForChildrenHospital = LatLng(45.5054205,-122.4375266)
         val massachusettsGeneralHospital = LatLng(45.4160544,-122.7229401)
@@ -352,7 +352,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             MarkerOptions().position(floatingHospitalForChildrenHospital).title("Floating Hospital For Children Hospital")
         )
         mMap.addMarker(
-            MarkerOptions().position(massGeneralHospital).title("Mass General Hospital")
+            MarkerOptions().position(bostonUniversityHospital).title("Boston University Hospital")
         )
         mMap.addMarker(
             MarkerOptions().position(brighamAndWomensHospital).title("Brigham And Womens Hospital")
