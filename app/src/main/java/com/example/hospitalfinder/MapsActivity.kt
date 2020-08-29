@@ -1,12 +1,13 @@
 //Abdullah Mutaz Alshawa
-// 7/8/20
-// Hospital Locator
-// Locates the directions to hospitals for COVID 19 treatment using the Google Maps API
+//7/8/20
+//Hospital Locator
+//Locates the directions to hospitals for COVID 19 treatment using the Google Maps API
 
 package com.example.hospitalfinder
 
 
 import android.os.Bundle
+//This makes the application an activity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.gms.maps.CameraUpdateFactory
@@ -1027,6 +1028,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         )
         mMap.moveCamera(CameraUpdateFactory.newLatLng(providenceBridgeport))
 
+
+        val naturalMedicine:HashMap<String, Int> = HashMap<String, Int>()
+        naturalMedicine.put("honey",1)
         //Medicine storage
 //        val honey = "Honey"
 //        val oliveOil = "Olive Oil"
