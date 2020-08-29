@@ -17,6 +17,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import javax.xml.parsers.DocumentBuilder
+import android.widget.Button
 import javax.xml.parsers.DocumentBuilderFactory
 
 
@@ -27,13 +28,9 @@ import javax.xml.parsers.DocumentBuilderFactory
 //import com.google.android.po
 
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+     private lateinit var mMap: GoogleMap
 
-    private lateinit var mMap: GoogleMap
-    //val a: dynamic = "abc"
-    //println("Hello World")
     val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
-    //val doc: DocumentsContract.Document by lazy { docBuilder.newDocument() }
-
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
