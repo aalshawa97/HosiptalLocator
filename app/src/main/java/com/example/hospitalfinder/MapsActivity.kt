@@ -7,6 +7,8 @@ package com.example.hospitalfinder
 
 
 import android.os.Bundle
+import android.os.Parcel
+import android.os.Parcelable
 //This makes the application an activity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -20,21 +22,82 @@ import javax.xml.parsers.DocumentBuilder
 import android.widget.Button
 import javax.xml.parsers.DocumentBuilderFactory
 
-
+//class UserProfileViewModel() : ViewModel(), Parcelable {
+//    val userId : String = TODO()
+//    val user : User = TODO()
+//
+//    constructor(parcel: Parcel) : this() {
+//    }
+//
+//    override fun writeToParcel(parcel: Parcel, flags: Int) {
+//
+//    }
+//
+//    override fun describeContents(): Int {
+//        return 0
+//    }
+//
+//    companion object CREATOR : Parcelable.Creator<UserProfileViewModel> {
+//        override fun createFromParcel(parcel: Parcel): UserProfileViewModel {
+//            return UserProfileViewModel(parcel)
+//        }
+//
+//        override fun newArray(size: Int): Array<UserProfileViewModel?> {
+//            return arrayOfNulls(size)
+//        }
+//    }
+//}
 //import pythonAppiumClient[
 
 //from appium import webdriver
 
 //import com.google.android.po
-
+//class BaeldungNewsletter : IObservable {
+//    override val observers: ArrayList<IObserver> = ArrayList()
+//    var newestArticleUrl = ""
+//        set(value) {
+//            field = value
+//            sendUpdateEvent()
+//        }
+//}
+//class BaeldungNewsletter {
+//    val newestArticleObservers = mutableListOf<(String) -> Unit>()
+//
+//    var newestArticleUrl: String by Delegates.observable("") { _, _, newValue ->
+//        newestArticleObservers.forEach { it(newValue) }
+//    }
+//}
+//class BaeldungReader(private var newsletter: BaeldungNewsletter) : IObserver {
+//    override fun update() {
+//        println("New Baeldung article: ${newsletter.newestArticleUrl}")
+//    }
+//}
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      private lateinit var mMap: GoogleMap
 
     val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
+    interface IObserver {
+        fun update()
+    }
+//    interface IObservable {
+//        val observers: ArrayList<IObserver>
+//
+//        fun add(observer: IObserver) {
+//            observers.add(observer)
+//        }
+//
+//        fun remove(observer: IObserver) {
+//            observers.remove(observer)
+//        }
+//
+//        fun sendUpdateEvent() {
+//            observers.forEach { it.update() }
+//        }
+//    }
 
     private fun getUrl(latitude: Double, longitude: Double, nearByPlace: String): String {
         val googlePlaceUrl = StringBuilder("https://maps/googleapis.com/maps/api/place/nearbysearch/json?")
-        googlePlaceUrl.append("location=$latitude,$longitude")
+        //googlePlaceUrl.append("location=$latitude,$longitude")
         //googlePlaceUrl.append("&radius=$PROXIMITY_RADIUS")
         googlePlaceUrl.append("&keyword=hospital")
         googlePlaceUrl.append("&sensor=true")
@@ -136,6 +199,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker for each hospital
+        val memorialHospitalofConverseCounty = LatLng(45.4159997,-122.7229728)
         val wyomingMedicalCenter = LatLng(45.415987,-122.7229989)
         val rileyHospitalForChildren = LatLng(45.416043,-122.7229752)
         val penRoseHospital = LatLng(45.4160656,-122.7229924)
@@ -343,6 +407,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
+
+        mMap.addMarker(
+            MarkerOptions().position(memorialHospitalofConverseCounty).title("Memorial Hospital of Converse County")
+        )
         mMap.addMarker(
             MarkerOptions().position(wyomingMedicalCenter).title("wyomingMedicalCenter")
         )

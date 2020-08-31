@@ -6,6 +6,12 @@ buildscript {
         jcenter()
     }
     dependencies {
+        def lifecycle_version = "2.2.0"
+        //implementation "androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version"
+//        implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" // Required for Kotlin integration
+        classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version" // See https://kotlinlang.org/docs/reference/compiler-plugins.html#kotlin-spring-compiler-plugin
+        //classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
         classpath 'com.android.tools.build:gradle:4.0.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         //implementation 'com.google.android.material:material:1.0.0'
