@@ -51,4 +51,12 @@
         android:inputType="textPersonName"
         android:text="helping people where I can!" />
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+    </ScrollView>
+
 </LinearLayout>

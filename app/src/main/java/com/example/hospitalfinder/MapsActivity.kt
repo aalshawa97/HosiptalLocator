@@ -136,6 +136,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker for each hospital
+        val wyomingMedicalCenter = LatLng(45.415987,-122.7229989)
         val rileyHospitalForChildren = LatLng(45.416043,-122.7229752)
         val penRoseHospital = LatLng(45.4160656,-122.7229924)
         val providenceBridgeport = LatLng(45.39, -122.75)
@@ -342,6 +343,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
+        mMap.addMarker(
+            MarkerOptions().position(wyomingMedicalCenter).title("wyomingMedicalCenter")
+        )
         mMap.addMarker(
             MarkerOptions().position(massachusettsGeneralHospital).title("Massachusetts General Hospital")
         )
