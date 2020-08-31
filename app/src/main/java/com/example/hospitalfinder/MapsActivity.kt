@@ -435,7 +435,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //            }
 //        }
         mMap.addMarker(
-            MarkerOptions().position(palestineHospital).title("Palestine Hospital")
+            MarkerOptions().position(palestineHospital).title("Palestine Regional Medical Center")
 
         )
         mMap.addMarker(
