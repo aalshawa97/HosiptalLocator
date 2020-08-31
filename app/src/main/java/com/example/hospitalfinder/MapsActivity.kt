@@ -6,9 +6,11 @@
 package com.example.hospitalfinder
 
 
+import android.net.Uri
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
+import android.net.Uri.Builder
 import android.util.Log
 //This makes the application an activity
 import androidx.appcompat.app.AppCompatActivity
@@ -96,15 +98,36 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
 //    }
 
+
+
     private fun getUrl(latitude: Double, longitude: Double, nearByPlace: String): String {
-        val googlePlaceUrl = StringBuilder("https://maps/googleapis.com/maps/api/place/nearbysearch/json?")
+        // Search for restaurants nearby
+       // val gmmIntentUri = Uri.parse("geo:0,0?q=restaurants")
+
+        return "null" //googlePlaceUrl.toString()
+
+
+/*
+        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+        startActivity(mapIntent)
+
+        // Search for restaurants in San Francisco
+        val gmmIntentUri =
+            Uri.parse("geo:37.7749,-122.4194?q=restaurants")
+        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
+        mapIntent.setPackage("com.google.android.apps.maps")
+        startActivity(mapIntent)
+*********************************************************************************************************
+ val googlePlaceUrl = StringBuilder("https://maps/googleapis.com/maps/api/place/nearbysearch/json?")
         googlePlaceUrl.append("location=$latitude,$longitude")
         googlePlaceUrl.append("&radius=$30")
         googlePlaceUrl.append("&keyword=hospital")
         googlePlaceUrl.append("&sensor=true")
         googlePlaceUrl.append("&key=" + "MYKEY")
         Log.d("MapsActivity", "url = $googlePlaceUrl")
-        return googlePlaceUrl.toString()
+
+ */
     }
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -273,6 +296,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val stAnthonyHospital = LatLng(45.42, -122.72)
         val adventistHealthPortland = LatLng(45.42, -122.72)
         val eastMorelandHospital = LatLng(45.47, -122.64)
+        val palestineHospital = LatLng(31.9508871,-96.005480)
         val bayAreaHospital = LatLng(45.42, -122.72)
         val redmondClinic = LatLng(44.26, -121.28)
         val sageViewPsychiatrists = LatLng(44.07, -121.41)
@@ -410,6 +434,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
+        mMap.addMarker(
+            MarkerOptions().position(palestineHospital).title("Palestine Hospital")
+
+        )
+        mMap.addMarker(
+            MarkerOptions().position(stJohnsHealth).title("St. John's Health")
+
+        )
         mMap.addMarker(
             MarkerOptions().position(stJohnsHealth).title("St. John's Health")
 
