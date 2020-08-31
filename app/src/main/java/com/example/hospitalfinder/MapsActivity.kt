@@ -199,6 +199,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         mMap = googleMap
 
         // Add a marker for each hospital
+        val stJohnsHealth = LatLng(45.4160609,-122.7229228)
+        val memorialHospitalOfSweetwaterCounty = LatLng(45.4160568,-122.7229396)
         val memorialHospitalofConverseCounty = LatLng(45.4159997,-122.7229728)
         val wyomingMedicalCenter = LatLng(45.415987,-122.7229989)
         val rileyHospitalForChildren = LatLng(45.416043,-122.7229752)
@@ -407,7 +409,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
+        mMap.addMarker(
+            MarkerOptions().position(stJohnsHealth).title("St. John's Health")
 
+        )
+        mMap.addMarker(
+            MarkerOptions().position(memorialHospitalOfSweetwaterCounty).title("Memorial Hospital of Sweetwater County")
+
+        )
         mMap.addMarker(
             MarkerOptions().position(memorialHospitalofConverseCounty).title("Memorial Hospital of Converse County")
         )
