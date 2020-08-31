@@ -9,6 +9,7 @@ package com.example.hospitalfinder
 import android.os.Bundle
 import android.os.Parcel
 import android.os.Parcelable
+import android.util.Log
 //This makes the application an activity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
@@ -97,12 +98,12 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
     private fun getUrl(latitude: Double, longitude: Double, nearByPlace: String): String {
         val googlePlaceUrl = StringBuilder("https://maps/googleapis.com/maps/api/place/nearbysearch/json?")
-        //googlePlaceUrl.append("location=$latitude,$longitude")
-        //googlePlaceUrl.append("&radius=$PROXIMITY_RADIUS")
+        googlePlaceUrl.append("location=$latitude,$longitude")
+        googlePlaceUrl.append("&radius=$30")
         googlePlaceUrl.append("&keyword=hospital")
         googlePlaceUrl.append("&sensor=true")
         googlePlaceUrl.append("&key=" + "MYKEY")
-        //Log.d("MapsActivity", "url = $googlePlaceUrl")
+        Log.d("MapsActivity", "url = $googlePlaceUrl")
         return googlePlaceUrl.toString()
     }
     override fun onCreate(savedInstanceState: Bundle?) {
