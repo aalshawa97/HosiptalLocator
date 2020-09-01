@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.MarkerOptions
 import javax.xml.parsers.DocumentBuilder
 import android.widget.Button
 import javax.xml.parsers.DocumentBuilderFactory
-
+//import kotlinx.android.synthetic.main.fragment_login.*
 //class UserProfileViewModel() : ViewModel(), Parcelable {
 //    val userId : String = TODO()
 //    val user : User = TODO()
@@ -372,6 +372,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val memorialHermannTexasMedicalCenter = LatLng(29.7048122,-95.4173518)
         val scottishRiteForChildren = LatLng(32.8021236,-96.8163139)
         val hcaHoustonMainland = LatLng(45.4474965,-122.7386516)
+        val bostonUniversityMedicalCenter = LatLng(42.3474618,-71.1208845)
         val setonMedicalCenterHarkerHeights = LatLng(32.2215139,-98.8221159)
         val memorialHospitalOfTexasCounty = LatLng(32.8011548,-103.7446915)
         val nellJRedfieldMemorialHospital = LatLng(43.393482,-121.8445067)
@@ -464,6 +465,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         )
         mMap.addMarker(
             MarkerOptions().position(floatingHospitalForChildrenHospital).title("Floating Hospital For Children Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(bostonUniversityMedicalCenter).title("Boston University Medical Center")
         )
         mMap.addMarker(
             MarkerOptions().position(bostonUniversityHospital).title("Boston University Hospital")
