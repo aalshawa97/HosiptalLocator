@@ -449,10 +449,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         )
         mMap.addMarker(
-            MarkerOptions().position(stJohnsHealth).title("St. John's Health")
-
-        )
-        mMap.addMarker(
             MarkerOptions().position(memorialHospitalOfSweetwaterCounty).title("Memorial Hospital of Sweetwater County")
 
         )
