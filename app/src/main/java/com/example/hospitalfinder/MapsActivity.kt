@@ -231,6 +231,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val penRoseHospital = LatLng(45.4160656,-122.7229924)
         val providenceBridgeport = LatLng(45.39, -122.75)
         val dignityHealth = LatLng(44.26, -121.28)
+        val evanstonRegionalHospital = LatLng(41.2431244,-115.4730433)
         val providenceMercantile = LatLng(45.42, -122.72)
         val providenceStVincent = LatLng(45.46, -122.792)
         val oregonHealthAndScienceUniversity = LatLng(45.48, -122.81)
@@ -439,6 +440,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             MarkerOptions().position(palestineHospital).title("Palestine Regional Medical Center")
 
         )
+        mMap.addMarker(
+            MarkerOptions().position(evanstonRegionalHospital).title("Evanston Regional Hospital")
+        )
+
         mMap.addMarker(
             MarkerOptions().position(stJohnsHealth).title("St. John's Health")
 
