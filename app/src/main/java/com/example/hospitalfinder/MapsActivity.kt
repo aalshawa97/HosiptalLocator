@@ -1,7 +1,7 @@
 //Abdullah Mutaz Alshawa
 //7/8/20
 //Hospital Locator
-//Locates the directions to hospitals for COVID 19 treatment using the Google Maps API
+//Locates the directions to hospitals for COVID 19 treatment using the Google Maps API. Uses Kotlin as a programming language.
 
 package com.example.hospitalfinder
 
