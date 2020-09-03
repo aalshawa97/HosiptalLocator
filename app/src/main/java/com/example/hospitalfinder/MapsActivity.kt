@@ -423,6 +423,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val brighamAndWomensHospital = LatLng(45.5441086,-122.4198746)
         val newEnglandBaptistHospital = LatLng(45.4160577,-122.7229065)
         val floatingHospitalForChildrenHospital = LatLng(45.5054205,-122.4375266)
+        val jebelAliHospital = LatLng(45.4160461,-122.7229256)
         val massachusettsGeneralHospital = LatLng(45.4160544,-122.7229401)
         val shrinersHospitalForChildrenBoston = LatLng(36.884958,-132.6318486)
         val massachusettsInstiuteofTechnologyMedicalCenterPediatrics = LatLng(42.3361037,-71.1588672)
@@ -436,6 +437,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
+        mMap.addMarker(
+            MarkerOptions().position(jebelAliHospital).title("Aster Cedars Jebel Ali Hospital")
+
+        )
         mMap.addMarker(
             MarkerOptions().position(palestineHospital).title("Palestine Regional Medical Center")
 
