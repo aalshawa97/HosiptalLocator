@@ -218,6 +218,24 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
     }
 
+    // Setting up a spring animation to animate the view1 and view2 translationX and translationY properties
+//    val (anim1X, anim1Y) = findViewById<View>(R.id.view1).let { view1 ->
+//        SpringAnimation(view1, DynamicAnimation.TRANSLATION_X) to
+//                SpringAnimation(view1, DynamicAnimation.TRANSLATION_Y)
+//    }
+//    val (anim2X, anim2Y) = findViewById<View>(R.id.view2).let { view2 ->
+//        SpringAnimation(view2, DynamicAnimation.TRANSLATION_X) to
+//                SpringAnimation(view2, DynamicAnimation.TRANSLATION_Y)
+//    }
+//
+//// Registering the update listener
+//    anim1X.addUpdateListener { _, value, _ ->
+//        // Overriding the method to notify view2 about the change in the view1’s property.
+//        anim2X.animateToFinalPosition(value)
+//    }
+//
+//    anim1Y.addUpdateListener { _, value, _ -> anim2Y.animateToFinalPosition(value) }
+    
     override fun onMapReady(googleMap: GoogleMap) {
 
         mMap = googleMap
