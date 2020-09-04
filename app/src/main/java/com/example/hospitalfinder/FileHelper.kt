@@ -7,7 +7,8 @@ class FileHelper{
     companion object{
 //        fun getTextFromResources(context: Context, resourceId Int){
 //            return context.resources.openRawResource(resourceId).use{
-//
+//              it.bufferedReader().use{it:BufferedReader it.readText()
+                    //it.readText()
 //       //     }
        // }
     }

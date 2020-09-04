@@ -19,6 +19,14 @@ public inline fun<T : Closeable?, R> T.use(block: (T) -> R):R{
         val minor = 1
         when {
             //apiVersionIsAtLeast(major:1, minor:1, patch:0) -> this.closeFinally(exception)
+            this == null -> {}
+            exception == null -> close()
+            else->
+                try{
+                    close()
+                } catch (closeException: Throwable){
+                    // cause.addSuppressed(closeException) // ignored here
+                }
         }
     }
 }
