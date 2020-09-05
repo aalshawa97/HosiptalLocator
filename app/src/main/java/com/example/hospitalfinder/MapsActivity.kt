@@ -15,15 +15,41 @@ import android.util.Log
 //This makes the application an activity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
-import com.google.android.gms.maps.CameraUpdateFactory
-import com.google.android.gms.maps.GoogleMap
-import com.google.android.gms.maps.OnMapReadyCallback
-import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import javax.xml.parsers.DocumentBuilder
 import android.widget.Button
+import com.google.android.gms.maps.*
 import javax.xml.parsers.DocumentBuilderFactory
+
+interface location {
+    fun getLocations(): List<LocationSource>
+    //fun getDirections(channelId: Long): List<Direction>
+}
+
+//val intent = Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS).apply {
+//    putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
+//    putExtra(Settings.EXTRA_CHANNEL_ID, myNotificationChannel.getId())
+//}
+//startActivity(intent)
+
+fun main(args: Array<String>)
+{
+    println("Hello, World")
+//    val me = Person("Abdullah","Mutaz" "Alshawa")
+//    val you = Person("Janet", "Chung", "Yang")
+//    val location = object {
+//        var xPosition = 200
+//        var yPosition = 400
+//        fun printIt(){
+//            println("Position = ($xPosition, $yPosition)")
+//        }
+//    }
+//    location.printIt()
+//    location.xPosition = 200
+//    location.yPosition = 400
+
+}
 //import kotlinx.android.synthetic.main.fragment_login.*
 //class UserProfileViewModel() : ViewModel(), Parcelable {
 //    val userId : String = TODO()
@@ -104,7 +130,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         // Search for restaurants nearby
        // val gmmIntentUri = Uri.parse("geo:0,0?q=restaurants")
 
-        return "null" //googlePlaceUrl.toString()
+        return "https://maps.googleapis.com/maps/api/streetview?parameters\n" //googlePlaceUrl.toString()
 
 
 /*
@@ -445,6 +471,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val massachusettsGeneralHospital = LatLng(45.4160544,-122.7229401)
         val shrinersHospitalForChildrenBoston = LatLng(36.884958,-132.6318486)
         val massachusettsInstiuteofTechnologyMedicalCenterPediatrics = LatLng(42.3361037,-71.1588672)
+//https://maps.googleapis.com/maps/api/streetview?size=400x400&location=47.5763831,-122.4211769
+//&fov=80&heading=70&pitch=0
+//&key=YOUR_API_KEY&signature=YOUR_SIGNATURE
+
 //
 //        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
 //
