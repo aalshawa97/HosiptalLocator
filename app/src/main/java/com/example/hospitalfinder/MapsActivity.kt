@@ -103,7 +103,7 @@ fun main(args: Array<String>)
 //}
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      private lateinit var map: GoogleMap
-     lateinit var fusedLocationClient: FusedLocationProviderClient
+     //lateinit var fusedLocationClient: FusedLocationProviderClient
 
     val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
     interface IObserver {
@@ -125,7 +125,9 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
 //    }
 
-
+//    private static LocationRequest createLocationRequest(){
+//        //LogHelper.trace("createLocationRequest")
+//    }
 
     private fun getUrl(latitude: Double, longitude: Double, nearByPlace: String): String {
         // Search for restaurants nearby
