@@ -279,6 +279,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         // Add a marker for each hospital
+	val milanHospital = LatLng(42.0880786,6.6409324)
 	val salvatorMundiInternationalHosptial= LatLng(42.0554577,6.5969871)
         val josUniversityTeachingHospital = LatLng(8.1603427,3.8807593)
         val stJohnsHealth = LatLng(45.4160609,-122.7229228)
@@ -500,6 +501,10 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //            }
 //        }
 
+	map.addMarker(
+            MarkerOptions().position(milanHospital ).title("Milan Hospital")
+
+        )
 	map.addMarker(
             MarkerOptions().position(salvatorMundiInternationalHosptial).title("Salvator Mundi International Hosptial")
 
