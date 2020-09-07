@@ -279,6 +279,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         // Add a marker for each hospital
+	val salvatorMundiInternationalHosptial= LatLng(42.0554577,6.5969871)
         val josUniversityTeachingHospital = LatLng(8.1603427,3.8807593)
         val stJohnsHealth = LatLng(45.4160609,-122.7229228)
         val memorialHospitalOfSweetwaterCounty = LatLng(45.4160568,-122.7229396)
@@ -498,6 +499,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
+
+	map.addMarker(
+            MarkerOptions().position(salvatorMundiInternationalHosptial).title("Salvator Mundi International Hosptial")
+
+        )
         map.addMarker(
             MarkerOptions().position(josUniversityTeachingHospital).title("Jos University Teaching Hospital")
 
