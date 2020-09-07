@@ -279,6 +279,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         // Add a marker for each hospital
+	-val usNavyHospital = LatLng(42.0880786,6.6409324)
 	val universityOfPittsburgHospital = LatLng(41.810267,8.8821434)
 	val milanHospital = LatLng(42.0880786,6.6409324)
 	val salvatorMundiInternationalHosptial= LatLng(42.0554577,6.5969871)
@@ -463,7 +464,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val eastTennesseeHospital = LatLng(45.416067,-122.7229058)
         val nashvilleGeneralHospital = LatLng(45.416067,-122.7229058)
         val iuHealthUniversity = LatLng(45.416043,-122.7229752)
-        val  kingsCollegeHospital = LatLng(45.4160732,-122.7229641)
+        val kingsCollegeHospital = LatLng(45.4160732,-122.7229641)
         val canadianSpecialistHospital = LatLng(45.4160732,-122.7229641)
         val medeor247HospitalDubaiConsulatesArea = LatLng(45.4512965,-122.7818506)
         val freseniusMedicalCareAtLegacyGoodSamaritanHospital = LatLng(45.416055,-122.7229539)
@@ -503,7 +504,11 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        }
 
 	map.addMarker(
-            MarkerOptions().position(University of Pittsburg Hospital).title("University of Pittsburg Hospital")
+            MarkerOptions().position(unitedStatesOfAmericaNavyHospital).title("United States Navy Hospital")
+
+        )
+	map.addMarker(
+            MarkerOptions().position(universityOfPittsburgHospital).title("University of Pittsburg Hospital")
 
         )
 	map.addMarker(
