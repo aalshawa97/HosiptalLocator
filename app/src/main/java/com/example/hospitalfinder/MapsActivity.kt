@@ -279,7 +279,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         // Add a marker for each hospital
-	-val usNavyHospital = LatLng(42.0880786,6.6409324)
+	//-val usNavyHospital = LatLng(42.0880786,6.6409324)
 	val universityOfPittsburgHospital = LatLng(41.810267,8.8821434)
 	val milanHospital = LatLng(42.0880786,6.6409324)
 	val salvatorMundiInternationalHosptial= LatLng(42.0554577,6.5969871)
@@ -502,11 +502,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
-
-	map.addMarker(
-            MarkerOptions().position(unitedStatesOfAmericaNavyHospital).title("United States Navy Hospital")
-
-        )
+        
 	map.addMarker(
             MarkerOptions().position(universityOfPittsburgHospital).title("University of Pittsburg Hospital")
 
