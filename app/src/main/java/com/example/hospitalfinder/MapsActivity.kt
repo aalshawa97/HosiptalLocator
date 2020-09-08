@@ -502,27 +502,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
-        
-	map.addMarker(
-            MarkerOptions().position(universityOfPittsburgHospital).title("University of Pittsburg Hospital")
-
-        )
-	map.addMarker(
-            MarkerOptions().position(milanHospital).title("Milan Hospital")
-
-        )
-	map.addMarker(
-            MarkerOptions().position(salvatorMundiInternationalHosptial).title("Salvator Mundi International Hosptial")
-
-        )
-        map.addMarker(
-            MarkerOptions().position(josUniversityTeachingHospital).title("Jos University Teaching Hospital")
-
-        )
-        map.addMarker(
-            MarkerOptions().position(jebelAliHospital).title("Aster Cedars Jebel Ali Hospital")
-
-        )
         map.addMarker(
             MarkerOptions().position(palestineHospital).title("Palestine Regional Medical Center")
 
