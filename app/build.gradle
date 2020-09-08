@@ -30,8 +30,8 @@ android {
 
 dependencies {
     // ...
-    def dynamicanimation_version = '1.0.0'
-    implementation "androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version"
+    //def dynamicanimation_version = '1.0.0'
+    //implementation "androidx.dynamicanimation:dynamicanimation:$dynamicanimation_version"
 
     implementation 'com.google.android.gms:play-services-location:11.8.0'
     // Add the Firebase SDK for Google Analytics
