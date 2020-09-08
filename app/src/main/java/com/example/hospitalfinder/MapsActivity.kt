@@ -279,13 +279,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
 
         // Add a marker for each hospital
-<<<<<<< HEAD
-	//-val usNavyHospital = LatLng(42.0880786,6.6409324)
-	val universityOfPittsburgHospital = LatLng(41.810267,8.8821434)
-=======
->>>>>>> parent of 2ddca0d... University of Pittsburg Hospital
-	val milanHospital = LatLng(42.0880786,6.6409324)
-	val salvatorMundiInternationalHosptial= LatLng(42.0554577,6.5969871)
+        val milanHospital = LatLng(42.0880786,6.6409324)
+	    val salvatorMundiInternationalHosptial= LatLng(42.0554577,6.5969871)
         val josUniversityTeachingHospital = LatLng(8.1603427,3.8807593)
         val stJohnsHealth = LatLng(45.4160609,-122.7229228)
         val memorialHospitalOfSweetwaterCounty = LatLng(45.4160568,-122.7229396)
@@ -505,26 +500,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
-<<<<<<< HEAD
-=======
 
-	map.addMarker(
-            MarkerOptions().position(milanHospital ).title("Milan Hospital")
-
-        )
-	map.addMarker(
-            MarkerOptions().position(salvatorMundiInternationalHosptial).title("Salvator Mundi International Hosptial")
-
-        )
-        map.addMarker(
-            MarkerOptions().position(josUniversityTeachingHospital).title("Jos University Teaching Hospital")
-
-        )
-        map.addMarker(
-            MarkerOptions().position(jebelAliHospital).title("Aster Cedars Jebel Ali Hospital")
-
-        )
->>>>>>> parent of 2ddca0d... University of Pittsburg Hospital
         map.addMarker(
             MarkerOptions().position(palestineHospital).title("Palestine Regional Medical Center")
 
