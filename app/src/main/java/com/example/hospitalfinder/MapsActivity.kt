@@ -109,11 +109,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     interface IObserver {
         fun update()
     }
-
-//    public static void checkLocationService(final Fragment fragment, final FusedLocationProviderClient, client, final OnSuccessListener<LocationSettingsResponse>successListener, OnFailureListener failureListener)
-//    {
-//
-//    }
 //    interface IObservable {
 //        val observers: ArrayList<IObserver>
 //
@@ -272,14 +267,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //    }
 //
 //    anim1Y.addUpdateListener { _, value, _ -> anim2Y.animateToFinalPosition(value) }
-
+    
     override fun onMapReady(googleMap: GoogleMap) {
 
         lateinit var map: GoogleMap
 
 
         // Add a marker for each hospital
-        val josUniversityTeachingHospital = LatLng(8.1603427,3.8807593)
         val stJohnsHealth = LatLng(45.4160609,-122.7229228)
         val memorialHospitalOfSweetwaterCounty = LatLng(45.4160568,-122.7229396)
         val memorialHospitalofConverseCounty = LatLng(45.4159997,-122.7229728)
@@ -498,7 +492,6 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
-
         map.addMarker(
             MarkerOptions().position(palestineHospital).title("Palestine Regional Medical Center")
 
