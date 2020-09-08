@@ -498,6 +498,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                }
 //            }
 //        }
+
         map.addMarker(
             MarkerOptions().position(palestineHospital).title("Palestine Regional Medical Center")
 
