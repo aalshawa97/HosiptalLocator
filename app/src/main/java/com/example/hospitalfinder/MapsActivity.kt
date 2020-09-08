@@ -103,7 +103,6 @@ fun main(args: Array<String>)
 //}
 class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
      private lateinit var map: GoogleMap
-     //lateinit var fusedLocationClient: FusedLocationProviderClient
 
     val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
     interface IObserver {
