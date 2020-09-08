@@ -522,7 +522,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             MarkerOptions().position(memorialHospitalofConverseCounty).title("Memorial Hospital of Converse County")
         )
         map.addMarker(
-            MarkerOptions().position(wyomingMedicalCenter).title("wyomingMedicalCenter")
+            MarkerOptions().position(wyomingMedicalCenter).title("WyomingMedicalCenter")
         )
         map.addMarker(
             MarkerOptions().position(massachusettsGeneralHospital).title("Massachusetts General Hospital")
