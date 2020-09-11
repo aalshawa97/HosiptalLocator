@@ -19,6 +19,8 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import javax.xml.parsers.DocumentBuilder
 import android.widget.Button
+import com.example.hospitalfinder.ui.ImALocation
+import com.example.hospitalfinder.ui.OnSet
 import com.google.android.gms.maps.*
 import javax.xml.parsers.DocumentBuilderFactory
 
@@ -101,13 +103,14 @@ fun main(args: Array<String>)
 //        println("New Baeldung article: ${newsletter.newestArticleUrl}")
 //    }
 //}
-class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
-     private lateinit var mMap: GoogleMap
-
+public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
+    private lateinit var mMap: GoogleMap
+    //Google map;
     val docBuilder: DocumentBuilder = DocumentBuilderFactory.newInstance().newDocumentBuilder()
     interface IObserver {
         fun update()
     }
+    //SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
 //    interface IObservable {
 //        val observers: ArrayList<IObserver>
 //
@@ -157,6 +160,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
  */
     }
+    @Override
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
@@ -472,6 +476,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val jebelAliHospital = LatLng(45.4160461,-122.7229256)
         val massachusettsGeneralHospital = LatLng(45.4160544,-122.7229401)
         val shrinersHospitalForChildrenBoston = LatLng(36.884958,-132.6318486)
+        var needsLocation:Boolean = true
         val massachusettsInstiuteofTechnologyMedicalCenterPediatrics = LatLng(42.3361037,-71.1588672)
 //https://maps.googleapis.com/maps/api/streetview?size=400x400&location=47.5763831,-122.4211769
 //&fov=80&heading=70&pitch=0
@@ -488,7 +493,13 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //            }
 //        }
         mMap.addMarker(
-            MarkerOptions().position(evanstonRegionalHospital).title("Evanston Regional Hospital")
+                MarkerOptions().position(evanstonRegionalHospital).title("Evanston Regional Hospital")
+                )
+        mMap.addMarker(
+            MarkerOptions().position(jebelAliHospital).title("Jebel Ali Hospital")
+        )
+        mMap.addMarker(
+            MarkerOptions().position(wyomingMedicalCenter).title("Wyoming Medical Center")
         )
 
         mMap.addMarker(
