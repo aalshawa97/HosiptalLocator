@@ -6,6 +6,7 @@
 package com.example.hospitalfinder
 
 
+import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.os.Parcel
@@ -477,6 +478,7 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val massachusettsGeneralHospital = LatLng(45.4160544,-122.7229401)
         val shrinersHospitalForChildrenBoston = LatLng(36.884958,-132.6318486)
         var needsLocation:Boolean = true
+        //var jebelAliHospitalVariable = LatLng(45.4160461,-122.7229256)
         val massachusettsInstiuteofTechnologyMedicalCenterPediatrics = LatLng(42.3361037,-71.1588672)
 //https://maps.googleapis.com/maps/api/streetview?size=400x400&location=47.5763831,-122.4211769
 //&fov=80&heading=70&pitch=0
@@ -1214,6 +1216,12 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
         val naturalMedicine:HashMap<String, Int> = HashMap<String, Int>()
         naturalMedicine.put("honey",1)
+        val AUTOCOMPLETE_REQUEST_CODE = 1
+        // Set the fields to specify which types of place data to
+        // return after the user has made a selection
+        //val fields = listOf(Place.Field.ID, Place.Field.NAME)
+        // Start the autocomplete intent.
+        //val intent = Intent(this, EnterTextActivity::class.java)
         //Medicine storage
 //        val honey = "Honey"
 //        val oliveOil = "Olive Oil"
