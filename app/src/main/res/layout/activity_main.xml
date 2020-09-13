@@ -5,22 +5,22 @@
     android:layout_height="match_parent"
     android:paddingTop="16dp"
     android:paddingBottom="16dp"
-
     >
-
-
+    <item
+        android:title="@string/settings"
+        />
     <androidx.appcompat.widget.AppCompatImageButton
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:onClick="jnr" />
+         />
 
     <activity
         android:name=".DisplayMessageActivity"
-        android:parentActivityName=".MainActivity">
+        android:parentActivityName=".MainActivity"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
         <!-- The meta-data tag is required if you support API level 15 and lower -->
-        <meta-data
-            android:name="android.support.PARENT_ACTIVITY"
-            android:value=".MainActivity" />
+
     </activity>
 
 

@@ -7,4 +7,9 @@
     <string name="navigate">Navigate</string>
     <string name="aboutMe">About Me</string>
     <string name="name">Abdullah Mutaz Alshawa</string>
+    <string name="btn">button</string>
+    <string name="red">red</string>
+    <string name="blue">blue</string>
+    <string name="settings">settings</string>
+    <string name="GoogleEarth">googleEarth</string>
 </resources>
