@@ -24,8 +24,10 @@ import com.google.android.gms.maps.model.MarkerOptions
 import javax.xml.parsers.DocumentBuilder
 import android.widget.Button
 import android.widget.Toast
+import androidx.core.app.ActivityCompat.startActivityForResult
 import com.example.hospitalfinder.ui.ImALocation
 import com.example.hospitalfinder.ui.OnSet
+import com.google.android.gms.common.GooglePlayServicesRepairableException
 import com.google.android.gms.maps.*
 import kotlinx.android.synthetic.main.activity_maps.*
 import javax.xml.parsers.DocumentBuilderFactory
@@ -301,6 +303,30 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //    }
 //
 //    anim1Y.addUpdateListener { _, value, _ -> anim2Y.animateToFinalPosition(value) }
+
+        fun onActivityResult(){
+            val resultCode = 0
+            if(resultCode == RESULT_OK)
+            {
+                //val place = PlacePicker.getPlace(this, data)
+                //val place = PlacePicker.getPlace(this, data)
+                //val place = place.name.toString()
+                //addressText += "\n" + place.address.toString()
+                //placeMarkerOnMap(place.latLng)
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
 
         override fun onMapReady(googleMap: GoogleMap) {
 
@@ -1312,3 +1338,18 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //    fun classifyText(text:String): Int{
 //        //val class_1_probability = findProbabilityGivenSample(text, positiveBagOf)
 //    }
+
+fun loadPlacePicker()
+{
+    //val builder = PlacePicker.IntentBuilder()
+
+    try{
+        val PLACE_PICKER_REQUEST = null
+        //startActivityForResult(builder.build(this@MapsActivity),)
+        //startActivityForResult(builder.build(this@MapsActivity), PLACE_PICKER_REQUEST)
+    }
+    catch(e: GooglePlayServicesRepairableException)
+    {
+        e.printStackTrace()
+    }
+}
