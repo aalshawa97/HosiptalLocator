@@ -2,4 +2,5 @@
 <resources>
 
     <item name="intent_group" type="id" />
+    <item name="btn_find" type="id" />
 </resources>

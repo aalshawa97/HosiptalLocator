@@ -12,4 +12,15 @@
     <string name="blue">blue</string>
     <string name="settings">settings</string>
     <string name="GoogleEarth">googleEarth</string>
+    <string name="maps_api_key">AIzaSyDTNLo21JuSdO-L3z9r-xf8v-CYY7Gt-kY</string>
+    <string name="action_search">Action search</string>
+    <string name="my_text_button">My Text Button</string>
+    <string name="my_button_text">My button text</string>
+    <string-array name="hospitals">
+        <item>children_hospital</item>
+        <item>public_hospital</item>
+        <item>private_hospital</item>
+        <item>government_hospital</item>
+        <item>university_hospital</item>
+    </string-array>
 </resources>
