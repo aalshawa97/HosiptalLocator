@@ -8,9 +8,6 @@ package com.example.hospitalfinder
 
 //This makes the application an activity
 import android.content.Context
-import android.location.Address
-import android.location.Geocoder
-import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
@@ -23,8 +20,6 @@ import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
-import android.widget.SearchView
-import com.google.android.gms.common.api.internal.GoogleApiManager
 
 interface location {
     fun getLocations(): List<LocationSource>
@@ -37,6 +32,10 @@ interface location {
     //var double = null
     //var mLatitude = 37.77657;
 //}
+/*
+
+
+`
 class YLAService(context: Context)
 {
     //val locationService: LocationManager
@@ -46,6 +45,7 @@ class YLAService(context: Context)
     }
     
 }
+*/
 
 //private infix fun Nothing?.LocationManager(any: Any): LocationManager {
    //Location location = null;
@@ -54,23 +54,30 @@ class YLAService(context: Context)
 //RelativeLayout draggable = (RelativeLayout) findViewById(R.id.draggable);
 //draggableOn
 
-private fun Context.getService(java: Class<LocationManager>): Nothing? {
-    val locationService = null
+private fun Context.getService(): Nothing? {
     // Get the status of the location
     //locationService = GoogleApiManager.zaib;
+    //getService(
+        //java: Class<LocationManager>
+   //// )
     return null
 }
 
 fun onMenuOptionClick() = Unit
 
-fun onClick(viewModel: MedicineViewModel)
+fun onClick()
 {
-    //val searchView = SearchView()
+    //val button: Button = findViewById(R.id.button_send)
+    //button.setOnClickListener {
+        // Do something in response to button click
+    //}
+    // Make a Google Maps search bar for locations
+    //googl
+    //    //val searchView = SearchView()
    // var sear
  //   val g: String = searchView
 
 //  val geocoder = Geocoder(getBaseContext())
-    var addresses: List<Address?>? = null
 
     try {
         // Getting a maximum of 3 Address that matches the input
@@ -80,6 +87,11 @@ fun onClick(viewModel: MedicineViewModel)
     } catch (e: Exception) {
     }
 }
+/*
+fun findViewById(buttonSend: Any) {
+return null
+}
+*/
 
 /*
 public View onCreateView (LayoutInflater inflater,
@@ -96,8 +108,9 @@ Bundle savedInstanceState)
 //}
 //startActivity(intent)
 fun onCreateOptionsMenu(menu: Menu) {
-    val onCreateOptionsMenu = onCreateOptionsMenu(menu)
-    val dataUri = null
+    onCreateOptionsMenu(menu)
+    ObjectRenderer()
+
     //Intent(null, dataUri).apply{
         //addCategory(Intent.CATEGORY_ALTERNATIVE)
     //}
@@ -120,12 +133,14 @@ fun onCreateOptionsMenu(menu: Menu) {
 
 fun main(args: Array<String>)
 {
-    val text = "Hello Toast!"
-    val duration = Toast.LENGTH_LONG
     //val context: Context = MainApplication.applicationContext()
     //val toast = Toast.makeText("", text, duration)
     //toast.show()
     println("Hello, World")
+    /*getUrl(45.4160384
+        ,-122.7404002
+        ,"15130 Quarry Rd, Lake Oswego, OR 97035")
+    */
 //    val me = Person("Abdullah","Mutaz" "Alshawa")
 //    val you = Person("Janet", "Chung", "Yang")
 //    val location = object {
@@ -224,12 +239,15 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         val mLatitude = 37.77656;
     //}
 
-    private fun getUrl(latitude: Double, longitude: Double, nearByPlace: String): String {
-        // Search for restaurants nearby
+     fun getUrl(latitude: Double, longitude: Double, nearByPlace: String): String {
+        // Search for hospitals nearby
+        println(longitude)
+        println(latitude)
+         println(nearByPlace)
        val gmmIntentUri = Uri.parse("geo:0,0?q=hospitals")
         //Example string for hospitals in Lake Oswego, Oregon
         val gmmIntentStringExample = "https://www.google.com/maps/search/hospitals/@45.3756934,-122.7698314,11z/data=!3m1!4b1"
-
+        println(gmmIntentStringExample)
         return "https://maps.googleapis.com/maps/api/streetview?parameters\n" + gmmIntentUri //googlePlaceUrl.toString()
 
 
@@ -255,7 +273,7 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 
  */
     }
-        fun foo(kotlinScript: String)
+        fun foo()
         {
 
         }
@@ -268,7 +286,7 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             {
                 // Inject language or reference
 
-                foo("""println("Hello World!")""")
+                foo()
             }
             getUrl(45.4160844, -122.7229328, "Providence Mercantile")
             setContentView(R.layout.activity_maps)
@@ -648,6 +666,10 @@ fun printHashMap(hashMap: HashMap<String, Int>){
             mMap.addMarker(
                 MarkerOptions().position(evanstonRegionalHospital)
                     .title("Evanston Regional Hospital")
+            )
+            mMap.addMarker(
+                MarkerOptions().position(palestineHospital)
+                    .title("Palestine Hospital")
             )
             mMap.addMarker(
                 MarkerOptions().position(jebelAliHospital).title("Jebel Ali Hospital")
