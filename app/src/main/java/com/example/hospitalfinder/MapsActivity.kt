@@ -1,7 +1,7 @@
 //Abdullah Mutaz Alshawa
 //7/8/20
 //Hospital Locator
-//Locates the directions to hospitals for COVID 19 treatment using the Google Maps API. Uses Kotlin as a programming language.
+//Locates the directions to hospitals for treatment using the Google Maps API. Uses Kotlin as a programming language.
 
 package com.example.hospitalfinder
 
@@ -15,6 +15,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.gms.common.GooglePlayServicesRepairableException
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.LocationSettingsRequest
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
@@ -336,11 +339,16 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //                LOCATION_PERMISSION_REQUEST_CODE)
 //            return
         }
+        //Automatically locate hospitals around the user's location
         private fun createLocationRequest() {
+
             // 1
-//        locationRequest = LocationRequest()
-//        // 2
-//        locationRequest.interval = 10000
+            val locationRequest = LocationRequest()
+            // 2
+            val interval = 10000
+            val fastestInterval = 5000
+            val locationRequestPriority = "PRIORITY_HIGH_ACCURACY"
+            //val builder = LocationSettingsRequest.Builder().addLocationRequest(locationRequest)
 //        // 3
 //        locationRequest.fastestInterval = 5000
 //        locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
@@ -351,12 +359,17 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
 //        // 4
 //        val client = LocationServices.getSettingsClient(this)
 //        val task = client.checkLocationSettings(builder.build())
-//
+            //val client = LocationServices.getSettingsClient(this)
 //        // 5
 //        task.addOnSuccessListener {
 //            locationUpdateState = true
 //            startLocationUpdates()
 //        }
+            //val task = client.checkLocationSettings(builder.build())
+           /* task.addOnSuccessListener {
+
+            }
+            */
 //        task.addOnFailureListener { e ->
 //            // 6
 //            if (e is ResolvableApiException) {
@@ -643,7 +656,7 @@ fun printHashMap(hashMap: HashMap<String, Int>){
             val jebelAliHospital = LatLng(45.4160461, -122.7229256)
             val massachusettsGeneralHospital = LatLng(45.4160544, -122.7229401)
             val shrinersHospitalForChildrenBoston = LatLng(36.884958, -132.6318486)
-            var needsLocation:Boolean = true
+            //var needsLocation:Boolean = true
             //var jebelAliHospitalVariable = LatLng(45.4160461,-122.7229256)
             val massachusettsInstiuteofTechnologyMedicalCenterPediatrics = LatLng(
                 42.3361037,
@@ -1467,7 +1480,7 @@ fun printHashMap(hashMap: HashMap<String, Int>){
 
             val naturalMedicine:HashMap<String, Int> = HashMap<String, Int>()
             naturalMedicine.put("honey", 1)
-            val AUTOCOMPLETE_REQUEST_CODE = 1
+            //val AUTOCOMPLETE_REQUEST_CODE = 1
             //Button button = findViewById(R.id.button_id);
             //Button myButton = (Button) findViewById(R.id.textView4)
             // Set the fields to specify which types of place data to
@@ -1533,7 +1546,7 @@ fun loadPlacePicker()
     //val builder = PlacePicker.IntentBuilder()
 
     try{
-        val PLACE_PICKER_REQUEST = null
+        //val PLACE_PICKER_REQUEST = null
         //startActivityForResult(builder.build(this@MapsActivity),)
         //startActivityForResult(builder.build(this@MapsActivity), PLACE_PICKER_REQUEST)
     }

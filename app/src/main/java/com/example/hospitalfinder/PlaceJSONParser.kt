@@ -1,6 +1,6 @@
 package com.example.hospitalfinder
 
-class PlaceJSONParser(args:Array<String>) {
+/*class PlaceJSONParser(args:Array<String>) {
     // Receives a JSONObject and returns a list
     /*public HashMap parse(JSONObject jObject)
     {
@@ -10,4 +10,4 @@ class PlaceJSONParser(args:Array<String>) {
     //printing the Empty hashMap
 
 }
-
+*/
