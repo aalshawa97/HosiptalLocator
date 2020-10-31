@@ -3,64 +3,56 @@
 //Hospital Locator
 package com.example.hospitalfinder
 
-
 //This makes the application an activity
 import android.content.Context
+import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.gms.common.ConnectionResult
+import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.common.GooglePlayServicesRepairableException
 import com.google.android.gms.location.LocationRequest
-import com.google.android.gms.location.LocationServices
-import com.google.android.gms.location.LocationSettingsRequest
 import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
+import java.lang.ArithmeticException
 import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
 
+//Declare and intitialize variables
+val PLAY_SERVICES_RESOLUTION_REQUEST = 0
+var locationManager: LocationManager? = null
+public class GooglePlacesActivity{
+
+}
+
+fun onBind() = null
+var type = "type";
+//Custom Setter
+enum class SearchResultType{
+    HISTORY, SAVED, BASIC
+}
+var resultType: SearchResultType
+get()
+{
+    val resultTypeString = "History"
+    return enumValueOf(resultTypeString)
+}
+set(value)
+{
+    //resultTypeString = value.toString()
+}
+
 interface location {
     fun getLocations(): List<LocationSource>
-    //fun getDirections(channelId: Long): List<Direction>
 }
-
-//public StringBuilder sbMethod()
-//{
-    // Use your current location here
-    //var double = null
-    //var mLatitude = 37.77657;
-//}
-/*
-
-
-`
-class YLAService(context: Context)
-{
-    //val locationService: LocationManager
-
-    init{
-        //locationService = context.getService(<LocationManager>())
-    }
-    
-}
-*/
-
-//private infix fun Nothing?.LocationManager(any: Any): LocationManager {
-   //Location location = null;
-
-//}
-//RelativeLayout draggable = (RelativeLayout) findViewById(R.id.draggable);
-//draggableOn
 
 private fun Context.getService(): Nothing? {
     // Get the status of the location
-    //locationService = GoogleApiManager.zaib;
-    //getService(
-        //java: Class<LocationManager>
-   //// )
     return null
 }
 
@@ -68,145 +60,33 @@ fun onMenuOptionClick() = Unit
 
 fun onClick()
 {
-    //val button: Button = findViewById(R.id.button_send)
-    //button.setOnClickListener {
-        // Do something in response to button click
-    //}
-    // Make a Google Maps search bar for locations
-    //googl
-    //    //val searchView = SearchView()
-   // var sear
- //   val g: String = searchView
-
-//  val geocoder = Geocoder(getBaseContext())
-
-    try {
-        // Getting a maximum of 3 Address that matches the input
-        // text
- //     addresses = geocoder.getFromLocationName(g, 3)
-     // if (addresses != null && addresses != "") search(addresses)
-    } catch (e: Exception) {
+    try
+    {
+    }
+    catch (e: Exception)
+    {
     }
 }
-/*
-fun findViewById(buttonSend: Any) {
-return null
-}
-*/
 
-/*
-public View onCreateView (LayoutInflater inflater,
-ViewGroup container,
-Bundle savedInstanceState)
-{
-
-}
-*/
-
-//val intent = Intent(Settings.ACTION_CHANNEL_NOTIFICATION_SETTINGS).apply {
-//    putExtra(Settings.EXTRA_APP_PACKAGE, packageName)
-//    putExtra(Settings.EXTRA_CHANNEL_ID, myNotificationChannel.getId())
-//}
-//startActivity(intent)
 fun onCreateOptionsMenu(menu: Menu) {
     onCreateOptionsMenu(menu)
     ObjectRenderer()
+}
 
-    //Intent(null, dataUri).apply{
-        //addCategory(Intent.CATEGORY_ALTERNATIVE)
-    //}
-    // Search and populate the menu with acceptable offering applications.
-   // val componentName = "Menu Intent"
-    //val intent
-   /* menu.addIntentOptions(
-        R.id.intent_group, // Menu group to which new items will be added
-        0,                 // Unique item ID (none)
-        0,                 // Order for the items (none)
-        componentName,// The current activity name
-        null,              // Specific items to place first (none)
-        intent,            // Intent created above that describes our requirements
-        0,                 // Additional flags to control items (none)
-        null)              // Array of MenuItems that correlate to specific items (none)
-    return true
-
-    */
+sealed class Status()
+{
+    class Error : Status()
+    class Success : Status()
 }
 
 fun main(args: Array<String>)
 {
-    //val context: Context = MainApplication.applicationContext()
-    //val toast = Toast.makeText("", text, duration)
-    //toast.show()
+    Bundle()
     println("Hello, World")
-    /*getUrl(45.4160384
-        ,-122.7404002
-        ,"15130 Quarry Rd, Lake Oswego, OR 97035")
-    */
-//    val me = Person("Abdullah","Mutaz" "Alshawa")
-//    val you = Person("Janet", "Chung", "Yang")
-//    val location = object {
-//        var xPosition = 200
-//        var yPosition = 400
-//        fun printIt(){
-//            println("Position = ($xPosition, $yPosition)")
-//        }
-//    }
-//    location.printIt()
-//    location.xPosition = 200
-//    location.yPosition = 400
+
 
 }
-//import kotlinx.android.synthetic.main.fragment_login.*
-//class UserProfileViewModel() : ViewModel(), Parcelable {
-//    val userId : String = TODO()
-//    val user : User = TODO()
-//
-//    constructor(parcel: Parcel) : this() {
-//    }
-//
-//    override fun writeToParcel(parcel: Parcel, flags: Int) {
-//
-//    }
-//
-//    override fun describeContents(): Int {
-//        return 0
-//    }
-//
-//    companion object CREATOR : Parcelable.Creator<UserProfileViewModel> {
-//        override fun createFromParcel(parcel: Parcel): UserProfileViewModel {
-//            return UserProfileViewModel(parcel)
-//        }
-//
-//        override fun newArray(size: Int): Array<UserProfileViewModel?> {
-//            return arrayOfNulls(size)
-//        }
-//    }
-//}
-//import pythonAppiumClient[
 
-//from appium import webdriver
-
-//import com.google.android.po
-//class BaeldungNewsletter : IObservable {
-//    override val observers: ArrayList<IObserver> = ArrayList()
-//    var newestArticleUrl = ""
-//        set(value) {
-//            field = value
-//            sendUpdateEvent()
-//        }
-//}
-//class BaeldungNewsletter {
-//    val newestArticleObservers = mutableListOf<(String) -> Unit>()
-//
-//    var newestArticleUrl: String by Delegates.observable("") { _, _, newValue ->
-//        newestArticleObservers.forEach { it(newValue) }
-//    }
-//}
-//class BaeldungReader(private var newsletter: BaeldungNewsletter) : IObserver {
-//    override fun update() {
-//        println("New Baeldung article: ${newsletter.newestArticleUrl}")
-//    }
-//}
 public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     private lateinit var mMap: GoogleMap
     //Google map;
@@ -214,73 +94,56 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
     interface IObserver {
         fun update()
     }
-    //SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map);
-//    interface IObservable {
-//        val observers: ArrayList<IObserver>
-//
-//        fun add(observer: IObserver) {
-//            observers.add(observer)
-//        }
-//
-//        fun remove(observer: IObserver) {
-//            observers.remove(observer)
-//        }
-//
-//        fun sendUpdateEvent() {
-//            observers.forEach { it.update() }
-//        }
-//    }
 
-//    private static LocationRequest createLocationRequest(){
-//        //LogHelper.trace("createLocationRequest")
-//    }
-
-    //public StringBuilder sbMethod{
         // Use your current location here
         val mLatitude = 37.77656;
-    //}
 
      fun getUrl(latitude: Double, longitude: Double, nearByPlace: String): String {
+         val gmmIntentUri = "hospitals"
+         val gmmIntentStringExample = "https://www.google.com/maps/search/hospitals/@45.3756934,-122.7698314,11z/data=!3m1!4b1"
         // Search for hospitals nearby
-        println(longitude)
-        println(latitude)
-         println(nearByPlace)
-       val gmmIntentUri = Uri.parse("geo:0,0?q=hospitals")
-        //Example string for hospitals in Lake Oswego, Oregon
-        val gmmIntentStringExample = "https://www.google.com/maps/search/hospitals/@45.3756934,-122.7698314,11z/data=!3m1!4b1"
-        println(gmmIntentStringExample)
-        return "https://maps.googleapis.com/maps/api/streetview?parameters\n" + gmmIntentUri //googlePlaceUrl.toString()
+        try
+        {
+            println(longitude)
+            println(latitude)
+            println(nearByPlace)
+            val gmmIntentUri = Uri.parse("geo:0,0?q=hospitals")
+            //Example string for hospitals in Lake Oswego, Oregon
+            println(gmmIntentStringExample)
+        }
+        catch(e : ArithmeticException)
+        {
+
+        }
+
+        return "https://maps.googleapis.com/maps/api/streetview?parameters\n" +  gmmIntentUri
 
 
-/*
-        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-        mapIntent.setPackage("com.google.android.apps.maps")
-        startActivity(mapIntent)
 
-        // Search for restaurants in San Francisco
-        val gmmIntentUri =
-            Uri.parse("geo:37.7749,-122.4194?q=restaurants")
-        val mapIntent = Intent(Intent.ACTION_VIEW, gmmIntentUri)
-        mapIntent.setPackage("com.google.android.apps.maps")
-        startActivity(mapIntent)
-*********************************************************************************************************
- val googlePlaceUrl = StringBuilder("https://maps/googleapis.com/maps/api/place/nearbysearch/json?")
-        googlePlaceUrl.append("location=$latitude,$longitude")
-        googlePlaceUrl.append("&radius=$30")
-        googlePlaceUrl.append("&keyword=hospital")
-        googlePlaceUrl.append("&sensor=true")
-        googlePlaceUrl.append("&key=" + "MYKEY")
-        Log.d("MapsActivity", "url = $googlePlaceUrl")
-
- */
     }
         fun foo()
         {
 
         }
+
+    private fun isGooglePlayServicesAvailable(): Boolean {
+        val apiAvailability = GoogleApiAvailability.getInstance()
+        val resultCode = apiAvailability.isGooglePlayServicesAvailable(this)
+        if (resultCode != ConnectionResult.SUCCESS) {
+            if (apiAvailability.isUserResolvableError(resultCode)) {
+                apiAvailability.getErrorDialog(this, resultCode, PLAY_SERVICES_RESOLUTION_REQUEST)
+                    .show()
+            } else {
+                println("This device is not supported.")
+                finish()
+            }
+            return false
+        }
+        return true
+    }
+
         @Override
         protected override fun onCreate(savedInstanceState: Bundle?) {
-
             // Retrieve content vie that renders the map.
             super.onCreate(savedInstanceState)
             if(getString(R.string.maps_api_key).isEmpty())
@@ -288,6 +151,10 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 // Inject language or reference
 
                 foo()
+            }
+            if(!isGooglePlayServicesAvailable())
+            {
+                return;
             }
             getUrl(45.4160844, -122.7229328, "Providence Mercantile")
             setContentView(R.layout.activity_maps)
@@ -298,29 +165,9 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             mapFragment.allowEnterTransitionOverlap
             mapFragment.activity
 
-            //val scope = "World"
-            // println("Hello, $scope!")
-
-//        class ExampleFragment : Fragment() {
-//
-//            override fun onCreateView(
-//                inflater: LayoutInflater,
-//                container: ViewGroup?,
-//                savedInstanceState: Bundle?
-//            ): View {
-//                // Inflate the layout for this fragment
-//                return inflater.inflate(R.layout.example_fragment, container, false)
-//            }
-//        }
-
-//        if(mapFragment.isRemoving)
-//            println("Application is closing!")
-
-
         }
 
-        /**        setContentView(R.layout.news_articles)
-
+        /**
          * Manipulates the map once available.
          * This callback is triggered when the map is ready to be used.
          * This is where we can add markers or lines, add listeners or move the camera. In this case,
@@ -329,79 +176,21 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
          * it inside the SupportMapFragment. This method will only be triggered once the user has
          * installed Google Play services and returned to the app.
          */
-        private fun startLocationUpdates(){
-//        if (ActivityCompat.checkSelfPermission(this,
-//                android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-//            ActivityCompat.requestPermissions(this,
-//                arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION),
-//                LOCATION_PERMISSION_REQUEST_CODE)
-//            return
+        private fun startLocationUpdates()
+        {
         }
         //Automatically locate hospitals around the user's location
         private fun createLocationRequest() {
-
-            // 1
+            val Place = "Hospitals"
+            val Field ="Corona virus"
+             // 1
             val locationRequest = LocationRequest()
             // 2
             val interval = 10000
             val fastestInterval = 5000
             val locationRequestPriority = "PRIORITY_HIGH_ACCURACY"
-            //val builder = LocationSettingsRequest.Builder().addLocationRequest(locationRequest)
-//        // 3
-//        locationRequest.fastestInterval = 5000
-//        locationRequest.priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-//
-//        val builder = LocationSettingsRequest.Builder()
-//            .addLocationRequest(locationRequest)
-//
-//        // 4
-//        val client = LocationServices.getSettingsClient(this)
-//        val task = client.checkLocationSettings(builder.build())
-            //val client = LocationServices.getSettingsClient(this)
-//        // 5
-//        task.addOnSuccessListener {
-//            locationUpdateState = true
-//            startLocationUpdates()
-//        }
-            //val task = client.checkLocationSettings(builder.build())
-           /* task.addOnSuccessListener {
 
-            }
-            */
-//        task.addOnFailureListener { e ->
-//            // 6
-//            if (e is ResolvableApiException) {
-//                // Location settings are not satisfied, but this can be fixed
-//                // by showing the user a dialog.
-//                try {
-//                    // Show the dialog by calling startResolutionForResult(),
-//                    // and check the result in onActivityResult().
-//                    e.startResolutionForResult(this@MapsActivity,
-//                        REQUEST_CHECK_SETTINGS)
-//                } catch (sendEx: IntentSender.SendIntentException) {
-//                    // Ignore the error.
-//                }
-//            }
-//        }
         }
-
-        // Setting up a spring animation to animate the view1 and view2 translationX and translationY properties
-//    val (anim1X, anim1Y) = findViewById<View>(R.id.view1).let { view1 ->
-//        SpringAnimation(view1, DynamicAnimation.TRANSLATION_X) to
-//                SpringAnimation(view1, DynamicAnimation.TRANSLATION_Y)
-//    }
-//    val (anim2X, anim2Y) = findViewById<View>(R.id.view2).let { view2 ->
-//        SpringAnimation(view2, DynamicAnimation.TRANSLATION_X) to
-//                SpringAnimation(view2, DynamicAnimation.TRANSLATION_Y)
-//    }
-//
-//// Registering the update listener
-//    anim1X.addUpdateListener { _, value, _ ->
-//        // Overriding the method to notify view2 about the change in the view1’s property.
-//        anim2X.animateToFinalPosition(value)
-//    }
-//
-//    anim1Y.addUpdateListener { _, value, _ -> anim2Y.animateToFinalPosition(value) }
 
         fun onActivityResult(){
             val resultCode = 0
@@ -414,15 +203,6 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
                 //placeMarkerOnMap(place.latLng)
             }
         }
-
-
-
-
-
-
-
-
-
 
 // Function to print the hashMap
 fun printHashMap(hashMap: HashMap<String, Int>){
@@ -654,26 +434,8 @@ fun printHashMap(hashMap: HashMap<String, Int>){
             val jebelAliHospital = LatLng(45.4160461, -122.7229256)
             val massachusettsGeneralHospital = LatLng(45.4160544, -122.7229401)
             val shrinersHospitalForChildrenBoston = LatLng(36.884958, -132.6318486)
-            //var needsLocation:Boolean = true
-            //var jebelAliHospitalVariable = LatLng(45.4160461,-122.7229256)
-            val massachusettsInstiuteofTechnologyMedicalCenterPediatrics = LatLng(
-                42.3361037,
-                -71.1588672
-            )
-//https://maps.googleapis.com/maps/api/streetview?size=400x400&location=47.5763831,-122.4211769
-//&fov=80&heading=70&pitch=0
-//&key=YOUR_API_KEY&signature=YOUR_SIGNATURE
+            val massachusettsInstiuteOfTechnologyMedicalCenterPediatrics = LatLng(42.3361037, -71.1588672)
 
-//
-//        private class YourImageAnalyzer : ImageAnalysis.Analyzer {
-//
-//            override fun analyze(imageProxy: ImageProxy) {
-//                val mediaImage = imageProxy.image
-//                if (mediaImage != null) {
-//                    val image = InputImage.fromMediaImage(mediaImage, imageP//                    // ...//                    // Pass image to an ML Kit Vision APIroxy.imageInfo.rotationDegrees)
-//                }
-//            }
-//        }
             mMap.addMarker(
                 MarkerOptions().position(evanstonRegionalHospital)
                     .title("Evanston Regional Hospital")
@@ -707,7 +469,7 @@ fun printHashMap(hashMap: HashMap<String, Int>){
                     .title("Massachusetts General Hospital")
             )
             mMap.addMarker(
-                MarkerOptions().position(massachusettsInstiuteofTechnologyMedicalCenterPediatrics)
+                MarkerOptions().position(massachusettsInstiuteOfTechnologyMedicalCenterPediatrics)
                     .title(
                         "Massachusetts Instiute of Technology Medical Center Pediatrics"
                     )
