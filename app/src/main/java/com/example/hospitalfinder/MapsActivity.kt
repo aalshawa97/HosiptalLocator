@@ -44,7 +44,12 @@ get()
 }
 set(value)
 {
+    var setterVisibility: String = "abc"
+        // the setter is private and has the default implementation
+    var setterWithAnnotation: Any? = null
+    //@Inject set  annotate the setter with Inject
     //resultTypeString = value.toString()
+    //value = " "
 }
 
 interface location {
@@ -191,6 +196,11 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             val locationRequestPriority = "PRIORITY_HIGH_ACCURACY"
 
         }
+
+    class PlacePicker
+    {
+
+    }
 
         fun onActivityResult(){
             val resultCode = 0
@@ -607,7 +617,7 @@ fun printHashMap(hashMap: HashMap<String, Int>){
                     .title("West Tennessee Healthcare Volunteer")
             )
             mMap.addMarker(
-                MarkerOptions().position(eastTennesseeHospital).title("eastTennesseeHospital")
+                MarkerOptions().position(eastTennesseeHospital).title("East Tennessee Hospital")
             )
             mMap.addMarker(
 
