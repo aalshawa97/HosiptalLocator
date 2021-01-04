@@ -16,6 +16,10 @@
     <string name="action_search">Action search</string>
     <string name="my_text_button">My Text Button</string>
     <string name="my_button_text">My button text</string>
+    <string name="normal_map">Normal Map</string>
+    <string name="hybrid_map">Hybrid Map</string>
+    <string name="terrain_map">Terrain Map</string>
+    <string name="satellite_map">Satellite Map</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>
@@ -23,4 +27,5 @@
         <item>government_hospital</item>
         <item>university_hospital</item>
     </string-array>
+    <!--<item name="hybrid_map" type="id">Hybrid Map</item>-->
 </resources>

@@ -7,10 +7,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 
-class medicineFragment : Fragment() {
+class MedicineFragment : Fragment() {
 
     companion object {
-        fun newInstance() = medicineFragment()
+        fun newInstance() = MedicineFragment()
     }
 
     private lateinit var viewModel: MedicineViewModel
@@ -26,6 +26,9 @@ class medicineFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MedicineViewModel::class.java)
         // TODO: Use the ViewModel
+        // getText: Return a localized, CharSequence from the application's package's default string table.
+        // getActivity: Return the FragmentActivity this fragment is currently associated with. May return null if the fragment is associated with a Context instead.
+        viewModel.run { activity?.getText(0) }
     }
 
 }

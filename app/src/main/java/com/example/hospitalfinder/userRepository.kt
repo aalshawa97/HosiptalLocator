@@ -1,9 +1,21 @@
+import org.json.JSONArray
+
 class UserViewModel(
     val repo:IUserRepository
 )
 
 class IUserRepository {
 
+}
+public class PlaceJSONParser {
+    //Define empty hashmap
+    val hashMap:HashMap<Int,String> = HashMap<Int,String>() //define empty hashmap
+    //hashMap.put(1,"Ajay")
+
+    //Receives a JSONObject and returns a list
+    //public List<HashMap<String, String>> parse(JSONObject jObject){
+        //JSONArray jPlace = null
+    //}
 }
 //package com.example.hospitalfinder
 //

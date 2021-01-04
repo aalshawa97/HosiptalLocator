@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="f6cd28c7-f03a-4de2-aded-d69d42c24477" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/MyLocationListener.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ui/RepoListFragment.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../res/menu/map_options.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MapsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/MapsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PlaceJSONParser.kt" beforeDir="false" afterPath="$PROJECT_DIR$/PlaceJSONParser.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dummy/ArticleFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/dummy/ArticleFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/medicineFragment.kt" beforeDir="false" afterPath="$PROJECT_DIR$/medicineFragment.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../res/layout/activity_about_me.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../res/layout/activity_about_me.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../res/layout/activity_maps.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../res/layout/activity_maps.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../res/values/ids.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../res/values/ids.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../release/res/values/google_maps_api.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../release/res/values/google_maps_api.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../../../../../build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../../../../build.gradle" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../../../.." />
+  </component>
+  <component name="ProjectId" id="1lqZgjQWCsXYKRz1GYv7DolQDw7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f6cd28c7-f03a-4de2-aded-d69d42c24477" name="Default Changelist" comment="" />
+      <created>1608326696015</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608326696015</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
