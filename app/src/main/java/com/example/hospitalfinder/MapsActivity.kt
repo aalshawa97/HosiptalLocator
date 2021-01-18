@@ -354,7 +354,7 @@ fun printHashMap(hashMap: HashMap<String, Int>){
             val sageViewPsychiatrists = LatLng(44.07, -121.41)
             val centralWashingtonHosptial = LatLng(47.21, -125.11)
             val providenceStMaryMedicalCenterWallaWalla = LatLng(46.75, -123.56)
-            val columbiaBasinHosptial = LatLng(47.04, -125.12)
+            val columbiaBasinHosptial = LatLng(47.040, -125.120)
             val providenceMountCarmelHospital = LatLng(46.86, -125.12)
             val harrisonMedicalCenter = LatLng(46.46, -125.39)
             val sacredHeartChildrensHosptial = LatLng(47.63, -120.39)
@@ -564,7 +564,9 @@ fun printHashMap(hashMap: HashMap<String, Int>){
 
                 MarkerOptions().position(bonSecoursRichmondCommunityHosptial).title("Bon Secours Richmond Community Hosptial")
             )
-
+            mMap.addMarker(
+                MarkerOptions().position(encompassHealthRehabilitationHospital).title("Encompass Health Rehabilitation Hospital")
+            )
             mMap.addMarker(
                 MarkerOptions().position(emiratesHospitalJumeriahBeach).title("Emirates Hospital Jumeriah Beach")
             )
