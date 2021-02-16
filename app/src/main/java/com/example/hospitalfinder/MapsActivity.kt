@@ -228,7 +228,7 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         //Automatically locate hospitals around the user's location
         private fun createLocationRequest() {
             val Place = "Hospitals"
-            val Field ="Corona virus"
+            val Field ="Covid"
              // 1
             val locationRequest = LocationRequest()
             // 2
