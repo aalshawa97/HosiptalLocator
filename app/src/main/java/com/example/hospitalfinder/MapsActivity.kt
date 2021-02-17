@@ -1,5 +1,5 @@
 //Abdullah Mutaz Alshawa
-//7/08/20
+//07/08/2020
 //Hospital Locator to conduct virtual visits at hospitals with a headset.
 package com.example.hospitalfinder
 
