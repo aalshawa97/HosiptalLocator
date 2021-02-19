@@ -29,6 +29,8 @@ import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
 
 //Declare and intitialize variables
+//private static final String GOOGLE_API_KEY = "AIzaSSDFSDF8Kv2eP0PM8adf5dSDFysdfas323SD3HA";
+//GoogleMap googleMap;
 val PLAY_SERVICES_RESOLUTION_REQUEST = 0
 var locationManager: LocationManager? = null
 public class GooglePlacesActivity{
@@ -235,6 +237,7 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             val interval = 10000
             val fastestInterval = 5000
             val locationRequestPriority = "PRIORITY_HIGH_ACCURACY"
+            val careType = "Express"
         }
 
     class PlacePicker
