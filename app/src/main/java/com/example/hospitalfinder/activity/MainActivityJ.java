@@ -29,7 +29,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivityJ extends AppCompatActivity {
 
     private static int SIGN_IN_REQUEST_CODE = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
@@ -100,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        activity_main = (RelativeLayout)findViewById(R.id.activity_main2);
+        activity_main = (RelativeLayout)findViewById(R.id.activity_main);
         fab = (FloatingActionButton)findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -147,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
 
                     //Now prompt the user for the key to use for decrypting the message
                     DecryptionPopup decryptionPopup = new DecryptionPopup();
-                    startActivity(new Intent(MainActivity.this,DecryptionPopup.class));
+                    startActivity(new Intent(MainActivityJ.this,DecryptionPopup.class));
 
 
                 }
@@ -202,7 +202,7 @@ public class MainActivity extends AppCompatActivity {
                 //Encrypt messages with RSA
                 RSAencryption rsAencryption = new RSAencryption();
                 plainText = rsAencryption.KeyGeneration(plainText);
-                
+
 
                 messageText.setText(String.valueOf(plainText));
                 messageUser.setText(model.getMessageUser());
@@ -250,7 +250,7 @@ public class MainActivity extends AppCompatActivity {
 
         // ListView listOfMessage = (ListView)findViewById(R.id.list_of_message);
 
-        
+
 
         /*
         adapter = new FirebaseListAdapter<ChatMessage>(this, ChatMessage.class, R.layout.list_item, FirebaseDatabase.getInstance().getReference()) {
