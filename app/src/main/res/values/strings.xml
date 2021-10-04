@@ -21,6 +21,8 @@
     <string name="terrain_map">Terrain Map</string>
     <string name="satellite_map">Satellite Map</string>
     <string name="title_activity_home">Home Activity</string>
+    <string name="decrypt">Decrypt</string>
+    <string name="title_activity_main">Main Activity</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>

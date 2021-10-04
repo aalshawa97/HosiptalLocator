@@ -9,6 +9,7 @@ buildscript {
         // The Google VR SDK requires version 2.3.3 or higher.
         classpath 'com.android.tools.build:gradle:4.1.1'
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version "
+        classpath 'com.google.gms:google-services:4.3.10'
         // The Google VR NDK requires experimental version 0.9.3 or higher.
         // classpath 'com.android.tools.build:gradle-experimental:0.9.3'
         def lifecycle_version = "2.2.0"

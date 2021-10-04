@@ -27,6 +27,7 @@
         class="com.google.android.gms.maps.SupportMapFragment"
         tools:layout="@layout/activity_main" />
 
+
     <item
         android:title="@string/settings"
         android:layout_width="wrap_content" />

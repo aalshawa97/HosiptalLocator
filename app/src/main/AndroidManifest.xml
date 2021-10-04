@@ -48,10 +48,15 @@
         <activity android:name=".MapsActivity"
                 android:label="@string/title_activity_maps"
             />
+        <activity android:name=".activity.DecryptionPopup"
+                android:label="Decryption Popup"/>
+
+        <activity android:name=".activity.HomeActivity"
+            android:label="@string/title_activity_home"/>
 
         <activity
-            android:name=".activity.HomeActivity"
-            android:label="@string/title_activity_home"
+            android:name=".activity.MainActivity"
+            android:label="@string/title_activity_main"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
