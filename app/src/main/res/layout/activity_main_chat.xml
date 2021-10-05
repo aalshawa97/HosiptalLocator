@@ -9,20 +9,25 @@
     android:paddingLeft="16dp"
     android:paddingRight="16dp"
     android:paddingTop="16dp"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.MainActivityJ">
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:clickable="true"
-        android:src="@drawable/ic_send"
-        android:id="@+id/fab"
-        android:tint="@android:color/white"
-        android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"
-        app:fabSize="mini"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:onClick="sendMessage"
+        android:clickable="true"
+        android:contentDescription="@string/todo"
+        android:minWidth="48dp"
 
-        android:layout_alignParentRight="true" />
+        android:minHeight="48dp"
+        android:src="@drawable/ic_send"
+        android:tint="@android:color/white"
+        app:fabSize="mini"
+        tools:ignore="TouchTargetSizeCheck" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
@@ -34,11 +39,12 @@
         android:layout_alignParentLeft="true">
 
         <EditText
+            android:id="@+id/input"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="message..."
-            android:id="@+id/input"
-            />
+            android:hint="@string/message"
+            tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck"
+            android:inputType="text" />
 
         ></com.google.android.material.textfield.TextInputLayout>
 

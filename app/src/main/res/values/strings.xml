@@ -25,8 +25,13 @@
     <string name="title_activity_main">Main Activity</string>
     <string name="add_friend">Add friend</string>
     <string name="sign_out_button">Sign-out</string>
+    <string name="title_activity_chat">Chat Activity</string>
     <string name="title_activity_login">Login Activity</string>
     <string name="begin_login">Start</string>
+    <string name="chat">Chat</string>
+    <string name="title_activity_mainj">Main Activity Java</string>
+    <string name="message">message...</string>
+    <string name="todo">TODO</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>

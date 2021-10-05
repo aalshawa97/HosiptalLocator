@@ -34,7 +34,7 @@ public class RSAencryption extends Activity
 
         //We need to generate 3 sets of RSA keys
 
-        //p,q and, lamdaN must be kept secret
+        //p,q and, lambdaN must be kept secret
 
         //Generate two distinct prime numbers p and q
         long  p = 0;

@@ -54,12 +54,25 @@
         <activity android:name=".activity.DecryptionPopup"
                 android:label="Decryption Popup"/>
 
-        <activity android:name=".activity.MainActivity"
-            android:label="@string/title_activity_main">
+        <activity
+            android:name=".activity.MainActivity"
+            android:label="@string/title_activity_main"
+            >
 
         </activity>
         <activity android:name=".activity.HomeActivity"
             android:label="@string/title_activity_home"/>
+
+        <activity android:name=".activity.ChatActivity"
+            android:exported="true"
+            android:label="@string/title_activity_chat"
+            />
+
+        <activity
+            android:name=".activity.MainActivityJ"
+            android:label="@string/title_activity_mainj"
+            android:exported="true"
+            />
 
         <activity
             android:name=".activity.LoginActivity"

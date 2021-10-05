@@ -102,14 +102,13 @@ public class MainActivityJ extends AppCompatActivity {
 
         activity_main = (RelativeLayout)findViewById(R.id.activity_main);
         fab = (FloatingActionButton)findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                EditText input = (EditText)findViewById(R.id.input);
-                FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(input.getText().toString(),FirebaseAuth.getInstance().getCurrentUser().getEmail()));
-                input.setText("");
-            }
-    });
+        /*
+        fab.setOnClickListener(v -> {
+            EditText input = (EditText)findViewById(R.id.input);
+            FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(input.getText().toString(),FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+            input.setText("");
+        });
+        */
 
         //Check if not sign-in then navigate Signin page
         if(FirebaseAuth.getInstance().getCurrentUser() == null)
@@ -124,10 +123,13 @@ public class MainActivityJ extends AppCompatActivity {
             displayChatMessage(aKey);
         }
 
+    }
 
-
-
-
+    public void sendMessage(final View view)
+    {
+        EditText input = (EditText)findViewById(R.id.input);
+        FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(input.getText().toString(),FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+        input.setText("");
     }
 
     public void decryptMessage(final View view)

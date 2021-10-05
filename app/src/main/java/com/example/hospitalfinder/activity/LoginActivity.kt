@@ -69,10 +69,18 @@ class LoginActivity : AppCompatActivity() {
     private fun signIn() {
         val signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient)
         startActivityForResult(signInIntent, RC_SIGN_IN)
+
+       //val myIntent = Intent(this@LoginActivity, HomeActivity::class.java)
+        //this@LoginActivity.startActivity(myIntent)
     }
 
     public fun skipLogin(view : View){
         val myIntent = Intent(this@LoginActivity, HomeActivity::class.java)
+        this@LoginActivity.startActivity(myIntent)
+    }
+
+    public fun chat(view : View){
+        val myIntent = Intent(this@LoginActivity, ChatActivity::class.java)
         this@LoginActivity.startActivity(myIntent)
     }
 
@@ -131,5 +139,10 @@ class LoginActivity : AppCompatActivity() {
     companion object {
         //private val TAG = "LoginActivity"
         private const val RC_SIGN_IN = 123
+    }
+
+    fun openChat(view: android.view.View) {
+        val myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
+        //this@LoginActivity.startActivity(myIntent)
     }
 }
