@@ -25,6 +25,8 @@
     <string name="title_activity_main">Main Activity</string>
     <string name="add_friend">Add friend</string>
     <string name="sign_out_button">Sign-out</string>
+    <string name="title_activity_login">Login Activity</string>
+    <string name="skip_login">Skip login</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>

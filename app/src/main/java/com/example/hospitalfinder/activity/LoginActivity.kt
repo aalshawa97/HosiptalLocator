@@ -2,9 +2,11 @@ package com.example.hospitalfinder.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.makeText
 import androidx.appcompat.app.AppCompatActivity
+import com.example.hospitalfinder.MapsActivity
 import com.example.hospitalfinder.R
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
@@ -55,6 +57,11 @@ class LoginActivity : AppCompatActivity() {
     private fun signIn() {
         val signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient)
         startActivityForResult(signInIntent, RC_SIGN_IN)
+    }
+
+    public fun skipLogin(view : View){
+        val myIntent = Intent(this@LoginActivity, HomeActivity::class.java)
+        this@LoginActivity.startActivity(myIntent)
     }
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {

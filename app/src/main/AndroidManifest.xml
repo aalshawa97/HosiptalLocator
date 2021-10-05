@@ -56,14 +56,14 @@
 
         <activity android:name=".activity.MainActivity"
             android:label="@string/title_activity_main">
-             
+
         </activity>
-        <activity android:name=".activity.LoginActivity"
-            android:label="Login Activity"/>
+        <activity android:name=".activity.HomeActivity"
+            android:label="@string/title_activity_home"/>
 
         <activity
-            android:name=".activity.HomeActivity"
-            android:label="@string/title_activity_home"
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login"
             >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
