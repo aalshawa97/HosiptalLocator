@@ -19,6 +19,12 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_login.*
+import com.google.firebase.FirebaseApp
+
+import com.google.firebase.FirebaseOptions
+
+
+
 
 class LoginActivity : AppCompatActivity() {
     private var firebaseAuth: FirebaseAuth? = null
@@ -28,6 +34,12 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val options = FirebaseOptions.Builder()
+            .setApplicationId("1:123140511070:android:a5c84837bb6de83502ebcf") // Required for Analytics.
+            .setProjectId("hospitallocator-be5cd") // Required for Firebase Installations.
+            .setApiKey("AIzaSyDhp9velxKCu4zR7j8iQJTuJvGY9pjnPoU") // Required for Auth.
+            .build()
+        FirebaseApp.initializeApp(this, options, "HospitalLocator")
         setContentView(R.layout.activity_login)
         rootRef = FirebaseFirestore.getInstance()
 
@@ -72,7 +84,7 @@ class LoginActivity : AppCompatActivity() {
                 val googleSignInAccount = task.getResult(ApiException::class.java)
                 firebaseSignInWithGoogle(googleSignInAccount)
             } catch (e: ApiException) {
-                makeText(this, "Google sign in failed!", LENGTH_SHORT).show()
+                makeText(this, "Google sign in exception", LENGTH_SHORT).show()
             }
         }
     }
@@ -85,6 +97,7 @@ class LoginActivity : AppCompatActivity() {
                 createUserIfNotExists(firebaseUser)
             }
         }
+        makeText(this, "Google sign in success", LENGTH_SHORT).show()
     }
 
     private fun createUserIfNotExists(firebaseUser: FirebaseUser) {

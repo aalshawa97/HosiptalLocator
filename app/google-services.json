@@ -15,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "870272768791-hiohc3satnmh6m8ej81kvpqc9l45vs7g.apps.googleusercontent.com",
+          "client_id": "123140511070-r7bpu1rhlsoe7knd9ov07v7va2kfa0jm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -28,7 +28,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "870272768791-hiohc3satnmh6m8ej81kvpqc9l45vs7g.apps.googleusercontent.com",
+              "client_id": "123140511070-r7bpu1rhlsoe7knd9ov07v7va2kfa0jm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
@@ -44,7 +44,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "870272768791-hiohc3satnmh6m8ej81kvpqc9l45vs7g.apps.googleusercontent.com",
+          "client_id": "123140511070-rh731bv7epf0lntc67uv632j552sh9jr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "hospital.Locator",
+            "certificate_hash": "88f90a0fae82aba9d3a4f6f0a9a6b8ccbde4a3c9"
+          }
+        },
+        {
+          "client_id": "123140511070-r7bpu1rhlsoe7knd9ov07v7va2kfa0jm.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -57,7 +65,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "870272768791-hiohc3satnmh6m8ej81kvpqc9l45vs7g.apps.googleusercontent.com",
+              "client_id": "123140511070-r7bpu1rhlsoe7knd9ov07v7va2kfa0jm.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
