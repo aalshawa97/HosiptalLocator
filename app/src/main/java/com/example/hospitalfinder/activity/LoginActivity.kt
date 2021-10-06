@@ -39,7 +39,11 @@ class LoginActivity : AppCompatActivity() {
             .setProjectId("hospitallocator-be5cd") // Required for Firebase Installations.
             .setApiKey("AIzaSyDhp9velxKCu4zR7j8iQJTuJvGY9pjnPoU") // Required for Auth.
             .build()
-        FirebaseApp.initializeApp(this, options, "HospitalLocator")
+        //If the application name is not initialized!
+        if(R.string.app_name == null)
+        {
+            FirebaseApp.initializeApp(this, options, "HospitalLocator")
+        }
         setContentView(R.layout.activity_login)
         rootRef = FirebaseFirestore.getInstance()
 
@@ -143,6 +147,6 @@ class LoginActivity : AppCompatActivity() {
 
     fun openChat(view: android.view.View) {
         val myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
-        //this@LoginActivity.startActivity(myIntent)
+        this@LoginActivity.startActivity(myIntent)
     }
 }

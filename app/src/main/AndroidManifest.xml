@@ -68,6 +68,11 @@
             android:label="@string/title_activity_chat"
             />
 
+        <activity android:name=".activity.ContactsActivity"
+            android:exported="true"
+            android:label="@string/title_activity_contacts"
+            />
+
         <activity
             android:name=".activity.MainActivityJ"
             android:label="@string/title_activity_mainj"
