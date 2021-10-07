@@ -141,7 +141,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
 
     public void sendMessage(final View view)
     {
-        Toast.makeText(this, "Sending text...", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Sending text..." + findViewById(R.id.input).toString(), Toast.LENGTH_SHORT).show();
         EditText input = (EditText)findViewById(R.id.input);
         FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(input.getText().toString(),FirebaseAuth.getInstance().getCurrentUser().getEmail()));
         input.setText("");

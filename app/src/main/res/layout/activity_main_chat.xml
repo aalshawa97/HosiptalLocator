@@ -38,8 +38,6 @@
         android:id="@+id/textInputLayout"
         android:layout_alignParentLeft="true">
 
-
-
         ></com.google.android.material.textfield.TextInputLayout>
 
     <EditText
