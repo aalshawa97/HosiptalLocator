@@ -36,6 +36,7 @@
     <string name="begin_button">Begin</string>
     <string name="hello">Hello</string>
     <string name="type_a_message">Type a message</string>
+    <string name="send">Send</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>
