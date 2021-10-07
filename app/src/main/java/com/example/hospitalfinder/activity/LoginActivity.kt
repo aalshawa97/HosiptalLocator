@@ -2,7 +2,9 @@ package com.example.hospitalfinder.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.View
+import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.makeText
 import androidx.appcompat.app.AppCompatActivity
@@ -22,8 +24,8 @@ import kotlinx.android.synthetic.main.activity_login.*
 import com.google.firebase.FirebaseApp
 
 import com.google.firebase.FirebaseOptions
-
-
+import java.util.*
+import kotlin.concurrent.schedule
 
 
 class LoginActivity : AppCompatActivity() {
@@ -146,7 +148,20 @@ class LoginActivity : AppCompatActivity() {
     }
 
     fun openChat(view: android.view.View) {
+        Toast.makeText(this, "Opening chat", Toast.LENGTH_LONG).show()
+        Log.d("LoginActivity", "openChat: ")
         val myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
         this@LoginActivity.startActivity(myIntent)
+
+        Toast.makeText(this, "Setting up chat", Toast.LENGTH_LONG).show()
+        Log.d("Opening messenger", "openChat: ")
+        Timer("SettingUp", false).schedule(20000) {
+            val myIntent = Intent(this@LoginActivity, ChatActivity::class.java)
+            this@LoginActivity.startActivity(myIntent)
+        }
+
+        this@LoginActivity.startActivity(myIntent)
+
+        Toast.makeText(this, "Done setting up chat", Toast.LENGTH_LONG).show()
     }
 }

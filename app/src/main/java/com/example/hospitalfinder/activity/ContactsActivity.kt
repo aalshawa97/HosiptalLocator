@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.example.hospitalfinder.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -16,7 +17,7 @@ class ContactsActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main2)
-
+        Toast.makeText(this, "Contacts activity", Toast.LENGTH_LONG).show()
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         title = "Contacts"
 
@@ -31,6 +32,8 @@ class ContactsActivity: AppCompatActivity() {
                     if (document.exists()) {
                         val fromUser = document.toObject(User::class.java)
                         val userContactsRef = rootRef.collection("contacts").document(fromUid).collection("userContacts")
+                        //First user
+                        //rootRef.collection("contacts").document(fromUid).collection("userContacts").add("John Smith")
                         userContactsRef.get().addOnCompleteListener{ t ->
                             if (t.isSuccessful) {
                                 val listOfToUserNames = ArrayList<String>()

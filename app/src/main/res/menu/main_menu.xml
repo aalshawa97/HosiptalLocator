@@ -1,6 +1,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <item android:id="@+id/begin_button"
+        android:title="@string/begin_button"
+        android:orderInCategory="98"
+        app:showAsAction="never"/>
+
     <item android:id="@+id/add_friend"
         android:title="@string/add_friend"
         android:orderInCategory="99"

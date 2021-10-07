@@ -1,5 +1,6 @@
 package com.example.hospitalfinder.activity;
 
+import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -29,10 +30,12 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class MainActivityJ extends AppCompatActivity {
+public class MainActivityJ extends AppCompatActivity implements MainActivityJinterface {
 
     private static int SIGN_IN_REQUEST_CODE = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
+    String[] values = new String[] { "begin_button", "add_friend", "sign_out_button",
+            };
     //Get reference to the database
     //private Firebase firebase = new Firebase("https://encryptedmessanger.firebaseio.com/");
 
@@ -53,7 +56,7 @@ public class MainActivityJ extends AppCompatActivity {
             AuthUI.getInstance().signOut(this).addOnCompleteListener(new OnCompleteListener<Void>() {
                 @Override
                 public void onComplete(@NonNull Task<Void> task) {
-                    Snackbar.make(activity_main,"You have been signed out.",Snackbar.LENGTH_SHORT).show();
+                    Snackbar.make(findViewById(android.R.id.content),"You have been signed out.",Snackbar.LENGTH_SHORT).show();
                     finish();
                 }
             });
@@ -69,7 +72,18 @@ public class MainActivityJ extends AppCompatActivity {
         return true;
     }
 
-
+    /*
+    protected void onListItemClick(ListView l, View v, int position, long id) {
+        try
+        {
+            String val = values[position];
+            Class ourClass  = Class.forName("com.example.listview."+val);
+            Intent intent = new Intent(MainActivity.this,ourClass);
+            startActivity(intent);
+        }catch(Exception e){
+            e.prinStacktrace();
+        }
+    }*/
 
 
 
@@ -81,13 +95,13 @@ public class MainActivityJ extends AppCompatActivity {
         {
             if(resultCode == RESULT_OK)
             {
-                Snackbar.make(activity_main,"Successfully signed in. Welcome ",Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content),"Successfully signed in. Welcome ",Snackbar.LENGTH_SHORT).show();
                 String aKey = null;
                 displayChatMessage(aKey);
             }
             else
             {
-                Snackbar.make(activity_main,"Unable to sign in, please try again",Snackbar.LENGTH_SHORT).show();
+                Snackbar.make(findViewById(android.R.id.content),"Unable to sign in, please try again",Snackbar.LENGTH_SHORT).show();
                 finish();
             }
         }
@@ -98,7 +112,7 @@ public class MainActivityJ extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main2);
+        setContentView(R.layout.activity_main_chat);
 
         activity_main = (RelativeLayout)findViewById(R.id.activity_main);
         fab = (FloatingActionButton)findViewById(R.id.fab);
@@ -117,7 +131,7 @@ public class MainActivityJ extends AppCompatActivity {
         }
         else
         {
-            Snackbar.make(activity_main,"Welcome "+ FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
+            Snackbar.make(findViewById(android.R.id.content),"Welcome "+ FirebaseAuth.getInstance().getCurrentUser().getEmail(),Snackbar.LENGTH_SHORT).show();
             //Load content
             String aKey = null;
             displayChatMessage(aKey);
