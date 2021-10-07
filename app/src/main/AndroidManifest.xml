@@ -66,6 +66,7 @@
         <activity android:name=".activity.ChatActivity"
             android:exported="true"
             android:label="@string/title_activity_chat"
+            android:windowSoftInputMode="stateHidden|adjustResize|adjustPan"
             />
 
         <activity android:name=".activity.ContactsActivity"
