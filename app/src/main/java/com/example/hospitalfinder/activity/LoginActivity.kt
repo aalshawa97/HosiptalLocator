@@ -157,7 +157,7 @@ class LoginActivity : AppCompatActivity() {
         Log.d("Opening messenger", "openChat: ")
         Timer("SettingUp", false).schedule(20000) {
             val myIntent = Intent(this@LoginActivity, ChatActivity::class.java)
-            this@LoginActivity.startActivity(myIntent)
+            //this@LoginActivity.startActivity(myIntent)
         }
 
         this@LoginActivity.startActivity(myIntent)

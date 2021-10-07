@@ -3,6 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/debug/res/layout/activity_place_details.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/debug/res/layout/layout.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/debug/res/layout/place_auto_complete.xml" value="0.2765625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/drawable/edit_text_shadow.xml" value="0.10277777777777777" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/drawable/message_from.xml" value="0.1" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/drawable/message_to.xml" value="0.1" />
@@ -14,15 +17,28 @@
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/activity_login.xml" value="0.16" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/activity_main2.xml" value="0.14791666666666667" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/activity_main_binding.xml" value="0.17239583333333333" />
-        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/activity_main_chat.xml" value="0.1" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/activity_main_chat.xml" value="0.2" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/activity_main_menu.xml" value="0.2" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/activity_main_sign_in.xml" value="0.1" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/article_fragment.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/decryption_input.xml" value="0.2765625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/decryptioninput.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/fragment_item.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/fragment_item_list.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/fragment_login.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/google_search_layout.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/item_message_from.xml" value="0.2765625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/item_message_to.xml" value="0.1765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/layout.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/layouthospitalamenities.xml" value="0.2765625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/list_item.xml" value="0.2765625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/main_menu.xml" value="0.264" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/main_meny.xml" value="0.1" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/map_options.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/medicine_fragment.xml" value="0.2765625" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/layout/news.xml" value="0.2765625" />
         <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/menu/main_menu.xml" value="0.14791666666666667" />
+        <entry key="..\:/Users/15039/AndroidStudioProjects/HosiptalLocator/app/src/main/res/menu/nav_menu.xml" value="0.2765625" />
         <entry key="..\:/Users/15039/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/simple_list_item_1.xml" value="0.23333333333333334" />
       </map>
     </option>
