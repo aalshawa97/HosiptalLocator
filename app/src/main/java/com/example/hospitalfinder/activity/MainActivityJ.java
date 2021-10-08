@@ -208,9 +208,14 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
 
                  long plainText = 100;
 
+                 //model.setMessageTime(1);
+                 //model.setMessageUser("abdullahalshawa@gmail.com");
+
                 //Get the plaintext from the textview
+                /*
                 StringBuilder tempPlainText = new StringBuilder(model.getMessageText());
 
+                //if(tempPlainText.toString() != "hih")
                 plainText = Long.parseLong(tempPlainText.toString());
 
                 Log.d("Encrypting plaintext: ", String.valueOf(plainText));
@@ -219,9 +224,11 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                 //Encrypt messages with RSA
                 RSAencryption rsAencryption = new RSAencryption();
                 plainText = rsAencryption.KeyGeneration(plainText);
+                */
 
 
-                messageText.setText(String.valueOf(plainText));
+                //messageText.setText(String.valueOf(plainText));
+                messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",model.getMessageTime()));
 
