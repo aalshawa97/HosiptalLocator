@@ -27,8 +27,12 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
+import com.google.firebase.FirebaseError;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class MainActivityJ extends AppCompatActivity implements MainActivityJinterface {
 
@@ -174,6 +178,23 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
         }
     }
 
+    private static String stringToLong(String string) {
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < string.length(); ++i) {
+            int ch = (int) string.charAt(i);
+            if (ch < 100) {
+                if(ch<10)
+                {
+                    sb.append('0');
+                }
+                sb.append('0').append(ch);
+            } else {
+                sb.append(ch);
+            }
+        }
+        return sb.toString();
+    }
+
     public void displayChatMessage(final String aKey)
     {
 
@@ -208,15 +229,16 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
 
                  long plainText = 100;
 
-                 //model.setMessageTime(1);
-                 //model.setMessageUser("abdullahalshawa@gmail.com");
-
                 //Get the plaintext from the textview
-                /*
+
+                //Toast.makeText(getApplicationContext(),"This is an RSA tutorial, please enter numbers only!", Toast.LENGTH_LONG).show();
+
                 StringBuilder tempPlainText = new StringBuilder(model.getMessageText());
 
-                //if(tempPlainText.toString() != "hih")
-                plainText = Long.parseLong(tempPlainText.toString());
+                Log.d("Original plaintext: ", (tempPlainText.toString()));
+
+
+                plainText = Long.parseLong(stringToLong(tempPlainText.toString()));
 
                 Log.d("Encrypting plaintext: ", String.valueOf(plainText));
 
@@ -224,7 +246,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                 //Encrypt messages with RSA
                 RSAencryption rsAencryption = new RSAencryption();
                 plainText = rsAencryption.KeyGeneration(plainText);
-                */
+
 
 
                 //messageText.setText(String.valueOf(plainText));
@@ -243,8 +265,6 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
     public void displayDecryptedChatMessage( String valueKey)
     {
         //Trying new method for decryption
-
-        /*
         final TextView messageText,messageUser,messageTime;
         View v = new View(getApplicationContext());
         messageText = (TextView) v.findViewById(R.id.message_text);
@@ -252,21 +272,31 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
         Log.d("Key: ", valueKey);
 
         //Decrypt the message
-        firebase.addValueEventListener(new ValueEventListener() {
+        FirebaseDatabase.getInstance().getReference().addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
                 String data = dataSnapshot.getValue(String.class);
-                messageText.setText("cool");
+                messageText.setText("Decrypted");
 
             }
 
+            /**
+             * This method will be triggered in the event that this listener either failed at the server, or
+             * is removed as a result of the security and Firebase Database rules. For more information on
+             * securing your data, see: <a
+             * href="https://firebase.google.com/docs/database/security/quickstart" target="_blank"> Security
+             * Quickstart</a>
+             *
+             * @param error A description of the error that occurred
+             */
             @Override
-            public void onCancelled(FirebaseError firebaseError) {
+            public void onCancelled(@NonNull DatabaseError error) {
 
             }
+
         });
-        */
+
 
 
 

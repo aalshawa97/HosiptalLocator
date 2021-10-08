@@ -68,7 +68,6 @@ public class DecryptionPopup extends Activity
                         //Now decrypt the message for the user
                         MainActivityJ mainActivity = new MainActivityJ();
                         //Need to get this method to work for decryption
-
                         mainActivity.displayDecryptedChatMessage(valueKey);
 
 
