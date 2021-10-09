@@ -1,9 +1,13 @@
 package com.example.hospitalfinder.activity
 
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.makeText
@@ -33,9 +37,18 @@ class LoginActivity : AppCompatActivity() {
     private var authStateListener: FirebaseAuth.AuthStateListener? = null
     private var googleApiClient: GoogleApiClient? = null
     private var rootRef: FirebaseFirestore? = null
+    lateinit var IVPreviewImage: ImageView
+    private var imageUri: Uri? = null
+
+    // One Button
+    var BSelectImage: Button? = null
+    val pickImage = 100
+    //Constant to compare the activity result code
+    var SELECT_PICTURE = 200
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val options = FirebaseOptions.Builder()
             .setApplicationId("1:123140511070:android:a5c84837bb6de83502ebcf") // Required for Analytics.
             .setProjectId("hospitallocator-be5cd") // Required for Firebase Installations.
@@ -47,6 +60,12 @@ class LoginActivity : AppCompatActivity() {
             FirebaseApp.initializeApp(this, options, "HospitalLocator")
         }
         setContentView(R.layout.activity_login)
+        BSelectImage = findViewById(R.id.BSelectImage)
+        IVPreviewImage = findViewById(R.id.imageView)
+        BSelectImage?.setOnClickListener {
+            val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
+            startActivityForResult(gallery, pickImage)
+        }
         rootRef = FirebaseFirestore.getInstance()
 
         google_sign_in_button.setOnClickListener { signIn() }
@@ -92,7 +111,11 @@ class LoginActivity : AppCompatActivity() {
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == RC_SIGN_IN) {
+        if (resultCode == RESULT_OK && requestCode == pickImage) {
+            imageUri = data?.data
+            IVPreviewImage.setImageURI(imageUri)
+        }
+        else if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             try {
                 val googleSignInAccount = task.getResult(ApiException::class.java)
@@ -146,6 +169,21 @@ class LoginActivity : AppCompatActivity() {
         //private val TAG = "LoginActivity"
         private const val RC_SIGN_IN = 123
     }
+
+    // this function is triggered when
+    // the Select Image Button is clicked
+    fun imageChooser(view: android.view.View) {
+
+        // create an instance of the
+        // intent of the type image
+        val i = Intent()
+        i.type = "image/*"
+        i.action = Intent.ACTION_GET_CONTENT
+
+        //Pass the constant to compare it with the returned requestCode
+        startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE)
+    }
+
 
     fun openChat(view: android.view.View) {
         Toast.makeText(this, "Opening chat", Toast.LENGTH_LONG).show()

@@ -7,7 +7,7 @@ buildscript {
     }
     dependencies {
         // The Google VR SDK requires version 2.3.3 or higher.
-        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath 'com.android.tools.build:gradle:7.0.2'
         classpath "org.jetbrains.kotlin:kotlin-android-extensions:$kotlin_version "
         classpath 'com.google.gms:google-services:4.3.10'
         // The Google VR NDK requires experimental version 0.9.3 or higher.
@@ -19,7 +19,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version" // Required for Kotlin integration
         classpath "org.jetbrains.kotlin:kotlin-allopen:$kotlin_version" // See https://kotlinlang.org/docs/reference/compiler-plugins.html#kotlin-spring-compiler-plugin
         //classpath "org.springframework.boot:spring-boot-gradle-plugin:$spring_boot_version"
-        classpath 'com.android.tools.build:gradle:4.1.1'
+        classpath 'com.android.tools.build:gradle:7.0.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         //implementation 'com.google.android.material:material:1.0.0'
         // NOTE: Do not place your application dependencies here; they belong

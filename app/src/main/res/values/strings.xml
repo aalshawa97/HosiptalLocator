@@ -38,6 +38,8 @@
     <string name="send">Send</string>
     <string name="sign_out">Sign Out</string>
     <string name="message">message...</string>
+    <string name="select_image">SELECT IMAGE</string>
+    <string name="profile_picture">PROFILE PICTURE</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>
