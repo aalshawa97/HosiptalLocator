@@ -7,20 +7,21 @@ import android.view.MenuItem
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentTransaction
 import com.example.hospitalfinder.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.activity_main2.*
+import kotlinx.android.synthetic.main.contacts_list_item.*
 
 class ContactsActivity: AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main2)
+        setContentView(R.layout.contacts_list_item)
         Toast.makeText(this, "Contacts activity", Toast.LENGTH_LONG).show()
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
         title = "Contacts"
-
         val firebaseUser = FirebaseAuth.getInstance().currentUser
         if (firebaseUser != null) {
             val fromUid = firebaseUser.uid
@@ -63,6 +64,23 @@ class ContactsActivity: AppCompatActivity() {
             }
         }
     }
+    /*
+    public fun fragment_transaction(fragment : Fragment)
+    {
+        //setContentView(R.layout.contacts_list_item)
+        /*
+        FragmentTransaction transaction = getSupportFragmentManager ()
+            .beginTransaction()
+            .replace(R.id.drawer_layout, mFragment);   // < - first problem ( see ad. 1)
+        .commit()  // <-  third problem (see ad. 3)
+
+        // second problem ( see ad. 2)
+        mFragment = new AnnouncementFragment ();
+        Bundle args = new Bundle();
+        args.putInt(null, position);
+        */
+    }
+    */
 
     override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {

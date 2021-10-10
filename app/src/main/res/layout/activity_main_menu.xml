@@ -21,7 +21,6 @@
         android:clickable="true"
         android:focusable="true"
         android:minWidth="48dp"
-
         android:minHeight="48dp"
         android:src="@drawable/ic_send"
         android:tint="@android:color/white"
