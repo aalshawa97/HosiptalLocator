@@ -6,7 +6,7 @@
     <string name="Welcome">Welcome!</string>
     <string name="navigate">Navigate</string>
     <string name="aboutMe">About Me</string>
-    <string name="name">Abdullah Mutaz Alshawa</string>
+    <string name="name">Name</string>
     <string name="btn">button</string>
     <string name="red">red</string>
     <string name="blue">blue</string>
@@ -40,6 +40,16 @@
     <string name="message">message...</string>
     <string name="select_image">SELECT IMAGE</string>
     <string name="profile_picture">PROFILE PICTURE</string>
+    <string name="abdullah">Abdullah</string>
+    <string name="having_recently_been_awarded_a_bachelors_of">Having Recently been awarded a bachelors of</string>
+    <string name="science_in_software_engineering_i_look_forward_to">science in software engineering I look forward to</string>
+    <string name="helping_people_where_i_can">helping people where I can!</string>
+    <string name="email">Email</string>
+    <string name="add_contact">Add contact</string>
+    <string name="phone">Phone</string>
+    <string name="reset_output_text">reset output text</string>
+    <string name="textview">TextView</string>
+    <string name="click_button">Click Button</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>

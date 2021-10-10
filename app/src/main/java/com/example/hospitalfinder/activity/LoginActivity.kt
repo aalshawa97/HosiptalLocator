@@ -1,17 +1,22 @@
 package com.example.hospitalfinder.activity
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
 import android.view.View
+import android.view.autofill.AutofillManager
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.makeText
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContentProviderCompat.requireContext
 import com.example.hospitalfinder.MapsActivity
 import com.example.hospitalfinder.R
 import com.google.android.gms.auth.api.Auth
@@ -26,11 +31,9 @@ import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_login.*
 import com.google.firebase.FirebaseApp
-
 import com.google.firebase.FirebaseOptions
 import java.util.*
 import kotlin.concurrent.schedule
-
 
 class LoginActivity : AppCompatActivity() {
     private var firebaseAuth: FirebaseAuth? = null
@@ -185,7 +188,11 @@ class LoginActivity : AppCompatActivity() {
     }
 
 
+    //@SuppressLint("NewApi")
+   // @RequiresApi(Build.VERSION_CODES.M)
     fun openChat(view: android.view.View) {
+        //val autofillManager = requireContext().getSystemService(AutofillManager::class.java)
+        //autofillManager.commit()
         Toast.makeText(this, "Opening chat", Toast.LENGTH_LONG).show()
         Log.d("LoginActivity", "openChat: ")
         val myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
