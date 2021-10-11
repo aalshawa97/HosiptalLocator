@@ -1,6 +1,5 @@
 package com.example.hospitalfinder.activity
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
@@ -9,24 +8,19 @@ import androidx.fragment.app.FragmentTransaction
 import com.example.hospitalfinder.R
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
+import android.Manifest;
+import android.content.*
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.contacts_list_item.*
 import android.provider.ContactsContract
-
-import android.content.ContentProviderResult
-
 import android.provider.ContactsContract.CommonDataKinds.Email
-
-import android.content.ContentProviderOperation
 import android.media.tv.TvContract.Channels.CONTENT_URI
 import android.os.Build
-
 import android.provider.ContactsContract.CommonDataKinds.Phone
-
 import android.provider.ContactsContract.CommonDataKinds.StructuredName
 import androidx.annotation.RequiresApi
 import java.lang.Exception
-import android.content.ContentValues
+import android.content.pm.PackageManager
 import android.media.tv.TvContract.Channels.Logo.CONTENT_DIRECTORY
 import android.net.Uri
 import android.provider.ContactsContract.Contacts
@@ -34,51 +28,53 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.widget.*
-
+import com.example.hospitalfinder.activity.ContactsActivity.Companion.PERMISSIONS_REQUEST_READ_CONTACTS
 
 class ContactsActivity: AppCompatActivity() {
-    /*
-    var aName = findViewById<EditText>(R.id.etName)
-    var aEmail = findViewById<EditText>(R.id.etEmail)
-    var aPhone = findViewById<EditText>(R.id.etPhone)
-    var anAddContact = findViewById<Button>(R.id.btnAdd)
-    */
+    companion object {
+        val PERMISSIONS_REQUEST_READ_CONTACTS = 100
+    }
+
+    lateinit var aName : EditText
+    lateinit var aEmail : EditText
+    lateinit var aPhone : EditText
+    //var anAddContact = findViewById<Button>(R.id.btnAdd)
+
     @RequiresApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.contacts_list_item)
+        aName = findViewById<EditText>(R.id.etName)
+        aEmail = findViewById<EditText>(R.id.etEmail)
+        aPhone = findViewById<EditText>(R.id.etPhone)
         val myIntent = Intent(this@ContactsActivity, ChatActivity::class.java)
         //this@ContactsActivity.startActivity(myIntent)
+        val intent = Intent(ContactsContract.Intents.Insert.ACTION).apply {
+            // Sets the MIME type to match the Contacts Provider
+            type = ContactsContract.RawContacts.CONTENT_TYPE
+        }
         button.setOnClickListener(){
-            val inputValue: String = editText.text.toString()
-            if (inputValue == null || inputValue.trim()==""){
-                Toast.makeText(this,"please input data, edit text cannot be blank",Toast.LENGTH_LONG).show()
-            }else{
-                textView4.setText(inputValue).toString()
+            if(!aName.text.isNullOrEmpty() && !etEmail.text.isNullOrEmpty() && !etPhone.text.isNullOrEmpty())
+            {
+                intent.setType(ContactsContract.RawContacts.CONTENT_TYPE)
+                intent.putExtra(ContactsContract.Intents.Insert.NAME, aName.getText().toString());
+                intent.putExtra(ContactsContract.Intents.Insert.EMAIL, aEmail.getText().toString());
+                intent.putExtra(ContactsContract.Intents.Insert.PHONE, aPhone.getText().toString());
+                if(intent.resolveActivity(packageManager) != null) {
+                    startActivity(intent)
+                }
+                else{
+                    Toast.makeText(this, "There is no app that supports this action.", Toast.LENGTH_LONG).show()
+                }
+                startActivity(intent);
+            }
+            else{
+                Toast.makeText(this, "Please fill all the fields",
+                    Toast.LENGTH_SHORT).show();
+                //textView4.setText(inputValue).toString()
             }
         }
-        textView5.setOnClickListener(){
-            if (textView4.text.toString() == null || textView4.text.toString().trim()==""){
-                Toast.makeText(this,"clicked on reset textView,\n output textView already reset",Toast.LENGTH_LONG).show()
-            }else{
-                textView4.setText("").toString()
-            }
-        }
-        editText.addTextChangedListener(object: TextWatcher {
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                //  TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                Toast.makeText(applicationContext,"executed before making any change over EditText",Toast.LENGTH_SHORT).show()
-            }
-
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                //  TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                Toast.makeText(applicationContext,"executed while making any change over EditText",Toast.LENGTH_SHORT).show()
-            }
-            override fun afterTextChanged(p0: Editable?) {
-                //  TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-                Toast.makeText(applicationContext,"executed after change made over EditText",Toast.LENGTH_SHORT).show()
-            }
-        })
+        
         Toast.makeText(this, "Contacts activity", Toast.LENGTH_LONG).show()
         addContact()
         //addContact("Shahid Mohmammed", "2134368227")
@@ -123,6 +119,83 @@ class ContactsActivity: AppCompatActivity() {
                         }
                     }
                 }
+            }
+        }
+        //loadContacts.setOnClickListener { loadContacts() }
+
+    }
+
+    private fun loadContacts() {
+        var builder = StringBuilder()
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(
+                android.Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+            requestPermissions(arrayOf(android.Manifest.permission.READ_CONTACTS),
+                PERMISSIONS_REQUEST_READ_CONTACTS)
+            //callback onRequestPermissionsResult
+        } else {
+            //builder = getContacts()
+            val listContacts = ""
+            //listContacts.text = builder.toString()
+        }
+    }
+
+    private fun getPhoneContacts()
+    {
+        //if()
+    }
+
+    /*
+    private fun getContacts(): StringBuilder {
+        val builder = StringBuilder()
+        val resolver: ContentResolver = contentResolver;
+        val cursor = resolver.query(ContactsContract.Contacts.CONTENT_URI, null, null, null,
+            null)
+
+        if (cursor.count > 0) {
+            while (cursor.moveToNext()) {
+                val id = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts._ID))
+                val name = cursor.getString(cursor.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME))
+                val phoneNumber = (cursor.getString(
+                    cursor.getColumnIndex(ContactsContract.Contacts.HAS_PHONE_NUMBER))).toInt()
+
+                if (phoneNumber > 0) {
+                    val cursorPhone = contentResolver.query(
+                        ContactsContract.CommonDataKinds.Phone.CONTENT_URI,
+                        null, ContactsContract.CommonDataKinds.Phone.CONTACT_ID + "=?", arrayOf(id), null)
+
+                    if (cursorPhone != null) {
+                        if(cursorPhone.count > 0) {
+                            while (cursorPhone.moveToNext()) {
+                                val phoneNumValue = cursorPhone.getString(
+                                    cursorPhone.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER))
+                                builder.append("Contact: ").append(name).append(", Phone Number: ").append(
+                                    phoneNumValue).append("\n\n")
+                                Log.e("Name ===>",phoneNumValue);
+                            }
+                        }
+                    }
+                    cursorPhone.close()
+                }
+            }
+        } else {
+            //   toast("No contacts available!")
+        }
+        if (cursor != null) {
+            cursor.close()
+        }
+        return builder
+    }
+}
+*/
+
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>,
+                                            grantResults: IntArray) {
+        if (requestCode == PERMISSIONS_REQUEST_READ_CONTACTS) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                loadContacts()
+            } else {
+                //  toast("Permission must be granted in order to display contacts information")
             }
         }
     }
@@ -222,6 +295,30 @@ class ContactsActivity: AppCompatActivity() {
         */
     }
     */
+    /*
+
+    if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && checkSelfPermission(
+    Manifest.permission.READ_CONTACTS) != PackageManager.PERMISSION_GRANTED) {
+        requestPermissions(arrayOf(Manifest.permission.READ_CONTACTS),
+            PERMISSIONS_REQUEST_READ_CONTACTS)
+        //callback onRequestPermissionsResult
+    } else {
+        builder = getContacts()
+        listContacts.text = builder.toString()
+    }
+}
+
+override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>,
+                                        grantResults: IntArray) {
+    if (requestCode == PERMISSIONS_REQUEST_READ_CONTACTS) {
+        if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+            loadContacts()
+        } else {
+            //  toast("Permission must be granted in order to display contacts information")
+        }
+    }
+}
+*/
 
     override fun onOptionsItemSelected(menuItem: MenuItem): Boolean {
         return when (menuItem.itemId) {
