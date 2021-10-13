@@ -50,6 +50,7 @@
     <string name="reset_output_text">reset output text</string>
     <string name="textview">TextView</string>
     <string name="click_button">Click Button</string>
+    <string name="encrypt">Encrypt</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>

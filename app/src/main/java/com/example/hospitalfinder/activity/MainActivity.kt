@@ -6,6 +6,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.hospitalfinder.R
 import com.google.android.gms.auth.api.Auth
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.contacts_list_item)
-
+        Toast.makeText(this, "Could you please click a button in the right top corner to begin?", Toast.LENGTH_LONG).show()
         firebaseAuth = FirebaseAuth.getInstance()
         authStateListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val firebaseUser = firebaseAuth.currentUser
@@ -44,6 +45,10 @@ class MainActivity : AppCompatActivity() {
         if (googleApiClient!!.isConnected) {
             Auth.GoogleSignInApi.signOut(googleApiClient)
         }
+    }
+
+    private fun encrypt() {
+        Toast.makeText(this, "Encrypting", Toast.LENGTH_LONG).show()
     }
 
     override fun onStart() {
@@ -118,6 +123,12 @@ class MainActivity : AppCompatActivity() {
                 signOut()
                 true
             }
+
+            R.id.encrypt_button -> {
+                encrypt()
+                true
+            }
+
 
             else -> super.onOptionsItemSelected(menuItem)
         }
