@@ -20,6 +20,7 @@ class ChatActivity: AppCompatActivity() {
     private var rootRef: FirebaseFirestore? = null
     private var fromUid: String? = ""
     private var adapter: MessageAdapter? = null
+    val encryptionKey: IntArray = intArrayOf(5, 115, 51, 86, 105, 4, -31, -23, -60, 80, 17, 20, 3, -105, -53)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -86,6 +87,7 @@ class ChatActivity: AppCompatActivity() {
     inner class MessageViewHolder internal constructor(private val view: View) : RecyclerView.ViewHolder(view) {
         internal fun setMessage(message: Message) {
             val textView = view.findViewById<TextView>(R.id.text_view)
+            //We can encrypt here...
             textView.text = message.messageText
         }
     }
