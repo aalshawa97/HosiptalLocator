@@ -76,6 +76,11 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         authStateListener = FirebaseAuth.AuthStateListener { auth ->
             val firebaseUser = auth.currentUser
+            if(auth.currentUser != null)
+            {
+                Toast.makeText(this, auth.currentUser?.displayName + " is signed on!", Toast.LENGTH_LONG).show()
+
+            }
             if (firebaseUser != null) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)

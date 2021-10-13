@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.contacts_list_item)
+        setContentView(R.layout.activity_maps)
         Toast.makeText(this, "Could you please click a button in the right top corner to begin?", Toast.LENGTH_LONG).show()
         firebaseAuth = FirebaseAuth.getInstance()
         authStateListener = FirebaseAuth.AuthStateListener { firebaseAuth ->

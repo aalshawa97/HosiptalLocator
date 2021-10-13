@@ -75,7 +75,7 @@ class ContactsActivity: AppCompatActivity() {
             }
         }
         
-        Toast.makeText(this, "Contacts activity", Toast.LENGTH_LONG).show()
+        Toast.makeText(this, "Please add your contact", Toast.LENGTH_LONG).show()
         addContact()
         //addContact("Shahid Mohmammed", "2134368227")
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
