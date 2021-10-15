@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.EditText
+import android.widget.ListView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
@@ -15,16 +17,24 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.SetOptions
 import kotlinx.android.synthetic.main.activity_chat.*
+import java.security.NoSuchAlgorithmException
+import javax.crypto.Cipher
 
 class ChatActivity: AppCompatActivity() {
+    lateinit var editText: EditText
+    lateinit var listView: ListView
     private var rootRef: FirebaseFirestore? = null
     private var fromUid: String? = ""
     private var adapter: MessageAdapter? = null
-    val encryptionKey: IntArray = intArrayOf(5, 115, 51, 86, 105, 4, -31, -23, -60, 80, 17, 20, 3, -105, -53)
-
+    private val encryptionKey: IntArray = intArrayOf(5, 115, 51, 86, 105, 4, -31, -23, -60, 80, 17, 20, 3, -105, -53)
+    private var cipher: Cipher = Cipher.getInstance("<i>DES/CBC/PKCS5Padding</i>")
+    //var d: Decipher = null
+    //private SecretKeySpec secretKeySpec
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_chat)
+        editText = findViewById(R.id.edit_text)
+        listView = findViewById(R.id.list_viw)
         rootRef = FirebaseFirestore.getInstance()
 
         supportActionBar!!.setDisplayHomeAsUpEnabled(true)
@@ -82,6 +92,17 @@ class ChatActivity: AppCompatActivity() {
         recycler_view.adapter = adapter
 
         title = toUser.userName
+
+        try {
+            cipher = Cipher.getInstance("AES")
+            //decipher = Cipher.getInstance("AES")
+        }
+        catch(e: NoSuchAlgorithmException)
+        {
+            e.printStackTrace()
+        }
+
+        //secretKeySpec = new SecreyKeySpec()
     }
 
     inner class MessageViewHolder internal constructor(private val view: View) : RecyclerView.ViewHolder(view) {

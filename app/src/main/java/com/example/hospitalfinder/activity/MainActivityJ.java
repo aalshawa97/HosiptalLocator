@@ -237,8 +237,14 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
 
                 Log.d("Original plaintext: ", (tempPlainText.toString()));
 
-
-                //plainText = Long.parseLong(stringToLong(tempPlainText.toString()));
+                try
+                {
+                    plainText = Long.parseLong(stringToLong(tempPlainText.toString()));
+                }
+                catch (NumberFormatException e)
+                {
+                    Log.d("Encyrption", "populateView: " + e.toString());
+                }
 
                 Log.d("Encrypting plaintext: ", String.valueOf(plainText));
 
