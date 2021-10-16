@@ -1,5 +1,8 @@
 package com.example.hospitalfinder.activity;
 
+import static java.lang.Character.toLowerCase;
+import static java.lang.Character.toUpperCase;
+
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -166,16 +169,117 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                     //Log statement to assure us that we have gotten here
                     Log.d("Ran","Decrypting");
 
+                    displayDecryptedChatMessageCaesar();
                     //Now prompt the user for the key to use for decrypting the message
-                    DecryptionPopup decryptionPopup = new DecryptionPopup();
-                    startActivity(new Intent(MainActivityJ.this,DecryptionPopup.class));
-
+                    //DecryptionPopup decryptionPopup = new DecryptionPopup();
+                    //startActivity(new Intent(MainActivityJ.this,DecryptionPopup.class));
 
                 }
 
 
             });
         }
+    }
+
+    public void displayDecryptedChatMessageCaesar()
+    {
+        Toast.makeText(this, "Decrypting", Toast.LENGTH_LONG).show();
+
+        ListView listOfMessage = (ListView)findViewById(R.id.list_of_message);
+        adapter = new FirebaseListAdapter<ChatMessage>(this,ChatMessage.class,R.layout.list_item,FirebaseDatabase.getInstance().getReference()) {
+            @Override
+            protected void populateView(View v, ChatMessage model, int position) {
+                //Get references to the views of list_item.xml
+                TextView messageText,messageUser,messageTime;
+                messageText = (TextView) v.findViewById(R.id.message_text);
+                messageUser = (TextView) v.findViewById(R.id.message_user);
+                messageTime = (TextView) v.findViewById(R.id.message_time);
+
+
+                //Decrypt messages with caesar
+
+                StringBuilder tempMessageText = new StringBuilder(model.getMessageText());
+                int ascii = 0;
+
+                //Key for decryption
+                int key = 0;
+                char ch = ' ';
+
+                /*
+                for (int i = 0; i<tempMessageText.length(); i++)
+                {
+                    tempMessageText.setCharAt(i,toLowerCase(tempMessageText.charAt(i)));
+                    ascii = ((((int)tempMessageText.charAt(i)-65 - key) %26) + 65);
+                    tempMessageText.setCharAt(i,(char)ascii);
+                }
+                */
+
+                String decryptedMessage = "";
+                for(int i = 0; i < tempMessageText.length(); ++i){
+                    ch = tempMessageText.charAt(i);
+                    if(ch >= 'a' && ch <= 'z'){
+                        ch = (char)(ch - key);
+
+                        if(ch < 'a'){
+                            ch = (char)(ch + 'z' - 'a' + 1);
+                        }
+
+                        decryptedMessage += ch;
+                    }
+                    else if(ch >= 'A' && ch <= 'Z'){
+                        ch = (char)(ch - key);
+
+                        if(ch < 'A'){
+                            ch = (char)(ch + 'Z' - 'A' + 1);
+                        }
+
+                        decryptedMessage += ch;
+                    }
+                    else {
+                        decryptedMessage += ch;
+                    }
+                }
+                System.out.println("Decrypted Message = " + decryptedMessage);
+
+
+                //Here is where I am trying to convert a message to a number so that I can encrypt it with my RSA functions
+
+                long plainText = 100;
+
+                //Get the plaintext from the textview
+
+                //Toast.makeText(getApplicationContext(),"This is an RSA tutorial, please enter numbers only!", Toast.LENGTH_LONG).show();
+
+                StringBuilder tempPlainText = new StringBuilder(model.getMessageText());
+
+                Log.d("Original plaintext: ", (tempPlainText.toString()));
+
+                try
+                {
+                    plainText = Long.parseLong(stringToLong(tempPlainText.toString()));
+                }
+                catch (NumberFormatException e)
+                {
+                    Log.d("Decyrption", "populateView: " + e.toString());
+                }
+
+                Log.d("Decrypting plaintext: ", String.valueOf(tempMessageText));
+
+
+                //Encrypt messages with RSA
+                //RSAencryption rsAencryption = new RSAencryption();
+                //plainText = rsAencryption.KeyGeneration(plainText);
+
+
+
+                messageText.setText(String.valueOf(decryptedMessage));
+                //messageText.setText(model.getMessageText());
+                messageUser.setText(model.getMessageUser());
+                messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",model.getMessageTime()));
+            }
+        };
+
+        listOfMessage.setAdapter(adapter);
     }
 
     private static String stringToLong(String string) {
@@ -197,6 +301,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
 
     public void displayChatMessage(final String aKey)
     {
+        Toast.makeText(this, "Encrypting", Toast.LENGTH_LONG).show();
 
         ListView listOfMessage = (ListView)findViewById(R.id.list_of_message);
         adapter = new FirebaseListAdapter<ChatMessage>(this,ChatMessage.class,R.layout.list_item,FirebaseDatabase.getInstance().getReference()) {
@@ -208,7 +313,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                 messageUser = (TextView) v.findViewById(R.id.message_user);
                 messageTime = (TextView) v.findViewById(R.id.message_time);
 
-                /*
+
                 //Encrypt messages with caesar
 
                 StringBuilder tempMessageText = new StringBuilder(model.getMessageText());
@@ -223,7 +328,6 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                         ascii = ((((int)tempMessageText.charAt(i)-65 + key) %26) + 65);
                         tempMessageText.setCharAt(i,(char)ascii);
                     }
-                */
 
                 //Here is where I am trying to convert a message to a number so that I can encrypt it with my RSA functions
 
@@ -246,21 +350,19 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                     Log.d("Encyrption", "populateView: " + e.toString());
                 }
 
-                Log.d("Encrypting plaintext: ", String.valueOf(plainText));
+                Log.d("Encrypting plaintext: ", String.valueOf(tempMessageText));
 
 
                 //Encrypt messages with RSA
-                RSAencryption rsAencryption = new RSAencryption();
-                plainText = rsAencryption.KeyGeneration(plainText);
+                //RSAencryption rsAencryption = new RSAencryption();
+                //plainText = rsAencryption.KeyGeneration(plainText);
 
 
 
-                //messageText.setText(String.valueOf(plainText));
-                messageText.setText(model.getMessageText());
+                messageText.setText(String.valueOf(tempMessageText));
+                //messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",model.getMessageTime()));
-
-
             }
         };
 
@@ -268,9 +370,12 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
     }
 
 
-    public void displayDecryptedChatMessage( String valueKey)
+    public void displayDecryptedChatMessage(String valueKey)
     {
-        //Trying new method for decryption
+        valueKey = "1";
+        Log.d("Decryption", "displayDecryptedChatMessage: " + valueKey.toString());
+
+        //Trying new method for decryption with caesar cipher
         final TextView messageText,messageUser,messageTime;
         View v = new View(getApplicationContext());
         messageText = (TextView) v.findViewById(R.id.message_text);
@@ -282,9 +387,23 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
 
-                String data = dataSnapshot.getValue(String.class);
-                messageText.setText("Decrypted");
+                StringBuilder tempMessageText = new StringBuilder(messageText.getText());
 
+                //Key for encryption
+                int key = 1;
+                int ascii = 0;
+
+
+                for (int i = 0; i<messageText.getText().length(); i++)
+                {
+                    tempMessageText.setCharAt(i,toUpperCase(tempMessageText.charAt(i)));
+                    ascii = ((((int)tempMessageText.charAt(i)+65 + key) %26) + 65);
+                    tempMessageText.setCharAt(i,(char)ascii);
+                }
+
+                String data = dataSnapshot.getValue(String.class);
+                messageText.setText(messageText.getText());
+                Log.d("Decryption", "Decrypted chat message: " + messageText.getText());
             }
 
             /**
