@@ -49,6 +49,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun encrypt() {
         Toast.makeText(this, "Encrypting", Toast.LENGTH_LONG).show()
+
     }
 
     override fun onStart() {
@@ -126,6 +127,8 @@ class MainActivity : AppCompatActivity() {
 
             R.id.encrypt_button -> {
                 encrypt()
+                val intent = Intent(this, MainActivityJ::class.java)
+                startActivity(intent)
                 true
             }
 
