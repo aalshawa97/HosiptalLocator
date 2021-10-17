@@ -5,6 +5,7 @@ buildscript {
         google()
         jcenter()
     }
+
     dependencies {
         // The Google VR SDK requires version 2.3.3 or higher.
         classpath 'com.android.tools.build:gradle:7.0.3'
