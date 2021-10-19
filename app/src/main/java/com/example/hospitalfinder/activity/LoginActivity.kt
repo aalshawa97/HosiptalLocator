@@ -18,6 +18,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
+//import com.google.android.gms.common.api.GoogleSignInClient
 import com.google.android.gms.common.api.GoogleApiClient
 import com.google.firebase.FirebaseApp
 import com.google.firebase.FirebaseOptions
@@ -41,7 +42,6 @@ class LoginActivity : AppCompatActivity() {
     var BSelectImage: Button? = null
     var BSkip: Button? = null
     var BChat: Button? = null
-
 
     val pickImage = 100
     //Constant to compare the activity result code
@@ -78,7 +78,7 @@ class LoginActivity : AppCompatActivity() {
         }
         rootRef = FirebaseFirestore.getInstance()
 
-        google_sign_in_button.setOnClickListener { signIn() }
+        //google_sign_in_button.setOnClickListener { signIn() }
 
         firebaseAuth = FirebaseAuth.getInstance()
         authStateListener = FirebaseAuth.AuthStateListener { auth ->
@@ -105,9 +105,23 @@ class LoginActivity : AppCompatActivity() {
                 .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
                 .build()
 
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        // Configure sign-in to request the user's ID, email address, and basic
+        // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
+        /*
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestEmail()
+            .build()
+
+        // Build a GoogleSignInClient with the options specified by gso.
+
+        // Build a GoogleSignInClient with the options specified by gso.
+        mGoogleSignInClient = GoogleSignIn.getClient(this, gso)
+        */
+
         //Skip login
         BSkip = findViewById(R.id.buttonSkipLogin)
-
         BSkip?.setOnClickListener {
             val myIntent = Intent(this@LoginActivity, HomeActivity::class.java)
             this@LoginActivity.startActivity(myIntent)
@@ -115,7 +129,6 @@ class LoginActivity : AppCompatActivity() {
 
         //Open chat
         BChat = findViewById(R.id.buttonChat)
-
         BChat?.setOnClickListener {
             Log.d("LoginActivity", "openChat: ")
             val myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
