@@ -28,7 +28,8 @@
         android:id="@+id/buttonSkipLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="skipLogin"
+        android:clickable="true"
+        android:focusable="true"
         android:text="@string/begin_login" />
 
     <com.google.android.gms.common.SignInButton

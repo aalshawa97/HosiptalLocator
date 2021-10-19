@@ -48,6 +48,8 @@ class LoginActivity : AppCompatActivity() {
 
     // One Button
     var BSelectImage: Button? = null
+    var BSkip: Button? = null
+
     val pickImage = 100
     //Constant to compare the activity result code
     var SELECT_PICTURE = 200
@@ -101,6 +103,13 @@ class LoginActivity : AppCompatActivity() {
                 .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
                 .build()
 
+        //Skip login
+        BSkip = findViewById(R.id.buttonSkipLogin)
+
+        BSkip?.setOnClickListener {
+            val myIntent = Intent(this@LoginActivity, HomeActivity::class.java)
+            this@LoginActivity.startActivity(myIntent)
+        }
         //Send message
 
         /*
