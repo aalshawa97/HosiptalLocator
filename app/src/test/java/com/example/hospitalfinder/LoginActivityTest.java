@@ -34,4 +34,19 @@ public class LoginActivityTest {
         }
 
     }
+
+    @Test
+    public void testAppName() {
+        if(R.string.app_name == 0)
+        {
+            //Return false
+            assertEquals(0, 1);
+        }
+        else
+        {
+            //Return true
+            assertEquals(0, 0);
+        }
+
+    }
 }
