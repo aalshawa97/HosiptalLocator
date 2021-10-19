@@ -9,6 +9,21 @@
     android:background="@drawable/ic_hospital_finder_background"
     android:gravity="center">
 
+    <!--
+    <com.example.hospitalfinder.customFonts.MyTextView
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/login_now"
+        android:letterSpacing="0.0025"
+        android:textColor="#fff"
+        android:textSize="16dp"
+        android:gravity="center"
+        android:padding="15dp"
+        android:background="#007AFF"
+        android:layout_alignParentBottom="true"/>
+
+-->
     <Button
         android:id="@+id/buttonSkipLogin"
         android:layout_width="wrap_content"
@@ -29,7 +44,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="openChat"
-            android:text="Chat" />
+            android:text="@string/chat" />
 
     </com.google.android.gms.common.SignInButton>
 

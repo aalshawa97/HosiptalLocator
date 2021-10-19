@@ -28,7 +28,6 @@
     <string name="title_activity_chat">Chat Activity</string>
     <string name="title_activity_login">Login Activity</string>
     <string name="begin_login">Start</string>
-    <string name="chat">Chat</string>
     <string name="title_activity_mainj">Main Activity Java</string>
     <string name="todo">TODO</string>
     <string name="title_activity_contacts">Contacts Activity</string>
@@ -51,6 +50,8 @@
     <string name="textview">TextView</string>
     <string name="click_button">Click Button</string>
     <string name="encrypt">Chat</string>
+    <string name="chat">Chat</string>
+    <string name="login_now">Login Now</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>

@@ -10,6 +10,7 @@ import android.util.Log
 import android.view.View
 import android.view.autofill.AutofillManager
 import android.widget.Button
+import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
@@ -25,6 +26,7 @@ import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
 import com.google.android.gms.common.api.GoogleApiClient
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
@@ -32,6 +34,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_login.*
 import com.google.firebase.FirebaseApp
 import com.google.firebase.FirebaseOptions
+import com.google.firebase.database.FirebaseDatabase
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -97,6 +100,29 @@ class LoginActivity : AppCompatActivity() {
                 .enableAutoManage(this) { makeText(this, "You got a GoogleApiClient Error!", LENGTH_SHORT).show() }
                 .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
                 .build()
+
+        //Send message
+
+        /*
+        SendButton = findViewById<FloatingActionButton>(R.id.fab)
+        if (SendButton != null) {
+            SendButton.setOnClickListener(
+                View.OnClickListener
+                //This method runs everytime the decrypt button is clicked
+                { //Log statement to assure us that we have gotten here
+                    Log.d("Ran", "Sending")
+                    //Toast.makeText(this, "Sending text..." + findViewById(R.id.input).toString(), Toast.LENGTH_SHORT).show();
+                    val input = findViewById<View>(R.id.input) as EditText
+                    FirebaseDatabase.getInstance().reference.push().setValue(
+                        ChatMessage(
+                            input.text.toString(), FirebaseAuth.getInstance().currentUser!!
+                                .email
+                        )
+                    )
+                    input.setText("")
+                })
+        }
+        */
     }
 
     private fun signIn() {
