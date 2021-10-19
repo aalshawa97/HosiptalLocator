@@ -49,6 +49,8 @@ class LoginActivity : AppCompatActivity() {
     // One Button
     var BSelectImage: Button? = null
     var BSkip: Button? = null
+    var BChat: Button? = null
+
 
     val pickImage = 100
     //Constant to compare the activity result code
@@ -110,6 +112,23 @@ class LoginActivity : AppCompatActivity() {
             val myIntent = Intent(this@LoginActivity, HomeActivity::class.java)
             this@LoginActivity.startActivity(myIntent)
         }
+
+        //Open chat
+        BChat = findViewById(R.id.buttonChat)
+
+        BChat?.setOnClickListener {
+            Log.d("LoginActivity", "openChat: ")
+            val myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
+            this@LoginActivity.startActivity(myIntent)
+            Log.d("Opening messenger", "openChat: ")
+            Timer("SettingUp", false).schedule(20000) {
+                val myIntent = Intent(this@LoginActivity, ChatActivity::class.java)
+                //this@LoginActivity.startActivity(myIntent)
+            }
+
+            this@LoginActivity.startActivity(myIntent)
+        }
+
         //Send message
 
         /*
