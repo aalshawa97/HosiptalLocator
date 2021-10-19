@@ -50,6 +50,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
     RelativeLayout activity_main;
     FloatingActionButton fab;
     Button DecryptButton;
+    FloatingActionButton SendButton;
     Toast decryptToast;
     Context context;
 
@@ -144,6 +145,48 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
             displayChatMessage(aKey);
         }
 
+        //Trying to see if I can detect button clicks on the decrypt button
+        DecryptButton = (Button)findViewById(R.id.button_decrypt);
+
+        if(DecryptButton != null)
+        {
+            DecryptButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                //This method runs everytime the decrypt button is clicked
+                public void onClick(View v) {
+                    //Log statement to assure us that we have gotten here
+                    Log.d("Ran","Decrypting");
+
+                    displayDecryptedChatMessageCaesar();
+                    //Now prompt the user for the key to use for decrypting the message
+                    //DecryptionPopup decryptionPopup = new DecryptionPopup();
+                    //startActivity(new Intent(MainActivityJ.this,DecryptionPopup.class));
+
+                }
+
+
+            });
+        }
+
+        //Send message
+        SendButton = findViewById(R.id.fab);
+        if(SendButton != null)
+        {
+            SendButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                //This method runs everytime the decrypt button is clicked
+                public void onClick(View v) {
+                    //Log statement to assure us that we have gotten here
+                    Log.d("Ran","Sending");
+                    //Toast.makeText(this, "Sending text..." + findViewById(R.id.input).toString(), Toast.LENGTH_SHORT).show();
+                    EditText input = (EditText)findViewById(R.id.input);
+                    FirebaseDatabase.getInstance().getReference().push().setValue(new ChatMessage(input.getText().toString(),FirebaseAuth.getInstance().getCurrentUser().getEmail()));
+                    input.setText("");
+                }
+
+
+            });
+        }
     }
 
     public void sendMessage(final View view)

@@ -22,8 +22,6 @@
         android:contentDescription="@string/todo"
         android:minWidth="48dp"
         android:minHeight="48dp"
-
-        android:onClick="sendMessage"
         android:src="@drawable/ic_send"
         android:tint="@android:color/white"
         app:fabSize="mini"
@@ -42,7 +40,6 @@
         android:layout_alignParentBottom="true"
         android:layout_marginEnd="58dp"
         android:layout_marginRight="58dp"
-        android:onClick="decryptMessage"
         android:text="@string/decrypt" />
 
     <com.google.android.material.textfield.TextInputLayout
@@ -55,15 +52,16 @@
         android:layout_alignParentLeft="true"
         android:layout_toStartOf="@+id/fab">
 
-        ></com.google.android.material.textfield.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <EditText
         android:id="@+id/input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints="Message a medical professional"
         android:hint="@string/message"
         android:inputType="text"
-        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+        tools:ignore="SpeakableTextPresentCheck,TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck,TextContrastCheck" />
 
     <ListView
         android:id="@+id/list_of_message"
