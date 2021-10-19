@@ -26,7 +26,7 @@ class ChatActivity: AppCompatActivity() {
     private var rootRef: FirebaseFirestore? = null
     private var fromUid: String? = ""
     private var adapter: MessageAdapter? = null
-    private val encryptionKey: IntArray = intArrayOf(5, 115, 51, 86, 105, 4, -31, -23, -60, 80, 17, 20, 3, -105, -53)
+    //private val encryptionKey: IntArray = intArrayOf(5, 115, 51, 86, 105, 4, -31, -23, -60, 80, 17, 20, 3, -105, -53)
     private var cipher: Cipher = Cipher.getInstance("<i>DES/CBC/PKCS5Padding</i>")
     //var d: Decipher = null
     //private SecretKeySpec secretKeySpec
@@ -94,7 +94,7 @@ class ChatActivity: AppCompatActivity() {
         title = toUser.userName
 
         try {
-            cipher = Cipher.getInstance("AES")
+            cipher = Cipher.getInstance("RSA")
             //decipher = Cipher.getInstance("AES")
         }
         catch(e: NoSuchAlgorithmException)
