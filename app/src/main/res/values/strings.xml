@@ -52,6 +52,7 @@
     <string name="encrypt">Chat</string>
     <string name="chat">Chat</string>
     <string name="login_now">Login Now</string>
+    <string name="big_star">Big star</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>
