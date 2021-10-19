@@ -52,6 +52,7 @@
         android:layout_marginBottom="24dp"
         android:contentDescription="@string/profile_picture"
 
+        tools:ignore="ImageContrastCheck"
         tools:srcCompat="@tools:sample/avatars" />
 
     <Button
