@@ -75,6 +75,15 @@ class LoginActivity : AppCompatActivity() {
         BSelectImage?.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, pickImage)
+
+            // create an instance of the
+            // intent of the type image
+            val i = Intent()
+            i.type = "image/*"
+            i.action = Intent.ACTION_GET_CONTENT
+
+            //Pass the constant to compare it with the returned requestCode
+            startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE)
         }
         rootRef = FirebaseFirestore.getInstance()
 
