@@ -1,6 +1,9 @@
 package com.example.hospitalfinder.activity
 
+import android.content.Context
 import android.os.Bundle
+import android.util.Base64.encodeToString
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
@@ -8,6 +11,7 @@ import android.view.ViewGroup
 import android.widget.EditText
 import android.widget.ListView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hospitalfinder.R
@@ -17,8 +21,16 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.Query
 import com.google.firebase.firestore.SetOptions
 import kotlinx.android.synthetic.main.activity_chat.*
+import java.lang.Byte.decode
 import java.security.NoSuchAlgorithmException
+import java.security.spec.PSSParameterSpec.DEFAULT
+import java.util.*
 import javax.crypto.Cipher
+import javax.crypto.SecretKey
+import javax.crypto.SecretKeyFactory
+import javax.crypto.spec.IvParameterSpec
+import javax.crypto.spec.PBEKeySpec
+import javax.crypto.spec.SecretKeySpec
 
 class ChatActivity: AppCompatActivity() {
     lateinit var editText: EditText
@@ -95,6 +107,9 @@ class ChatActivity: AppCompatActivity() {
 
         try {
             cipher = Cipher.getInstance("RSA")
+            val keyBytes = byteArrayOfInts(0xA1, 0x2E, 0x38, 0xD4, 0x89, 0xC3)
+            val secretKey: SecretKey = SecretKeySpec(keyBytes, "AES")
+            //cipher.init()
             //decipher = Cipher.getInstance("AES")
         }
         catch(e: NoSuchAlgorithmException)
@@ -104,6 +119,64 @@ class ChatActivity: AppCompatActivity() {
 
         //secretKeySpec = new SecreyKeySpec()
     }
+
+    object AESEncyption {
+
+        const val secretKey = "tK5UTui+DPh8lIlBxya5XVsmeDCoUl6vHhdIESMB6sQ="
+        const val salt = "QWlGNHNhMTJTQWZ2bGhpV3U=" // base64 decode => AiF4sa12SAfvlhiWu
+        const val iv = "bVQzNFNhRkQ1Njc4UUFaWA==" // base64 decode => mT34SaFD5678QAZX
+
+        fun encrypt(strToEncrypt: String) :  String?
+        {
+            try
+            {
+                val ivParameterSpec = IvParameterSpec(android.util.Base64.decode(iv, android.util.Base64.DEFAULT))
+
+                val factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1")
+                val spec =  PBEKeySpec(secretKey.toCharArray(), android.util.Base64.decode(salt, android.util.Base64.DEFAULT), 10000, 256)
+                val tmp = factory.generateSecret(spec)
+                val secretKey =  SecretKeySpec(tmp.encoded, "AES")
+
+                val cipher = Cipher.getInstance("AES/CBC/PKCS7Padding")
+                cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivParameterSpec)
+                //Toast.makeText(this, "Opening chat", Toast.LENGTH_LONG).show()
+                Log.d("ChatActivity", "encrypt: RSA")
+                //Toast.makeText(this, "Testing encryption with RSA", Toast.LENGTH_LONG).show()
+                return android.util.Base64.encodeToString(cipher.doFinal(strToEncrypt.toByteArray(Charsets.UTF_8)), android.util.Base64.DEFAULT)
+            }
+            catch (e: Exception)
+            {
+                println("Error while encrypting: $e")
+            }
+            return null
+        }
+
+        fun decrypt(strToDecrypt : String) : String? {
+            try
+            {
+
+                /*
+                val ivParameterSpec =  IvParameterSpec(android.util.Base64.(iv, android.util.Base64.DEFAULT))
+
+                val factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1")
+                val spec =  PBEKeySpec(secretKey.toCharArray(), android.util.Base64.decode(salt, android.util.Base64.DEFAULT), 10000, 256)
+                val tmp = factory.generateSecret(spec);
+                val secretKey =  SecretKeySpec(tmp.encoded, "AES")
+
+                val cipher = Cipher.getInstance("AES/CBC/PKCS7Padding");
+                cipher.init(Cipher.DECRYPT_MODE, secretKey, ivParameterSpec);
+                return  String(cipher.doFinal(android.util.Base64.decode(strToDecrypt, android.util.Base64.DEFAULT)))
+                */
+            }
+            catch (e : Exception) {
+                println("Error while decrypting: $e");
+            }
+            return null
+        }
+    }
+
+    fun byteArrayOfInts(vararg ints: Int) = ByteArray(ints.size) { pos -> ints[pos].toByte() }
+
 
     inner class MessageViewHolder internal constructor(private val view: View) : RecyclerView.ViewHolder(view) {
         internal fun setMessage(message: Message) {
