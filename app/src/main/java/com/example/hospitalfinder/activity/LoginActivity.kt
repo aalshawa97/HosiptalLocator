@@ -39,9 +39,9 @@ class LoginActivity : AppCompatActivity() {
     private var imageUri: Uri? = null
 
     // One Button
-    var BSelectImage: Button? = null
-    var BSkip: Button? = null
-    var BChat: Button? = null
+    var bSelectImage: Button? = null
+    var bSkip: Button? = null
+    var bChat: Button? = null
 
     val pickImage = 100
     //Constant to compare the activity result code
@@ -56,14 +56,17 @@ class LoginActivity : AppCompatActivity() {
             .setApiKey("AIzaSyDhp9velxKCu4zR7j8iQJTuJvGY9pjnPoU") // Required for Auth.
             .build()
         //If the application name is not initialized!
+        /*
         if(R.string.app_name == null)
         {
             FirebaseApp.initializeApp(this, options, "HospitalLocator")
         }
+        */
+
         setContentView(R.layout.activity_login)
-        BSelectImage = findViewById(R.id.BSelectImage)
+        bSelectImage = findViewById(R.id.BSelectImage)
         IVPreviewImage = findViewById(R.id.imageView)
-        BSelectImage?.setOnClickListener {
+        bSelectImage?.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, pickImage)
 
@@ -125,21 +128,21 @@ class LoginActivity : AppCompatActivity() {
         */
 
         //Skip login
-        BSkip = findViewById(R.id.buttonSkipLogin)
-        BSkip?.setOnClickListener {
+        bSkip = findViewById(R.id.buttonSkipLogin)
+        bSkip?.setOnClickListener {
             val myIntent = Intent(this@LoginActivity, HomeActivity::class.java)
             this@LoginActivity.startActivity(myIntent)
         }
 
         //Open chat
-        BChat = findViewById(R.id.buttonChat)
-        BChat?.setOnClickListener {
+        bChat = findViewById(R.id.buttonChat)
+        bChat?.setOnClickListener {
             Log.d("LoginActivity", "openChat: ")
             val myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
             this@LoginActivity.startActivity(myIntent)
             Log.d("Opening messenger", "openChat: ")
             Timer("SettingUp", false).schedule(20000) {
-                val myIntent = Intent(this@LoginActivity, ChatActivity::class.java)
+                Intent(this@LoginActivity, ChatActivity::class.java)
                 //this@LoginActivity.startActivity(myIntent)
             }
 
