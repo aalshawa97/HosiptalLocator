@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
 
     val pickImage = 100
     //Constant to compare the activity result code
-    var SELECT_PICTURE = 200
+    var selectPicture = 200
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -74,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
             i.action = Intent.ACTION_GET_CONTENT
 
             //Pass the constant to compare it with the returned requestCode
-            startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE)
+            startActivityForResult(Intent.createChooser(i, "Select Picture"), selectPicture)
         }
         rootRef = FirebaseFirestore.getInstance()
 
