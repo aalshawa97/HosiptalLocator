@@ -53,6 +53,7 @@
     <string name="chat">Chat</string>
     <string name="login_now">Login Now</string>
     <string name="big_star">Big star</string>
+    <string name="server_client_id">870272768791-hiohc3satnmh6m8ej81kvpqc9l45vs7g.apps.googleusercontent.com</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>

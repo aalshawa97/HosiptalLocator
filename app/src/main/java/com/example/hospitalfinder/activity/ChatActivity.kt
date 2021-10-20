@@ -15,6 +15,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hospitalfinder.R
+import com.example.hospitalfinder.activity.ChatActivity.AESEncyption.encrypt
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter
 import com.firebase.ui.firestore.FirestoreRecyclerOptions
 import com.google.firebase.firestore.FirebaseFirestore
@@ -105,6 +106,9 @@ class ChatActivity: AppCompatActivity() {
 
         title = toUser.userName
 
+        //Testing RSA
+        encrypt("This is secret!")
+
         try {
             cipher = Cipher.getInstance("RSA")
             val keyBytes = byteArrayOfInts(0xA1, 0x2E, 0x38, 0xD4, 0x89, 0xC3)
@@ -130,6 +134,8 @@ class ChatActivity: AppCompatActivity() {
         {
             try
             {
+                Log.d("ChatActivity", "Before encrypting: RSA " + strToEncrypt)
+
                 val ivParameterSpec = IvParameterSpec(android.util.Base64.decode(iv, android.util.Base64.DEFAULT))
 
                 val factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA1")
@@ -140,7 +146,7 @@ class ChatActivity: AppCompatActivity() {
                 val cipher = Cipher.getInstance("AES/CBC/PKCS7Padding")
                 cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivParameterSpec)
                 //Toast.makeText(this, "Opening chat", Toast.LENGTH_LONG).show()
-                Log.d("ChatActivity", "encrypt: RSA")
+                Log.d("ChatActivity", "Encrypted: RSA " + android.util.Base64.encodeToString(cipher.doFinal(strToEncrypt.toByteArray(Charsets.UTF_8)), android.util.Base64.DEFAULT))
                 //Toast.makeText(this, "Testing encryption with RSA", Toast.LENGTH_LONG).show()
                 return android.util.Base64.encodeToString(cipher.doFinal(strToEncrypt.toByteArray(Charsets.UTF_8)), android.util.Base64.DEFAULT)
             }

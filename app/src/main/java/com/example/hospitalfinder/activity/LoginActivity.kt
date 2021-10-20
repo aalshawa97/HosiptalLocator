@@ -88,6 +88,9 @@ class LoginActivity : AppCompatActivity() {
                 Toast.makeText(this, auth.currentUser?.displayName + " is signed on!", Toast.LENGTH_LONG).show()
 
             }
+
+            //val idToken: GoogleIdToken = verifier.verify(idTokenString)
+
             if (firebaseUser != null) {
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
@@ -95,8 +98,9 @@ class LoginActivity : AppCompatActivity() {
             }
         }
 
+
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id))
+                .requestIdToken(getString(R.string.server_client_id))
                 .requestEmail()
                 .build()
 
