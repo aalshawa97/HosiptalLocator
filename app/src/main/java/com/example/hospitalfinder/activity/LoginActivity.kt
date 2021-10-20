@@ -86,9 +86,12 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuth = FirebaseAuth.getInstance()
         authStateListener = FirebaseAuth.AuthStateListener { auth ->
             val firebaseUser = auth.currentUser
-            if(auth.currentUser != null)
-            {
-                Toast.makeText(this, auth.currentUser?.displayName + " is signed on!", Toast.LENGTH_LONG).show()
+            if (auth.currentUser != null) {
+                Toast.makeText(
+                    this,
+                    auth.currentUser?.displayName + " is signed on!",
+                    Toast.LENGTH_LONG
+                ).show()
 
             }
 
@@ -104,13 +107,20 @@ class LoginActivity : AppCompatActivity() {
 
         val googleSignInOptions = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestIdToken(getString(R.string.server_client_id))
-                .requestEmail()
-                .build()
+            .requestIdToken(getString(R.string.server_client_id))
+            .requestEmail()
+            .build()
 
         googleApiClient = GoogleApiClient.Builder(applicationContext)
-                .enableAutoManage(this) { makeText(this, "You got a GoogleApiClient Error!", LENGTH_SHORT).show() }
-                .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
-                .build()
+            .enableAutoManage(this) {
+                makeText(
+                    this,
+                    "You got a GoogleApiClient Error!",
+                    LENGTH_SHORT
+                ).show()
+            }
+            .addApi(Auth.GOOGLE_SIGN_IN_API, googleSignInOptions)
+            .build()
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -171,24 +181,6 @@ class LoginActivity : AppCompatActivity() {
                 })
         }
         */
-    }
-
-    private fun signIn() {
-        val signInIntent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient)
-        startActivityForResult(signInIntent, RC_SIGN_IN)
-
-       //val myIntent = Intent(this@LoginActivity, HomeActivity::class.java)
-        //this@LoginActivity.startActivity(myIntent)
-    }
-
-    public fun skipLogin(view : View){
-        val myIntent = Intent(this@LoginActivity, HomeActivity::class.java)
-        this@LoginActivity.startActivity(myIntent)
-    }
-
-    public fun chat(view : View){
-        val myIntent = Intent(this@LoginActivity, ChatActivity::class.java)
-        this@LoginActivity.startActivity(myIntent)
     }
 
     public override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
