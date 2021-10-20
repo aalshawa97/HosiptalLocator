@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
     private var authStateListener: FirebaseAuth.AuthStateListener? = null
     private var googleApiClient: GoogleApiClient? = null
     private var rootRef: FirebaseFirestore? = null
-    lateinit var IVPreviewImage: ImageView
+    private lateinit var previewImage: ImageView
     private var imageUri: Uri? = null
 
     // One Button
@@ -65,7 +65,7 @@ class LoginActivity : AppCompatActivity() {
 
         setContentView(R.layout.activity_login)
         bSelectImage = findViewById(R.id.BSelectImage)
-        IVPreviewImage = findViewById(R.id.imageView)
+        previewImage = findViewById(R.id.imageView)
         bSelectImage?.setOnClickListener {
             val gallery = Intent(Intent.ACTION_PICK, MediaStore.Images.Media.INTERNAL_CONTENT_URI)
             startActivityForResult(gallery, pickImage)
@@ -195,7 +195,7 @@ class LoginActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == RESULT_OK && requestCode == pickImage) {
             imageUri = data?.data
-            IVPreviewImage.setImageURI(imageUri)
+            previewImage.setImageURI(imageUri)
         }
         else if (requestCode == RC_SIGN_IN) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
