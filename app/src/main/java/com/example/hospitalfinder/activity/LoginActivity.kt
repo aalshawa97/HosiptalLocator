@@ -248,41 +248,4 @@ class LoginActivity : AppCompatActivity() {
         //private val TAG = "LoginActivity"
         private const val RC_SIGN_IN = 123
     }
-
-    // this function is triggered when
-    // the Select Image Button is clicked
-    fun imageChooser(view: android.view.View) {
-
-        // create an instance of the
-        // intent of the type image
-        val i = Intent()
-        i.type = "image/*"
-        i.action = Intent.ACTION_GET_CONTENT
-
-        //Pass the constant to compare it with the returned requestCode
-        startActivityForResult(Intent.createChooser(i, "Select Picture"), SELECT_PICTURE)
-    }
-
-
-    //@SuppressLint("NewApi")
-   // @RequiresApi(Build.VERSION_CODES.M)
-    fun openChat(view: android.view.View) {
-        //val autofillManager = requireContext().getSystemService(AutofillManager::class.java)
-        //autofillManager.commit()
-        Toast.makeText(this, "Opening chat", Toast.LENGTH_LONG).show()
-        Log.d("LoginActivity", "openChat: ")
-        val myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
-        this@LoginActivity.startActivity(myIntent)
-
-        Toast.makeText(this, "Setting up chat", Toast.LENGTH_LONG).show()
-        Log.d("Opening messenger", "openChat: ")
-        Timer("SettingUp", false).schedule(20000) {
-            val myIntent = Intent(this@LoginActivity, ChatActivity::class.java)
-            //this@LoginActivity.startActivity(myIntent)
-        }
-
-        this@LoginActivity.startActivity(myIntent)
-
-        Toast.makeText(this, "Done setting up chat", Toast.LENGTH_LONG).show()
-    }
 }
