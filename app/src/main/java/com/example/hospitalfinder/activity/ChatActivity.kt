@@ -1,6 +1,7 @@
 package com.example.hospitalfinder.activity
 
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.util.Base64.encodeToString
 import android.util.Log
@@ -147,6 +148,8 @@ class ChatActivity: AppCompatActivity() {
                 cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivParameterSpec)
                 //Toast.makeText(this, "Opening chat", Toast.LENGTH_LONG).show()
                 Log.d("ChatActivity", "Encrypted: RSA " + android.util.Base64.encodeToString(cipher.doFinal(strToEncrypt.toByteArray(Charsets.UTF_8)), android.util.Base64.DEFAULT))
+
+                //this@ChatActivity.startActivity(new Intent(this@ChatActivitiy, RSA::class.java))
                 //Toast.makeText(this, "Testing encryption with RSA", Toast.LENGTH_LONG).show()
                 return android.util.Base64.encodeToString(cipher.doFinal(strToEncrypt.toByteArray(Charsets.UTF_8)), android.util.Base64.DEFAULT)
             }

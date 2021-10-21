@@ -138,14 +138,15 @@ class LoginActivity : AppCompatActivity() {
         bChat = findViewById(R.id.buttonChat)
         bChat?.setOnClickListener {
             Log.d("LoginActivity", "openChat: ")
-            val myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
+            var myIntent = Intent(this@LoginActivity, RSAactivity::class.java)
+            this@LoginActivity.startActivity(myIntent)
+            myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
             this@LoginActivity.startActivity(myIntent)
             Log.d("Opening messenger", "openChat: ")
             Timer("SettingUp", false).schedule(20000) {
                 Intent(this@LoginActivity, ChatActivity::class.java)
                 //this@LoginActivity.startActivity(myIntent)
             }
-
             this@LoginActivity.startActivity(myIntent)
         }
 

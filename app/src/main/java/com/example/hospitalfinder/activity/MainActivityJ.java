@@ -356,6 +356,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                 messageUser = (TextView) v.findViewById(R.id.message_user);
                 messageTime = (TextView) v.findViewById(R.id.message_time);
 
+                //Encrypt messages with RSA
 
                 //Encrypt messages with caesar
 
