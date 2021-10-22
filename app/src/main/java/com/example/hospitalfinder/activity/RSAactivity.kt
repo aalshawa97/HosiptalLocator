@@ -14,12 +14,40 @@ import java.security.spec.X509EncodedKeySpec
 import javax.crypto.Cipher
 
 class RSAactivity : AppCompatActivity() {
+    fun encrypt(message : String){
+        Log.e("TAG", "To encrypt: " + message)
+
+        //put PUBLIC key here key generated from: https://8gwifi.org/rsafunctions.jsp
+        val publicKeyRaw =
+            "-----BEGIN PUBLIC KEY-----\n" +
+                    "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQCAW4WQxF2/qzqYwoQlwkkQIjQJ\n" +
+                    "hCm2Hjl00QGkxeO12Py+jytTNYAopHCPpR4SbhE1cFdYx1qjEnFbgeJBxFENyqDg\n" +
+                    "GvBhlwrWQXfI9LdA2M3xbr/4wur7ph1c+aQxOpImzslCtHJ5df7cyFrOTnkY+XYY\n" +
+                    "yGK2Fsnu67FKWjgVvQIDAQAB\n" +
+                    "-----END PUBLIC KEY-----"
+        val reader = PemReader(StringReader(publicKeyRaw))
+        val pemObject = reader.readPemObject()
+        val keyBytes: ByteArray = pemObject.content
+        val keySpec: EncodedKeySpec = X509EncodedKeySpec(keyBytes)
+        val keyFactory = KeyFactory.getInstance("RSA")
+        val key = keyFactory.generatePublic(keySpec)
+
+        val cipher = Cipher.getInstance("RSA")
+        cipher.init(Cipher.ENCRYPT_MODE, key)
+        val cipherData: ByteArray = cipher.doFinal(message.toByteArray())
+        val encrypted = Base64.encodeToString(cipherData, Base64.DEFAULT)
+
+        Log.e("TAG", "encrypted: $encrypted")
+        /* use the encrypted text and place in https://8gwifi.org/rsafunctions.jsp
+        and try to decrypt with the PRIVATE key generated*/
+    }
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
 
-        val toEncrypt = "8uUrfe4OcJVUT5lkAP07WKrlGhIlAAwTRwAksBztVaa0hHdZp50EFjOmhrAmFsLQ"
+        val toEncrypt = "secret message"
+        Log.e("TAG", "To encrypt: " + toEncrypt)
 
         //put PUBLIC key here key generated from: https://8gwifi.org/rsafunctions.jsp
         val publicKeyRaw =

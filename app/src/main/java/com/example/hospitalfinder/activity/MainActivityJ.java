@@ -7,9 +7,11 @@ import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Menu;
+import java.util.*;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -36,11 +38,26 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.example.hospitalfinder.activity.RSAactivity;
+//import com.google.firebase.perf.util.Timer;
 
 public class MainActivityJ extends AppCompatActivity implements MainActivityJinterface {
 
     private static int SIGN_IN_REQUEST_CODE = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
+    private final int interval = 1000; // 1 Second
+    public void waitThread()
+    {
+        Handler handler = new Handler();
+        Runnable runnable = new Runnable(){
+            public void run() {
+                Toast.makeText(MainActivityJ.this, "Encryption with RSA!", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivityJ.this, RSAactivity.class);
+                startActivity(intent);
+            }
+        };
+    }
+
     String[] values = new String[] { "begin_button", "add_friend", "sign_out_button",
             };
     //Get reference to the database
@@ -161,9 +178,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                     //Now prompt the user for the key to use for decrypting the message
                     //DecryptionPopup decryptionPopup = new DecryptionPopup();
                     //startActivity(new Intent(MainActivityJ.this,DecryptionPopup.class));
-
                 }
-
 
             });
         }
@@ -199,7 +214,6 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
 
     public void decryptMessage(final View view)
     {
-
         //Trying to see if I can detect button clicks on the decrypt button
         DecryptButton = (Button)view;
 
@@ -216,9 +230,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                     //Now prompt the user for the key to use for decrypting the message
                     //DecryptionPopup decryptionPopup = new DecryptionPopup();
                     //startActivity(new Intent(MainActivityJ.this,DecryptionPopup.class));
-
                 }
-
 
             });
         }
@@ -237,7 +249,6 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                 messageText = (TextView) v.findViewById(R.id.message_text);
                 messageUser = (TextView) v.findViewById(R.id.message_user);
                 messageTime = (TextView) v.findViewById(R.id.message_time);
-
 
                 //Decrypt messages with caesar
 
@@ -323,6 +334,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
         };
 
         listOfMessage.setAdapter(adapter);
+        waitThread();
     }
 
     private static String stringToLong(String string) {
@@ -396,12 +408,9 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
 
                 Log.d("Encrypting plaintext: ", String.valueOf(tempMessageText));
 
-
                 //Encrypt messages with RSA
                 //RSAencryption rsAencryption = new RSAencryption();
                 //plainText = rsAencryption.KeyGeneration(plainText);
-
-
 
                 messageText.setText(String.valueOf(tempMessageText));
                 //messageText.setText(model.getMessageText());
