@@ -2,7 +2,7 @@ package com.example.hospitalfinder.activity;
 
 import static java.lang.Character.toLowerCase;
 import static java.lang.Character.toUpperCase;
-
+//import org.apache.commons.codec.binary.Base64;
 import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.os.Handler;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.Menu;
-
+import java.util.Base64;
 import java.nio.charset.Charset;
 import java.security.InvalidKeyException;
 import java.security.Key;
@@ -78,9 +78,14 @@ import javax.crypto.Cipher;
 
 public class MainActivityJ extends AppCompatActivity implements MainActivityJinterface {
 
+    private static final String PUBLIC_PATH = " ";
     private static int SIGN_IN_REQUEST_CODE = 1;
     private FirebaseListAdapter<ChatMessage> adapter;
     private final int interval = 1000; // 1 Second
+
+    public MainActivityJ() throws NoSuchAlgorithmException {
+    }
+
     public void waitThread()
     {
         Handler handler = new Handler();
@@ -173,6 +178,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_chat);
+        kpg.initialize(2048);
 
         activity_main = (RelativeLayout)findViewById(R.id.activity_main);
         fab = (FloatingActionButton)findViewById(R.id.fab);
@@ -401,11 +407,12 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                 messageTime = (TextView) v.findViewById(R.id.message_time);
                 StringBuilder tempMessageText = new StringBuilder(model.getMessageText());
                 String rsaEncryption = "";
-
+                final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
 
                 //Encrypt messages with RSA
                 try {
                     rsaEncryption = encrypt(messageText.toString());
+                    RSAEncrypt(messageText.toString());
                 } catch (IOException e) {
                     e.printStackTrace();
                 } catch (NoSuchAlgorithmException e) {
@@ -424,6 +431,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                 Log.d("RSA", "populateView RSA: " + rsaEncryption);
                 //Encrypt messages with caesar
 
+                /*
                 int ascii = 0;
 
                     //Key for encryption
@@ -458,12 +466,24 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                 }
 
                 Log.d("Encrypted plaintext: ", String.valueOf(tempMessageText));
-
+                */
                 //Encrypt messages with RSA
                 //RSAencryption rsAencryption = new RSAencryption();
                 //plainText = rsAencryption.KeyGeneration(plainText);
 
-                messageText.setText(String.valueOf(tempMessageText));
+                try {
+                    messageText.setText(Arrays.toString(RSAEncrypt(model.getMessageText())));
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                } catch (NoSuchPaddingException e) {
+                    e.printStackTrace();
+                } catch (InvalidKeyException e) {
+                    e.printStackTrace();
+                } catch (IllegalBlockSizeException e) {
+                    e.printStackTrace();
+                } catch (BadPaddingException e) {
+                    e.printStackTrace();
+                }
                 //messageText.setText(model.getMessageText());
                 messageUser.setText(model.getMessageUser());
                 messageTime.setText(DateFormat.format("dd-MM-yyyy (HH:mm:ss)",model.getMessageTime()));
@@ -471,6 +491,46 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
         };
 
         listOfMessage.setAdapter(adapter);
+    }
+    KeyPairGenerator kpg = KeyPairGenerator.getInstance("RSA");
+    KeyPair kp = kpg.genKeyPair();
+    PublicKey publicKey = kp.getPublic();
+    PrivateKey privateKey = kp.getPrivate();
+
+
+    public byte[] RSAEncrypt(final String plain) throws NoSuchAlgorithmException, NoSuchPaddingException,
+            InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+
+
+        Cipher cipher = Cipher.getInstance("RSA");
+        cipher.init(Cipher.ENCRYPT_MODE, publicKey);
+        byte[] encryptedBytes = cipher.doFinal(plain.getBytes());
+        System.out.println("Encrypted" + new String(bytesToHex(encryptedBytes)));
+        return encryptedBytes;
+    }
+
+    private static final char[] HEX_ARRAY = "0123456789ABCDEF".toCharArray();
+
+    public static String bytesToHex(byte[] bytes) {
+        char[] hexChars = new char[bytes.length * 2];
+        for (int j = 0; j < bytes.length; j++) {
+            int v = bytes[j] & 0xFF;
+            hexChars[j * 2] = HEX_ARRAY[v >>> 4];
+            hexChars[j * 2 + 1] = HEX_ARRAY[v & 0x0F];
+        }
+        return new String(hexChars);
+    }
+
+    public String RSADecrypt(final byte[] encryptedBytes) throws NoSuchAlgorithmException, NoSuchPaddingException,
+            InvalidKeyException, IllegalBlockSizeException, BadPaddingException {
+
+        Cipher cipher1 = Cipher.getInstance("RSA");
+        Key privateKey = null;
+        cipher1.init(Cipher.DECRYPT_MODE, privateKey);
+        byte[] decryptedBytes = cipher1.doFinal(encryptedBytes);
+        String decrypted = new String(decryptedBytes);
+        System.out.println("Decrypted" + decrypted);
+        return decrypted;
     }
 
     public final String encrypt(@NotNull String message) throws IOException, NoSuchAlgorithmException, InvalidKeySpecException, InvalidKeyException, NoSuchPaddingException, BadPaddingException, IllegalBlockSizeException {
@@ -501,7 +561,20 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
     }
 
     public static String decrypt(String data, String base64PrivateKey) throws IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, NoSuchPaddingException {
-        return " ";//decrypt(Base64.decode(data.getBytes()), getPrivateKey(base64PrivateKey));
+        return "";//decrypt(Base64.decode(data.getBytes()), getPrivateKey(base64PrivateKey));
+    }
+
+    private static String decrypt(byte[] buffer) {
+        try {
+            Cipher rsa;
+            rsa = Cipher.getInstance("RSA");
+            rsa.init(Cipher.DECRYPT_MODE, getPrivateKey(PUBLIC_PATH));
+            byte[] utf8 = rsa.doFinal(buffer);
+            return new String(utf8, "UTF8");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static PrivateKey getPrivateKey(String base64PrivateKey){
@@ -524,8 +597,10 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
 
 
 
-    public void displayDecryptedChatMessage(String valueKey)
-    {
+    public void displayDecryptedChatMessage(String valueKey) throws IllegalBlockSizeException, InvalidKeyException, BadPaddingException, NoSuchAlgorithmException, NoSuchPaddingException {
+        String inputString = valueKey;
+        byte[] byteArrray = inputString.getBytes();
+        RSADecrypt(byteArrray);
         valueKey = "1";
         Log.d("Decryption", "displayDecryptedChatMessage: " + valueKey.toString());
 
@@ -544,6 +619,7 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                 StringBuilder tempMessageText = new StringBuilder(messageText.getText());
 
                 //Key for encryption
+                /*
                 int key = 1;
                 int ascii = 0;
 
@@ -554,9 +630,24 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
                     ascii = ((((int)tempMessageText.charAt(i)+65 + key) %26) + 65);
                     tempMessageText.setCharAt(i,(char)ascii);
                 }
-
+                */
                 String data = dataSnapshot.getValue(String.class);
-                messageText.setText(messageText.getText());
+                CharSequence seq = null;
+                Charset charset = null;
+                byte[] bytes = seq.toString().getBytes(charset);
+                try {
+                    messageText.setText(RSADecrypt(bytes));
+                } catch (NoSuchAlgorithmException e) {
+                    e.printStackTrace();
+                } catch (NoSuchPaddingException e) {
+                    e.printStackTrace();
+                } catch (InvalidKeyException e) {
+                    e.printStackTrace();
+                } catch (IllegalBlockSizeException e) {
+                    e.printStackTrace();
+                } catch (BadPaddingException e) {
+                    e.printStackTrace();
+                }
                 Log.d("Decryption", "Decrypted chat message: " + messageText.getText());
             }
 
@@ -575,9 +666,6 @@ public class MainActivityJ extends AppCompatActivity implements MainActivityJint
             }
 
         });
-
-
-
 
         //Decrypt Message
 

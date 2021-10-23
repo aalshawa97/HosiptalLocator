@@ -9,11 +9,19 @@ import org.bouncycastle.util.*//io.pem.PemReader
 import org.bouncycastle.util.io.pem.PemReader
 import java.io.StringReader
 import java.security.KeyFactory
+import java.security.KeyPairGenerator
+import java.security.PrivateKey
+import java.security.PublicKey
 import java.security.spec.EncodedKeySpec
 import java.security.spec.X509EncodedKeySpec
 import javax.crypto.Cipher
 
 class RSAactivity : AppCompatActivity() {
+        lateinit var generator : KeyPairGenerator;
+        lateinit var privateKey : PrivateKey
+        lateinit var publicKey : PublicKey
+    //KeyPairGenerator generator = KeyPairGenerator.getInstance("RSA");
+
     fun encrypt(message : String){
         Log.e("TAG", "To encrypt: " + message)
 
@@ -44,8 +52,9 @@ class RSAactivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-
+        generator = KeyPairGenerator.getInstance("RSA")
+        generator.initialize(1024)
+        //privateKey = pair.getPrivate()
         val toEncrypt = "secret message"
         Log.e("TAG", "To encrypt: " + toEncrypt)
 

@@ -12,6 +12,13 @@ import static java.lang.Character.toUpperCase;
 
 import com.example.hospitalfinder.R;
 
+import java.security.InvalidKeyException;
+import java.security.NoSuchAlgorithmException;
+
+import javax.crypto.BadPaddingException;
+import javax.crypto.IllegalBlockSizeException;
+import javax.crypto.NoSuchPaddingException;
+
 /**
  * Created by abdul on 2/28/2017.
  */
@@ -66,9 +73,26 @@ public class DecryptionPopup extends Activity
 
 
                         //Now decrypt the message for the user
-                        MainActivityJ mainActivity = new MainActivityJ();
+                        MainActivityJ mainActivity = null;
+                        try {
+                            mainActivity = new MainActivityJ();
+                        } catch (NoSuchAlgorithmException e) {
+                            e.printStackTrace();
+                        }
                         //Need to get this method to work for decryption
-                        mainActivity.displayDecryptedChatMessage(valueKey);
+                        try {
+                            mainActivity.displayDecryptedChatMessage(valueKey);
+                        } catch (IllegalBlockSizeException e) {
+                            e.printStackTrace();
+                        } catch (InvalidKeyException e) {
+                            e.printStackTrace();
+                        } catch (BadPaddingException e) {
+                            e.printStackTrace();
+                        } catch (NoSuchAlgorithmException e) {
+                            e.printStackTrace();
+                        } catch (NoSuchPaddingException e) {
+                            e.printStackTrace();
+                        }
 
 
                     }
