@@ -42,10 +42,11 @@
 
     </com.google.android.gms.common.SignInButton>
 -->
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="222dp"
+        android:layout_height="183dp"
         android:layout_marginTop="39dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
