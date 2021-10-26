@@ -139,7 +139,7 @@ class LoginActivity : AppCompatActivity() {
         bChat?.setOnClickListener {
             Log.d("LoginActivity", "openChat: ")
             var myIntent = Intent(this@LoginActivity, RSAactivity::class.java)
-            this@LoginActivity.startActivity(myIntent)
+            //this@LoginActivity.startActivity(myIntent)
             myIntent = Intent(this@LoginActivity, MainActivityJ::class.java)
             this@LoginActivity.startActivity(myIntent)
             Log.d("Opening messenger", "openChat: ")
