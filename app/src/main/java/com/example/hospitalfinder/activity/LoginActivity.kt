@@ -1,26 +1,26 @@
 package com.example.hospitalfinder.activity
 
+//import com.google.android.gms.common.api.GoogleSignInClient
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.util.Log
-import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import android.widget.Toast.LENGTH_SHORT
 import android.widget.Toast.makeText
+import androidx.*
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.Toolbar
 import com.example.hospitalfinder.R
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.android.gms.common.api.ApiException
-//import com.google.android.gms.common.api.GoogleSignInClient
 import com.google.android.gms.common.api.GoogleApiClient
-import com.google.firebase.FirebaseApp
 import com.google.firebase.FirebaseOptions
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
@@ -42,14 +42,16 @@ class LoginActivity : AppCompatActivity() {
     var bSelectImage: Button? = null
     var bSkip: Button? = null
     var bChat: Button? = null
-
+    var toolBar: Toolbar? = null
     val pickImage = 100
     //Constant to compare the activity result code
     var selectPicture = 200
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
+        //Toolbar
+        //toolBar = findViewById(R.id.toolbar)
+        //setSupportActionBar(toolBar)
         val options = FirebaseOptions.Builder()
             .setApplicationId("1:123140511070:android:a5c84837bb6de83502ebcf") // Required for Analytics.
             .setProjectId("hospitallocator-be5cd") // Required for Firebase Installations.
