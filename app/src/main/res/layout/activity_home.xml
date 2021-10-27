@@ -12,10 +12,10 @@
         android:layout_height="128dp"
         android:layout_marginStart="28dp"
         android:layout_marginLeft="28dp"
-        android:layout_marginTop="44dp"
-        android:gravity="center_horizontal"
+        android:layout_marginTop="32dp"
+        android:textAlignment="viewStart"
+        android:gravity="start"
         android:text="@string/hospitallocator"
-        android:textAlignment="center"
         android:textSize="40sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
