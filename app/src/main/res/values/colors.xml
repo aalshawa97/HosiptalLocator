@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#6200EE</color>
+    <color name="colorOnPrimary">#6200EE</color>
     <color name="colorPrimaryDark">#3700B3</color>
     <color name="colorAccent">#03DAC5</color>
     <color name="primary">#6A7CFF</color>
+    <color name="black">#000000</color>
+    <color name="purple_500">#800080</color>
+    <color name="purple_700">#301934</color>
     <color name="background">#F7F7FA</color>
     <color name="card_background">#FFFFFF</color>
+    <color name="teal_200">#008080</color>
+    <color name="teal_700">#014d4e </color>
     <color name="primary_text">#565B65</color>
     <color name="secondary_text">#9B9A9D</color>
     <color name="white">#FFFFFF</color>
