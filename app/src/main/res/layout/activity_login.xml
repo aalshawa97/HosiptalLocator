@@ -83,4 +83,12 @@
         app:layout_anchor="@+id/buttonSkipLogin"
         app:layout_anchorGravity="bottom|center" />
 
+    <Button
+        android:id="@+id/buttonHospial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hospital_button"
+        app:layout_anchor="@+id/buttonChat"
+        app:layout_anchorGravity="bottom|center" />
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

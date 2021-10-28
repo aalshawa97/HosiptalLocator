@@ -1,27 +1,15 @@
 package com.example.hospitalfinder.activity
 
-import android.content.ContentValues.TAG
 import android.content.Intent
-import android.os.AsyncTask
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.provider.AlarmClock.EXTRA_MESSAGE
 import android.util.Log
-import android.view.View
 import android.widget.ProgressBar
-import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.hospitalfinder.MapsActivity
-import com.example.hospitalfinder.R
 import com.google.android.gms.auth.api.signin.GoogleSignIn
-import java.util.Timer
-import kotlin.concurrent.schedule
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount
-import android.os.Looper
-import java.util.concurrent.Callable
-import java.util.concurrent.Executor
-import java.util.concurrent.Executors
+import java.util.*
+import kotlin.concurrent.schedule
 
 
 class HomeActivity : AppCompatActivity() {
@@ -55,4 +43,15 @@ class HomeActivity : AppCompatActivity() {
 
 
     }
+
+    /*
+    fun onResult(likelyPlaces: PlaceLikelihoodBuffer) {
+        for (placeLikelihood in likelyPlaces) {
+            place.add(placeLikelihood.place.freeze())
+            Log.i("Place = ", placeLikelihood.place.name.toString())
+        }
+        adapter.notifyDataSetChanged()
+        likelyPlaces.release()
+    }*/
+
 }
