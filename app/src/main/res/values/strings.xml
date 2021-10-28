@@ -60,6 +60,9 @@
     <string name="download">download</string>
     <string name="begin">begin</string>
     <string name="title_activity_async">Async Activity</string>
+    <string name="make_call">Call</string>
+    <string name="login">Login</string>
+    <string name="title_activity_recycler">Recycler Activity</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>

@@ -84,9 +84,10 @@
         app:layout_anchorGravity="bottom|center" />
 
     <Button
-        android:id="@+id/buttonHospial"
+        android:id="@+id/buttonHospital"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:onClick="onClick"
         android:text="@string/hospital_button"
         app:layout_anchor="@+id/buttonChat"
         app:layout_anchorGravity="bottom|center" />

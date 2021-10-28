@@ -236,4 +236,23 @@ class LoginActivity : AppCompatActivity() {
         //private val TAG = "LoginActivity"
         private const val RC_SIGN_IN = 123
     }
+
+    fun onClick(view: android.view.View) {
+        /*
+        etName
+        if(etName.text.isNullOrEmpty())
+        {
+            Toast.makeText(this,"Could you please sign in or register? " , Toast.LENGTH_LONG).show();
+        }
+        */
+        Toast.makeText(this,"Welcome now listing hospitals", Toast.LENGTH_LONG).show();
+        //setContentView(R.layout.activity_item_detail)
+        val intent = Intent(this, RecyclerActivity::class.java)
+        startActivity(intent)
+        /*
+        when (v.getId()) {
+            com.example.detailapplication.R.id.sign_in_button -> signIn()
+        }
+        */
+    }
 }

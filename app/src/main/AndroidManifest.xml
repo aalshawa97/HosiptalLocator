@@ -64,6 +64,12 @@
         </activity>
 
         <activity
+            android:name=".activity.RecyclerActivity"
+            android:label="@string/title_activity_recycler"
+            >
+        </activity>
+
+        <activity
             android:name=".activity.AsyncActivity"
             android:label="@string/title_activity_async"
             >
