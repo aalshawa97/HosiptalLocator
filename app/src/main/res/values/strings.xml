@@ -63,6 +63,9 @@
     <string name="make_call">Call</string>
     <string name="login">Login</string>
     <string name="title_activity_recycler">Recycler Activity</string>
+    <string name="image_call_hint">make call</string>
+    <string name="calling">calling</string>
+    <string name="title_activity_phone">Phone Activity</string>
     <string-array name="hospitals">
         <item>children_hospital</item>
         <item>public_hospital</item>
