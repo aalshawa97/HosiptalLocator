@@ -8,12 +8,14 @@ import android.content.Context
 import android.location.LocationManager
 import android.net.Uri
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuInflater
 import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.hospitalfinder.models.UserMap
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
 import com.google.android.gms.common.GooglePlayServicesRepairableException
@@ -32,6 +34,9 @@ import javax.xml.parsers.DocumentBuilderFactory
 //private static final String GOOGLE_API_KEY = "AIzaSSDFSDF8Kv2eP0PM8adf5dSDFysdfas323SD3HA";
 //GoogleMap googleMap;
 val PLAY_SERVICES_RESOLUTION_REQUEST = 0
+private lateinit var mMap: GoogleMap
+private lateinit var userMap: UserMap
+
 var locationManager: LocationManager? = null
 public class GooglePlacesActivity{
 
@@ -272,6 +277,7 @@ fun printHashMap(hashMap: HashMap<String, Int>){
             // Printing the empty hashMap
             printHashMap(hashMap)
             mMap = googleMap
+            Log.i("MapsActivity", "User map to render: ${userMap.title}")
             val text = "Hello and welcome to the hospital locator!"
             val duration = Toast.LENGTH_SHORT
             val toast = Toast.makeText(applicationContext, text, duration)

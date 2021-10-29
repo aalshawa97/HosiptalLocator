@@ -14,7 +14,13 @@ import android.widget.Toast.makeText
 import androidx.*
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.hospitalfinder.MapsActivity
+import com.example.hospitalfinder.MapsAdapter
 import com.example.hospitalfinder.R
+import com.example.hospitalfinder.models.Place
+import com.example.hospitalfinder.models.UserMap
 import com.google.android.gms.auth.api.Auth
 import com.google.android.gms.auth.api.signin.GoogleSignIn
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount
@@ -27,6 +33,7 @@ import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.auth.GoogleAuthProvider
 import com.google.firebase.firestore.FirebaseFirestore
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.activity_show_hospitals.*
 import java.util.*
 import kotlin.concurrent.schedule
 
@@ -47,11 +54,70 @@ class LoginActivity : AppCompatActivity() {
     //Constant to compare the activity result code
     var selectPicture = 200
 
+    private fun generateSampleData(): List<UserMap> {
+        return listOf(
+            UserMap(
+                "Drive-thru covid testing",
+                listOf(
+                    Place("COVID-19 Drive-Thru Testing at Walgreens", "COVID-19 testing center\n" +
+                            "Appointment required\n" +
+                            "Referral not required\n" +
+                            "Tests limited to certain patients\n" +
+                            "Drive-through\n" +
+                            "Instructions: 1.) Complete a quick questionnaire. 2.) Choose a location and time for your COVID-19 test (based on the type of test you want). 3.) Go to the testing location and remain in your vehicle with the window rolled up. 4.) Show your confirmation email, a valid state ID or driver's license, and insurance card or voucher. 5.) Perform the nasal swab yourself under the direction of a pharmacy team member. Patients ages 3-18 will need a parent or legal guardian while they self-administer the COVID-19 test. 6.) Get results from PWNHealth", 45.5472, -122.6417),
+                    Place("Walmart Drive Thru Testing", "COVID-19 testing center\n" +
+                            "Appointment required\n" +
+                            "Referral not required\n" +
+                            "Testing for all patients\n" +
+                            "Drive-through\n" +
+                            "Verify testing center info before going.", 45.5472, -122.6417),
+                    Place("GS Labs Testing - Lake Oswego\n", "COVID-19 testing center\n" +
+                            "Appointment required\n" +
+                            "Referral not required\n" +
+                            "Testing for all patients\n" +
+                            "Drive-through\n" +
+                            "Verify testing center info before going.", 45.4738589, -122.7599947)
+                )
+            ),
+            UserMap("Covid research centers",
+                listOf(
+                    Place("Fred Hutch", "COVID-19 Clinical Research Center", 45.5472, -122.6417),
+                    Place("NIAID", "NIAID Office of Communications and Government Relations\n" +
+                            "5601 Fishers Lane, MSC 9806\n" +
+                            "Bethesda, MD 20892-9806 (deliveries: Rockville, MD 20852)\n" +
+                            "United States of America\n" +
+                            "\n", 39.0633222, -77.1208334),
+                    Place("Fred Hutch", "COVID-19 Clinical Research Center", 47.6266759, -122.3329178)
+                )
+            )
+        )
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        val userMaps = generateSampleData()
+        val rvHospital = findViewById<RecyclerView>(R.id.rvHospitals)
         //Toolbar
         //toolBar = findViewById(R.id.toolbar)
         //setSupportActionBar(toolBar)
+        //Set layout manager on the recycler view
+
+        if(rvHospital != null)
+        {
+            rvHospital.layoutManager = LinearLayoutManager(this)
+            //Set adapter on recycler view
+            rvHospital.adapter = MapsAdapter(this, userMaps, object: MapsAdapter.OnClickListener{
+                fun onItemClick(position: Int){
+                    Log.i("Login Activity", "onItemClick $position")
+                    //When user taps on view in recycler view, navigate to new activity
+                    val intent = Intent(this@LoginActivity, MapsActivity::class.java)
+                    startActivity(intent)
+                }
+            })
+        }
+
+        //When user taps on a new activity we need to go to it!
+        //layoutManager
         val options = FirebaseOptions.Builder()
             .setApplicationId("1:123140511070:android:a5c84837bb6de83502ebcf") // Required for Analytics.
             .setProjectId("hospitallocator-be5cd") // Required for Firebase Installations.

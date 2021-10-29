@@ -8,24 +8,34 @@
     -->
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES"/>
-    <uses-feature android:glEsVersion="0x00020000" android:required="true"/>
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
-    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-feature android:name="android.hardware.microphone" android:required="false" />
-    <uses-permission android:name="android.permission.SEND_SMS" />
-    <!-- Limits app visibility in the Google Play Store to ARCore supported devices
-     (https://developers.google.com/ar/discover/supported-devices). -->
-    <uses-feature android:name="android.hardware.camera.ar" />
-    <application
 
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <!--
+ Limits app visibility in the Google Play Store to ARCore supported devices
+     (https://developers.google.com/ar/discover/supported-devices).
+    -->
+    <uses-feature android:name="android.hardware.camera.ar" />
+
+    <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -33,7 +43,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".ui.AboutMe"></activity>
+        <activity
+            android:name=".activity.DisplayMapActivity"
+            android:exported="false" />
+        <activity android:name=".ui.AboutMe" />
         <!--
              The API key for Google Maps-based APIs is defined as a string resource.
              (See the file "res/values/google_maps_api.xml").
@@ -45,75 +58,59 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
+        <!--             The API key for Google Maps-based APIs. -->
         <!--
-            The API key for Google Maps-based APIs.
-
+ "AR Required" app, requires "Google Play Services for AR" (ARCore)
+       to be installed, as the app does not include any non-AR features.
         -->
-        <!-- "AR Required" app, requires "Google Play Services for AR" (ARCore)
-       to be installed, as the app does not include any non-AR features. -->
-        <meta-data android:name="com.google.ar.core" android:value="required" />
-
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="required" />
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
 
-        <activity android:name=".MapsActivity"
-                android:label="@string/title_activity_maps"
-            />
-        <activity android:name=".activity.DecryptionPopup"
-                android:label="Decryption Popup"/>
-
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity
+            android:name=".activity.DecryptionPopup"
+            android:label="Decryption Popup" />
         <activity
             android:name=".activity.MainActivity"
-            android:label="@string/title_activity_main"
-            >
-        </activity>
-
+            android:label="@string/title_activity_main"></activity>
         <activity
             android:name=".activity.RecyclerActivity"
-            android:label="@string/title_activity_recycler"
-            >
-        </activity>
-
+            android:label="@string/title_activity_recycler"></activity>
         <activity
             android:name=".activity.AsyncActivity"
-            android:label="@string/title_activity_async"
-            >
-        </activity>
-
+            android:label="@string/title_activity_async"></activity>
         <activity
             android:name=".activity.RSAactivity"
-            android:label="@string/title_activity_rsa"
-            >
-        </activity>
-
-        <activity android:name=".activity.HomeActivity"
-            android:label="@string/title_activity_home"/>
-
-        <activity android:name=".activity.PhoneActivity"
-            android:label="@string/title_activity_phone"/>
-
-        <activity android:name=".activity.ChatActivity"
+            android:label="@string/title_activity_rsa"></activity>
+        <activity
+            android:name=".activity.HomeActivity"
+            android:label="@string/title_activity_home" />
+        <activity
+            android:name=".activity.PhoneActivity"
+            android:label="@string/title_activity_phone" />
+        <activity
+            android:name=".activity.ChatActivity"
             android:exported="true"
             android:label="@string/title_activity_chat"
-            android:windowSoftInputMode="stateHidden|adjustResize|adjustPan"
-            />
-
-        <activity android:name=".activity.ContactsActivity"
+            android:windowSoftInputMode="stateHidden|adjustResize|adjustPan" />
+        <activity
+            android:name=".activity.ContactsActivity"
             android:exported="true"
-            android:label="@string/title_activity_contacts"
-            />
-
+            android:label="@string/title_activity_contacts" />
         <activity
             android:name=".activity.MainActivityJ"
-            android:label="@string/title_activity_mainj"
             android:exported="true"
-            />
-
+            android:label="@string/title_activity_mainj" />
         <activity
             android:name=".activity.LoginActivity"
-            android:label="@string/title_activity_login"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/title_activity_login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
