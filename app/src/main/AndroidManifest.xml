@@ -44,6 +44,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
         <activity
+            android:name=".activity.ShowHospitalsActivity"
+            android:exported="false" />
+        <activity
             android:name=".activity.DisplayMapActivity"
             android:exported="false" />
         <activity android:name=".ui.AboutMe" />
@@ -57,8 +60,7 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="@string/google_maps_key" />
-        <!--             The API key for Google Maps-based APIs. -->
+            android:value="@string/google_maps_key" /> <!-- The API key for Google Maps-based APIs. -->
         <!--
  "AR Required" app, requires "Google Play Services for AR" (ARCore)
        to be installed, as the app does not include any non-AR features.
@@ -78,16 +80,16 @@
             android:label="Decryption Popup" />
         <activity
             android:name=".activity.MainActivity"
-            android:label="@string/title_activity_main"></activity>
+            android:label="@string/title_activity_main" />
         <activity
             android:name=".activity.RecyclerActivity"
-            android:label="@string/title_activity_recycler"></activity>
+            android:label="@string/title_activity_recycler" />
         <activity
             android:name=".activity.AsyncActivity"
-            android:label="@string/title_activity_async"></activity>
+            android:label="@string/title_activity_async" />
         <activity
             android:name=".activity.RSAactivity"
-            android:label="@string/title_activity_rsa"></activity>
+            android:label="@string/title_activity_rsa" />
         <activity
             android:name=".activity.HomeActivity"
             android:label="@string/title_activity_home" />
