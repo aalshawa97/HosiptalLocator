@@ -15,6 +15,7 @@ import android.view.MenuItem
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.example.hospitalfinder.models.Place
 import com.example.hospitalfinder.models.UserMap
 import com.google.android.gms.common.ConnectionResult
 import com.google.android.gms.common.GoogleApiAvailability
@@ -35,7 +36,7 @@ import javax.xml.parsers.DocumentBuilderFactory
 //GoogleMap googleMap;
 val PLAY_SERVICES_RESOLUTION_REQUEST = 0
 private lateinit var mMap: GoogleMap
-private lateinit var userMap: UserMap
+//private lateinit var userMap: UserMap
 
 var locationManager: LocationManager? = null
 public class GooglePlacesActivity{
@@ -198,6 +199,7 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         protected override fun onCreate(savedInstanceState: Bundle?) {
             // Retrieve content vie that renders the map.
             super.onCreate(savedInstanceState)
+
             if(getString(R.string.maps_api_key).isEmpty())
             {
                 // Inject language or reference
@@ -277,7 +279,14 @@ fun printHashMap(hashMap: HashMap<String, Int>){
             // Printing the empty hashMap
             printHashMap(hashMap)
             mMap = googleMap
-            Log.i("MapsActivity", "User map to render: ${userMap.title}")
+            /*
+            for (place in userMap.places){
+                val latLng = LatLng(place.latitude, place.longitude)
+                mMap.addMarker(MarkerOptions().position(latLng).title(place.title).snippet(place.description))
+            }
+            */
+            //userMap = UserMap("Covid reasearch", ("John Hopkins","University") as Place)
+            //Log.i("MapsActivity", "User map to render: ${userMap.title}")
             val text = "Hello and welcome to the hospital locator!"
             val duration = Toast.LENGTH_SHORT
             val toast = Toast.makeText(applicationContext, text, duration)
