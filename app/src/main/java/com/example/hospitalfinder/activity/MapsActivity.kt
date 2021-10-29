@@ -27,6 +27,7 @@ import com.google.android.gms.maps.*
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 import java.lang.ArithmeticException
+import java.lang.NullPointerException
 import java.sql.Connection
 import javax.xml.parsers.DocumentBuilder
 import javax.xml.parsers.DocumentBuilderFactory
@@ -36,7 +37,14 @@ import javax.xml.parsers.DocumentBuilderFactory
 //GoogleMap googleMap;
 val PLAY_SERVICES_RESOLUTION_REQUEST = 0
 private lateinit var mMap: GoogleMap
-//private lateinit var userMap: UserMap
+private var userMap: UserMap = UserMap(" ",  listOf(Place("Providence Medical Group Primary Care - Newberg", "When you choose Providence Medical Group - Newberg, you’re choosing more than a primary care provider or a clinic location. You’re choosing an integrated network of caregivers, specialists and clinical programs dedicated to compassionate, patient-centered health care.\n" +
+        "\n" +
+        "It’s all part of your medical home: a coordinated approach that brings together an expert team focused on caring for you—body, soul and mind.\n" +
+        "\n" +
+        "Providence Medical Group accepts most major forms of insurance. Please contact your insurance carrier to confirm coverage at this clinic.\n" +
+        "\n" +
+        "Whether it’s internal medicine, family medicine or obstetrics, we look forward to serving you in being your health care professionals.", 45.5472 ,122.6417)))
+val EXTRA_USER_MAP = "EXTRA_USER_MAP"
 
 var locationManager: LocationManager? = null
 public class GooglePlacesActivity{
@@ -199,6 +207,26 @@ public class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         protected override fun onCreate(savedInstanceState: Bundle?) {
             // Retrieve content vie that renders the map.
             super.onCreate(savedInstanceState)
+            try{
+                userMap =
+                    (intent?.getSerializableExtra(EXTRA_USER_MAP) as? UserMap)!!//UserMap("Covid reasearch", ("John Hopkins","University") as Place)
+            }
+            catch (e : NullPointerException)
+            {
+
+            }
+
+            userMap.places.get(0).title ="Providence Medical Group Primary Care - Newberg"
+            userMap.places.get(0).description = "\"When you choose Providence Medical Group - Newberg, you’re choosing more than a primary care provider or a clinic location. You’re choosing an integrated network of caregivers, specialists and clinical programs dedicated to compassionate, patient-centered health care.\\n\" +\n" +
+                    "        \"\\n\" +\n" +
+                    "        \"It’s all part of your medical home: a coordinated approach that brings together an expert team focused on caring for you—body, soul and mind.\\n\" +\n" +
+                    "        \"\\n\" +\n" +
+                    "        \"Providence Medical Group accepts most major forms of insurance. Please contact your insurance carrier to confirm coverage at this clinic.\\n\" +\n" +
+                    "        \"\\n\" +\n" +
+                    "        \"Whether it’s internal medicine, family medicine or obstetrics, we look forward to serving you in being your health care professionals.\""
+            userMap.places.get(0).latitude = 45.5472
+            userMap.places.get(0).longitude = 122.6417
+
 
             if(getString(R.string.maps_api_key).isEmpty())
             {
@@ -279,13 +307,7 @@ fun printHashMap(hashMap: HashMap<String, Int>){
             // Printing the empty hashMap
             printHashMap(hashMap)
             mMap = googleMap
-            /*
-            for (place in userMap.places){
-                val latLng = LatLng(place.latitude, place.longitude)
-                mMap.addMarker(MarkerOptions().position(latLng).title(place.title).snippet(place.description))
-            }
-            */
-            //userMap = UserMap("Covid reasearch", ("John Hopkins","University") as Place)
+
             //Log.i("MapsActivity", "User map to render: ${userMap.title}")
             val text = "Hello and welcome to the hospital locator!"
             val duration = Toast.LENGTH_SHORT
@@ -1128,6 +1150,12 @@ fun printHashMap(hashMap: HashMap<String, Int>){
 
             val naturalMedicine:HashMap<String, Int> = HashMap<String, Int>()
             naturalMedicine.put("honey", 1)
+
+            for (place in userMap.places){
+                val latLng = LatLng(place.latitude, place.longitude)
+                mMap.addMarker(MarkerOptions().position(latLng).title(place.title).snippet(place.description))
+            }
+
         }
 
         private lateinit var constraintLayout: ConstraintLayout
