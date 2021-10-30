@@ -15,5 +15,5 @@ import androidx.room.PrimaryKey
  * https://developer.android.com/topic/libraries/architecture/room.html
  */
 
-@Entity(tableName = "imam_table")
+@Entity(tableName = "hospital_table")
 data class HospitalR(@PrimaryKey @ColumnInfo(name = "hospital") val word: String)
